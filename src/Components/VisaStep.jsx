@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TempHeader from "./components/TempHeader";
+import StepHeader from "./StepHeader";
 
 export default function VisaStep({ updateScore, nextStep }) {
 
@@ -17,7 +17,7 @@ export default function VisaStep({ updateScore, nextStep }) {
     <div className="card">
 
       {/* Top Title + Score Box */}
-      <TempHeader title="Visa Subclass" points={points} />
+      <StepHeader title="Visa Subclass" points={points} />
 
       <p className="question">
         Which visa Subclass are you applying for?

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TempHeader from "./TempHeader";
+import StepHeader from "./StepHeader";
 
 export default function OverseasStep({ updateScore, nextStep, prevStep }) {
   const [points, setPoints] = useState(0);
@@ -13,7 +13,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
 
   return (
     <div className="card">
-      <TempHeader title="Educational Qualifications
+      <StepHeader title="Educational Qualifications
 " points={points} />
       <p className="question">
 What is your highest qualification?

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TempHeader from "./TempHeader";
+import StepHeader from "./StepHeader";
 
 export default function OverseasStep({ updateScore, nextStep, prevStep }) {
   const [points, setPoints] = useState(0);
@@ -13,7 +13,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
 
   return (
     <div className="card">
-      <TempHeader title="Australian Work Experience" points={points} />
+      <StepHeader title="Australian Work Experience" points={points} />
       <p className="question">
         In the last 10 years, how long have you worked in your nominated skilled
         occupation or closely related occupation in Australia?

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TempHeader({ title, points }) {
+export default function StepHeader({ title, points }) {
   return (
     <div className="step-header">
       <h2>{title}</h2>
