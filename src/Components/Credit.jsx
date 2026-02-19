@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepHeader from "./StepHeader";
+import TempHeader from "./TempHeader";
 
 export default function SpecialEduStep({ updateScore, nextStep, prevStep }) {
   const [points, setPoints] = useState(0);
@@ -13,7 +13,7 @@ export default function SpecialEduStep({ updateScore, nextStep, prevStep }) {
 
   return (
     <div className="card">
-      <StepHeader title="Accredited Community Language
+      <TempHeader title="Accredited Community Language
 " points={points} />
       <p className="question">
        Do you hold any one of the following?

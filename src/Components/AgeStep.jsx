@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import StepHeader from "./components/StepHeader";
+import TempHeader from "./components/TempHeader";
 
 export default function AgeStep({ updateScore, nextStep, prevStep }) {
  {
@@ -13,7 +13,7 @@ export default function AgeStep({ updateScore, nextStep, prevStep }) {
     <div>
          <div className="card">
           
-                <StepHeader title="Age" points={points} />
+                <TempHeader title="Age" points={points} />
           
                 <p className="question">
                   Your age at the time of invitation to apply for the visa.

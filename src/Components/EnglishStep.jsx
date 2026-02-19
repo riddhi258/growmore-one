@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepHeader from "./StepHeader";
+import TempHeader from "./TempHeader";
 
 export default function EnglishStep({ updateScore, nextStep, prevStep }) {
 
@@ -16,7 +16,7 @@ export default function EnglishStep({ updateScore, nextStep, prevStep }) {
     <div className="card">
 
       {/* Header with score */}
-      <StepHeader title="English Language" points={points} />
+      <TempHeader title="English Language" points={points} />
 
       <p className="question">What is your English test level?</p>
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepHeader from "./StepHeader";
+import TempHeader from "./TempHeader";
 
 export default function OverseasStep({ updateScore, nextStep, prevStep }) {
   const [points, setPoints] = useState(0);
@@ -13,7 +13,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
 
   return (
     <div className="card">
-            <StepHeader title="Overseas Work Experience" points={points} />
+            <TempHeader title="Overseas Work Experience" points={points} />
       <p className="question">How many years of skilled work experience outside Australia?</p>
 
          <label className={`option ${selected === "15" ? "active" : ""}`}>
