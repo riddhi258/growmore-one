@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepHeader from "./StepHeader";
+import StepHeader from "./components/StepHeader";
 
 export default function VisaStep({ updateScore, nextStep }) {
 
