@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StepHeader from "./components/StepHeader";
+import StepHeader from "./StepHeader";
 
 export default function SpecialEduStep({ updateScore, nextStep, prevStep }) {
   const [points, setPoints] = useState(0);
