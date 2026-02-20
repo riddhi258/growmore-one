@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      "https://case.growmore.one/add/company-website",
+      "https://case.growmore.one/admin/",
       {
         method: "POST",
         headers: {
