@@ -11,7 +11,7 @@ const WhoWeAre = () => {
           <h1 className="text-3xl md:text-5xl font-semibold text-white mb-3">
             Who We Are
           </h1>
-          <p className="text-gray-200 font-medium">Home &gt; Who We Are</p>
+          <p className="text-white font-semibold">Home &gt; Who We Are</p>
         </div>
       </section>
 
