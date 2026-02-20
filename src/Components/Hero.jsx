@@ -152,7 +152,7 @@ const Hero = () => {
                 {/* CAPTCHA */}
                 <div className="flex items-start">
                   <ReCAPTCHA
-                    sitekey="6LeQu3EsAAAAAE7yv5jAke-n5Qfu8E3n8IoigpIz"
+                    sitekey="6LeQu3EsAAAAABm56Ce7FjDWBQog8qZBiw2eBwCh"
                     ref={recaptchaRef}
                   />
                 </div>
