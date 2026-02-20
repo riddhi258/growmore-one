@@ -28,7 +28,7 @@ const Teams = () => {
     <div className="w-full bg-white py-24">
 
       {/* ================= TEAM SECTION ================= */}
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 justify-items-center">
           {team.map((member, index) => (
             <div
