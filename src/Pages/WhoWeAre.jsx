@@ -1,6 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
 import WhyChooseUs from "../Components/WhyChooseUs";
+import Teams from "../Components/Teams";
 
 const WhoWeAre = () => {
   return (
@@ -140,6 +141,7 @@ const WhoWeAre = () => {
           </div>
         </div>
       </section>
+      <Teams />
     </div>
   );
 };
