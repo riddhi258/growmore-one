@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import ReCAPTCHA from "react-google-recaptcha";
 import "react-phone-input-2/lib/style.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const recaptchaRef = useRef(null);
