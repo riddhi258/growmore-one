@@ -143,7 +143,7 @@ const Hero = () => {
                 <select
                   name="visaType"
                   required
-                  className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition"
+                  className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:bg-blue focus:border-[#6dc7d1] transition"
                 >
                   <option value="">Inquiry For</option>
                   <option>Student Visa</option>
