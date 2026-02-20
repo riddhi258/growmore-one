@@ -1,14 +1,20 @@
-// /api/lead.js
+// api/lead.js
 
 export default async function handler(req, res) {
 
-  // Allow POST only
+  // handle preflight
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    return res.status(200).end();
+  }
+
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
+    return res.status(405).json({ success: false, message: "Method not allowed" });
   }
 
   try {
-    // Send data to Growmore CRM webhook
     const response = await fetch(
       "https://case.growmore.one/add/company-website",
       {
@@ -20,12 +26,11 @@ export default async function handler(req, res) {
       }
     );
 
-    const text = await response.text();
+    const data = await response.text();
 
     return res.status(200).json({
       success: true,
-      message: "Lead sent successfully",
-      crm: text,
+      crmResponse: data,
     });
 
   } catch (error) {
@@ -33,7 +38,7 @@ export default async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
-      message: "Server error while sending lead",
+      message: "Failed to send lead",
     });
   }
 }
