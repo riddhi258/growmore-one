@@ -55,7 +55,6 @@ const Hero = () => {
       e.target.reset();
       setPhone("");
       recaptchaRef.current.reset();
-
     } catch (error) {
       console.error(error);
       alert("Server error. Please try again.");
@@ -70,7 +69,6 @@ const Hero = () => {
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
       <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
-
         {/* LEFT */}
         <div className="flex flex-col justify-center text-left">
           <h6 className="text-base md:text-lg font-semibold text-[#6dc7d1] mb-4">
@@ -78,16 +76,20 @@ const Hero = () => {
           </h6>
 
           <h1 className="text-2xl md:text-3xl font-bold text-white leading-snug mb-6 max-w-2xl">
-            The Best Immigration Consultant Service for a Smooth Move to Australia
+            The Best Immigration Consultant Service for a Smooth Move to
+            Australia
           </h1>
 
           <p className="text-medium md:text-lg text-gray-200 mb-4 max-w-xl leading-relaxed text-justify">
-            Start your journey to a new life in Australia with expert visa agent support.
+            Start your journey to a New Life in Australia with Expert Visa Agent
+            Support and Seamless Immigration Assistance from Trusted Registered
+            Migration Agents.
           </p>
-
+         <Link to="/who-we-are">
           <button className="w-fit bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition">
             Read More →
           </button>
+         </Link>
         </div>
 
         {/* FORM */}
@@ -96,14 +98,28 @@ const Hero = () => {
             <div className="h-5 bg-[#6dc7d1] w-full"></div>
 
             <div className="p-8">
-              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">CONTACT US</p>
-              <h2 className="text-3xl font-semibold text-white mb-6">Make an Appointment</h2>
+              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">
+                CONTACT US
+              </p>
+              <h2 className="text-3xl font-semibold text-white mb-6">
+                Make an Appointment
+              </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-
                 <div className="grid grid-cols-2 gap-4">
-                  <input name="name" placeholder="Your Name" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"/>
-                  <input type="email" name="email" placeholder="Enter Email" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"/>
+                  <input
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    required
+                    className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                  />
                 </div>
 
                 <div className="bg-white rounded-lg p-1 border border-gray-300">
@@ -112,11 +128,19 @@ const Hero = () => {
                     enableSearch
                     value={phone}
                     onChange={setPhone}
-                    inputStyle={{ width: "100%", border: "none", height: "44px" }}
+                    inputStyle={{
+                      width: "100%",
+                      border: "none",
+                      height: "44px",
+                    }}
                   />
                 </div>
 
-                <select name="visaType" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300">
+                <select
+                  name="visaType"
+                  required
+                  className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                >
                   <option value="">Inquiry For</option>
                   <option>Student Visa</option>
                   <option>Work/Skilled Migration</option>
@@ -126,7 +150,12 @@ const Hero = () => {
                   <option>PR Inquiries</option>
                 </select>
 
-                <textarea rows="4" name="message" placeholder="Your Comments" className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"></textarea>
+                <textarea
+                  rows="4"
+                  name="message"
+                  placeholder="Your Comments"
+                  className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                ></textarea>
 
                 <ReCAPTCHA
                   sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
@@ -140,12 +169,10 @@ const Hero = () => {
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
-
               </form>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
