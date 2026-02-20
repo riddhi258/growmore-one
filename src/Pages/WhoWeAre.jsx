@@ -103,7 +103,7 @@ const WhoWeAre = () => {
           {/* RIGHT CONTENT */}
           <div>
             <p className="text-[#8FD07C] font-semibold tracking-widest text-sm mb-4">
-              L
+            LEADERSHIP
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 leading-tight mb-10">
