@@ -6,9 +6,10 @@ import "react-phone-input-2/lib/style.css";
 const Hero = () => {
   const recaptchaRef = useRef(null);
   const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // FORM SUBMIT
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Check captcha
@@ -18,19 +19,49 @@ const Hero = () => {
       return;
     }
 
-    // Collect form data
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    data.phone = phone;
+    setLoading(true);
 
-    console.log("SAFE FORM DATA:", data);
+    try {
+      // Collect form data
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
 
-    // reset form
-    e.target.reset();
-    setPhone("");
-    recaptchaRef.current.reset();
+      const payload = {
+        ...data,
+        phone: phone,
+        captchaToken: token,
+      };
 
-    alert("Form submitted successfully!");
+      const response = await fetch(
+        "https://case.growmore.one/add/company-website",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const result = await response.json();
+      console.log("Webhook Response:", result);
+
+      alert("Form submitted successfully!");
+
+      // reset form
+      e.target.reset();
+      setPhone("");
+      recaptchaRef.current.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Submission failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -38,10 +69,6 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      {/* Overlay */}
-      <div className="absolute "></div>
-
-      {/* Container */}
       <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
 
         {/* LEFT CONTENT */}
@@ -56,8 +83,7 @@ const Hero = () => {
 
           <p className="text-medium md:text-lg text-gray-200 mb-4 max-w-xl leading-relaxed text-justify">
             Start your journey to a new life in Australia with expert visa agent
-            support and seamless immigration assistance from trusted registered
-            migration agents.
+            support and seamless immigration assistance.
           </p>
 
           <button className="w-fit bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition">
@@ -67,10 +93,8 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         <div className="flex justify-center md:justify-end">
-
           <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-md">
 
-            {/* Top teal strip */}
             <div className="h-5 bg-[#6dc7d1] w-full"></div>
 
             <div className="p-8">
@@ -82,10 +106,8 @@ const Hero = () => {
                 Make an Appointment
               </h2>
 
-              {/* FORM */}
               <form onSubmit={handleSubmit} className="space-y-4">
 
-                {/* Name + Email */}
                 <div className="grid grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -104,7 +126,6 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Phone */}
                 <div className="bg-white rounded-lg p-1 border border-gray-300 hover:border-[#6dc7d1] focus-within:border-[#6dc7d1] transition">
                   <PhoneInput
                     country={"in"}
@@ -114,19 +135,11 @@ const Hero = () => {
                     inputStyle={{
                       width: "100%",
                       border: "none",
-                      height: "44px"
-                    }}
-                    buttonStyle={{
-                      border: "none",
-                      background: "transparent"
-                    }}
-                    containerStyle={{
-                      width: "100%"
+                      height: "44px",
                     }}
                   />
                 </div>
 
-                {/* Inquiry */}
                 <select
                   name="visaType"
                   required
@@ -141,7 +154,6 @@ const Hero = () => {
                   <option>PR Inquiries</option>
                 </select>
 
-                {/* Message */}
                 <textarea
                   rows="4"
                   name="message"
@@ -149,20 +161,17 @@ const Hero = () => {
                   className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition"
                 ></textarea>
 
-                {/* CAPTCHA */}
-                <div className="flex items-start">
-                  <ReCAPTCHA
-                    sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
-                    ref={recaptchaRef}
-                  />
-                </div>
+                <ReCAPTCHA
+                  sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
+                  ref={recaptchaRef}
+                />
 
-                {/* Submit */}
                 <button
                   type="submit"
-                  className="w-fit p-4 bg-[#6dc7d1] text-white font-semibold py-3 rounded-full border-2 border-transparent hover:bg-black hover:border-[#6dc7d1] transition-all duration-300"
+                  disabled={loading}
+                  className="w-fit p-4 bg-[#6dc7d1] text-white font-semibold py-3 rounded-full border-2 border-transparent hover:bg-black hover:border-[#6dc7d1] transition-all duration-300 disabled:opacity-50"
                 >
-                  Submit →
+                  {loading ? "Submitting..." : "Submit →"}
                 </button>
 
               </form>
