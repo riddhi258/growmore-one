@@ -136,7 +136,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-fit bg-[#6dc7d1] p-5 text-white py-3 rounded-full hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition disabled:opacity-50"
+                  className="w-fit bg-[#6dc7d1] p-5 text-white py-3 rounded-full hover:bg-black focus:border-[#6dc7d1] transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
