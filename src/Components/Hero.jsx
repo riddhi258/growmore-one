@@ -8,12 +8,11 @@ const Hero = () => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // FORM SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check captcha
     const token = recaptchaRef.current.getValue();
+
     if (!token) {
       alert("Please verify the captcha");
       return;
@@ -22,43 +21,44 @@ const Hero = () => {
     setLoading(true);
 
     try {
-      // Collect form data
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData.entries());
 
       const payload = {
-        ...data,
+        name: data.name,
+        email: data.email,
         phone: phone,
+        visaType: data.visaType,
+        message: data.message,
         captchaToken: token,
+        source: "Website Form",
       };
 
-      const response = await fetch(
-        "https://case.growmore.one/add/company-website",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
+      // IMPORTANT: call OUR API, not the CRM directly
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
       const result = await response.json();
-      console.log("Webhook Response:", result);
 
-      alert("Form submitted successfully!");
+      if (!result.success) {
+        throw new Error("Submission failed");
+      }
 
-      // reset form
+      alert("Thank you! Our team will contact you shortly.");
+
+      // reset
       e.target.reset();
       setPhone("");
       recaptchaRef.current.reset();
+
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Submission failed. Please try again.");
+      console.error(error);
+      alert("Server error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -71,7 +71,7 @@ const Hero = () => {
     >
       <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
 
-        {/* LEFT CONTENT */}
+        {/* LEFT */}
         <div className="flex flex-col justify-center text-left">
           <h6 className="text-base md:text-lg font-semibold text-[#6dc7d1] mb-4">
             Welcome to Growmore Immigration
@@ -82,8 +82,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-medium md:text-lg text-gray-200 mb-4 max-w-xl leading-relaxed text-justify">
-            Start your journey to a new life in Australia with expert visa agent
-            support and seamless immigration assistance.
+            Start your journey to a new life in Australia with expert visa agent support.
           </p>
 
           <button className="w-fit bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition">
@@ -91,60 +90,33 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* RIGHT FORM */}
+        {/* FORM */}
         <div className="flex justify-center md:justify-end">
           <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-md">
-
             <div className="h-5 bg-[#6dc7d1] w-full"></div>
 
             <div className="p-8">
-              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">
-                CONTACT US
-              </p>
-
-              <h2 className="text-3xl font-semibold text-white mb-6">
-                Make an Appointment
-              </h2>
+              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">CONTACT US</p>
+              <h2 className="text-3xl font-semibold text-white mb-6">Make an Appointment</h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
 
                 <div className="grid grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                    className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition"
-                  />
-
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter Email"
-                    required
-                    className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition"
-                  />
+                  <input name="name" placeholder="Your Name" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"/>
+                  <input type="email" name="email" placeholder="Enter Email" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"/>
                 </div>
 
-                <div className="bg-white rounded-lg p-1 border border-gray-300 hover:border-[#6dc7d1] focus-within:border-[#6dc7d1] transition">
+                <div className="bg-white rounded-lg p-1 border border-gray-300">
                   <PhoneInput
                     country={"in"}
-                    enableSearch={true}
+                    enableSearch
                     value={phone}
-                    onChange={(value) => setPhone(value)}
-                    inputStyle={{
-                      width: "100%",
-                      border: "none",
-                      height: "44px",
-                    }}
+                    onChange={setPhone}
+                    inputStyle={{ width: "100%", border: "none", height: "44px" }}
                   />
                 </div>
 
-                <select
-                  name="visaType"
-                  required
-                  className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:bg-blue focus:border-[#6dc7d1] transition"
-                >
+                <select name="visaType" required className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300">
                   <option value="">Inquiry For</option>
                   <option>Student Visa</option>
                   <option>Work/Skilled Migration</option>
@@ -154,12 +126,7 @@ const Hero = () => {
                   <option>PR Inquiries</option>
                 </select>
 
-                <textarea
-                  rows="4"
-                  name="message"
-                  placeholder="Your Comments"
-                  className="bg-white rounded-lg px-4 py-3 w-full outline-none border border-gray-300 hover:border-[#6dc7d1] focus:border-[#6dc7d1] transition"
-                ></textarea>
+                <textarea rows="4" name="message" placeholder="Your Comments" className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"></textarea>
 
                 <ReCAPTCHA
                   sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
@@ -169,7 +136,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-fit p-4 bg-[#6dc7d1] text-white font-semibold py-3 rounded-full border-2 border-transparent hover:bg-black hover:border-[#6dc7d1] transition-all duration-300 disabled:opacity-50"
+                  className="w-full bg-[#6dc7d1] text-white py-3 rounded-full hover:bg-black transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
