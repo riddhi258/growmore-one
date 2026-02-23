@@ -52,7 +52,7 @@ const WhoWeAre = () => {
                 <h4 className="font-semibold text-lg mb-2">
                   Empowering Futures
                 </h4>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   To be a trusted partner in helping individuals and families
                   achieve their Australian migration dreams through innovative
                   and reliable visa solutions.
@@ -69,7 +69,7 @@ const WhoWeAre = () => {
                 <h4 className="font-semibold text-lg mb-2">
                   Global Leadership
                 </h4>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   To establish Growmore Immigration as a leader in ethical,
                   client-focused migration consulting, delivering exceptional
                   results worldwide.

@@ -25,19 +25,21 @@ const team = [
 
 const Teams = () => {
   return (
-    <div className="w-full bg-white py-24">
+    <div className="w-full bg-white py-20 md:py-24">
       {/* ================= TEAM SECTION ================= */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Grid stays same on LG, stacks on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10 place-items-center">
           {team.map((member, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden w-full max-w-sm"
             >
+              {/* IMPORTANT FIX */}
               <img
                 src={member.img}
                 alt={member.name}
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[320px] sm:h-[420px] lg:h-[500px] object-cover"
               />
 
               <div className="p-5">
@@ -52,65 +54,46 @@ const Teams = () => {
       </div>
 
       {/* ================= COMMUNITY SECTION ================= */}
-      <div className="max-w-screen rounded-lg  mx-auto mt-28 px-6">
-            <div className="bg-[#1E4E54] rounded-[28px] p-8 md:p-10 flex flex-col md:flex-row items-center justify-center gap-10">
+      <div className="max-w-7xl lg:max-w-screen-xl mx-auto mt-20 md:mt-28 px-4 sm:px-6">
+        {/* Stack on mobile, row only on lg */}
+        <div className="bg-[#1E4E54] rounded-[28px] p-6 md:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
           {/* LEFT CARD */}
-          <div className="bg-white rounded-2xl p-8 w-full h-[300px] md:w-3/4">
-            <h3 className="text-3xl font-semibold text-[#2CA6B0] mb-4 mt-4 pl-4">
+          <div className="bg-white rounded-2xl p-6 md:p-8 w-full lg:w-3/4">
+            <h3 className="text-2xl lg:text-3xl font-semibold text-[#2CA6B0] mb-4">
               Community
             </h3>
 
-            <p className="text-gray-600 text-base leading-relaxed mb-6 text-justify px-4">
+            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-6 text-justify">
               Stay updated with the latest news, tips, and success stories by
               connecting with us on our social media platforms:
             </p>
 
             {/* SOCIAL ICONS */}
-            <div className="flex gap-4 pt-6 px-4">
+            <div className="flex flex-wrap gap-4 pt-4">
               <a href="#">
-                <img
-                  src="/assets/t.svg"
-                  alt="Tiktok"
-                  className="w-9 h-9 rounded-md  flex items-center justify-center-4"
-                />
+                <img src="/assets/t.svg" alt="Tiktok" className="w-9 h-9" />
               </a>
               <a href="#">
-                <img
-                  src="/assets/i.svg"
-                  alt="Instagram"
-                  className="w-9 h-9 rounded-md  flex items-center justify-center"
-                />
+                <img src="/assets/i.svg" alt="Instagram" className="w-9 h-9" />
               </a>
               <a href="#">
-                <img
-                  src="/assets/t.svg"
-                  alt="Tiktok"
-                  className="w-9 h-9 rounded-md  flex items-center justify-center-4"
-                />
+                <img src="/assets/t.svg" alt="Tiktok" className="w-9 h-9" />
               </a>
               <a href="#">
-                <img
-                  src="/assets/l.svg"
-                  alt="LinkedIn"
-                  className="w-9 h-9 rounded-mdflex items-center justify-center"
-                />
+                <img src="/assets/l.svg" alt="LinkedIn" className="w-9 h-9" />
               </a>
               <a href="#">
-                <img
-                  src="/assets/y.svg"
-                  alt="YouTube"
-                  className="w-9 h-9 rounded-lg  flex items-center justify-center"
-                />
+                <img src="/assets/y.svg" alt="YouTube" className="w-9 h-9" />
               </a>
             </div>
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full lg:w-1/2">
             <img
               src="/assets/c.png"
               alt="community"
-              className="rounded-2xl w-full h-[320px] object-cover"
+              className="rounded-2xl w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[320px] object-cover"
             />
           </div>
         </div>
