@@ -63,7 +63,7 @@ const ContactUs = () => {
 
   return (
     <section className="bg-white py-20">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-24">
         {/* IMAGE */}
         <div className="w-full md:w-1/2">
           <img
@@ -74,7 +74,7 @@ const ContactUs = () => {
         </div>
 
         {/* FORM */}
-        <div className="w-full md:w-1/2 flex flex-col items-center">
+        <div className="w-full md:w-3/4 flex flex-col items-center">
           {/* Heading */}
           <div className="w-full max-w-md mb-6 text-left ml-4">
             <p className="text-green-200 text-sm font-semibold">
