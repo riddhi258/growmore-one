@@ -15,8 +15,7 @@ body{
 
 /* LEFT PANEL */
 .form-panel{
-  width:75%;
-  height: stretch;
+  flex:3;
 }
 
 /* CARD */
