@@ -62,6 +62,17 @@ const ContactUs = () => {
   };
 
   return (
+   <div className="w-full">
+      <section className="bg-[#28535B] py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-16">
+          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-3">
+            Contact Us
+          </h1>
+          <p className="text-white font-semibold">
+            Home &gt; Contact Us
+          </p>
+        </div>
+      </section>
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-24">
         {/* IMAGE */}
@@ -154,6 +165,7 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
