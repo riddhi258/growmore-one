@@ -16,6 +16,7 @@ body{
 /* LEFT PANEL */
 .form-panel{
   width:75%;
+  height: stretch;
 }
 
 /* CARD */
@@ -127,7 +128,7 @@ body{
   border-radius:12px;
   padding:25px;
   box-shadow:0 2px 12px rgba(0,0,0,0.08);
-  height:fit-content;
+  height:stretch;
 }
 
 .circle-wrapper {

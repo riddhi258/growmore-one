@@ -6,3 +6,25 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+/* circle label inside */
+.circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.circle-label {
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* 🎉 ELIGIBLE STATE (>=65) */
+.score-panel.eligible .circle-label {
+  color: #16a34a;
+  font-weight: 600;
+}

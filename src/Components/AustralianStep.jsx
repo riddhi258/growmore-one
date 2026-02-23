@@ -14,10 +14,19 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
   return (
     <div className="card">
       <StepHeader title="Australian Work Experience" points={points} />
-      <p className="question">
-        In the last 10 years, how long have you worked in your nominated skilled
-        occupation or closely related occupation in Australia?
-      </p>
+      <div className="question">
+        <p className="mb-3 font-medium">
+          In the last 10 years, how long have you worked in your nominated
+          skilled occupation or closely related occupation in Australia?
+        </p>
+
+        <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
+          <li>
+            The maximum points that can be awarded for 'Overseas Work
+            Experience' and 'Australian Work Experience' combined, is 20 points
+          </li>
+        </ul>
+      </div>
       <label className={`option ${selected === "20" ? "active" : ""}`}>
         <input
           type="radio"
@@ -27,7 +36,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
         />
         <span>8+ years</span>
       </label>
-          <label className={`option ${selected === "15" ? "active" : ""}`}>
+      <label className={`option ${selected === "15" ? "active" : ""}`}>
         <input
           type="radio"
           name="exp"
@@ -36,7 +45,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
         />
         <span>5 to 7 years</span>
       </label>
-            <label className={`option ${selected === "10" ? "active" : ""}`}>
+      <label className={`option ${selected === "10" ? "active" : ""}`}>
         <input
           type="radio"
           name="exp"
@@ -45,7 +54,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
         />
         <span>3 to 4 years</span>
       </label>
-      
+
       <label className={`option ${selected === "5" ? "active" : ""}`}>
         <input
           type="radio"
@@ -55,7 +64,7 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
         />
         <span>1 to 2 years </span>
       </label>
-      
+
       <label className={`option ${selected === "0" ? "active" : ""}`}>
         <input
           type="radio"
@@ -65,8 +74,6 @@ export default function OverseasStep({ updateScore, nextStep, prevStep }) {
         />
         <span>Less than 1 year </span>
       </label>
-
-
 
       {/* Buttons */}
       <div
