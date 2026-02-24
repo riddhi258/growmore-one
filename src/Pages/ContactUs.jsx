@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import ContactSection from "../Components/ContactSection";
 
 const ContactUs = () => {
   const recaptchaRef = useRef(null);
@@ -88,10 +89,10 @@ const ContactUs = () => {
         <div className="w-full md:w-3/4 flex flex-col items-center">
           {/* Heading */}
           <div className="w-full max-w-md mb-6 text-left ml-4">
-            <p className="text-green-200 text-sm font-semibold">
+            <p className="text-green-400 text-sm font-semibold">
               Contact Information
             </p>
-            <h2 className="text-3xl font-semibold text-green-200 mt-2">
+            <h2 className="text-3xl font-semibold text-green-400 mt-2">
               Get in Touch with Us
             </h2>
           </div>
@@ -165,6 +166,7 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    <ContactSection/>
     </div>
   );
 };
