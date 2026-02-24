@@ -114,8 +114,8 @@ const Migrate = () => {
             </p>
 
             {/* Main Heading */}
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight mb-6 mt-8">
-              <span className="text-[#8FD07C] ">Benefits</span> of Moving to
+            <h2 className="text-xl md:text-4xl normal text-gray-900 leading-tight mb-6 mt-8">
+              <span className="text-[#8FD07C] font-semibold">Benefits</span> of Moving to
               Australia
             </h2>
 
@@ -132,7 +132,7 @@ const Migrate = () => {
 
             <div className="flex items-center gap-5 mt-8">
               <Link to="/points-calculator">
-                <button className="bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#333333] transition whitespace-nowrap">
+                <button className="bg-[#6dc7d1] text-white px-7 py-4 rounded-full font-semibold hover:bg-[#333333] transition whitespace-nowrap">
                   Explore the option →
                 </button>
               </Link>
