@@ -54,7 +54,7 @@ const Teams = () => {
       </div>
 
       {/* ================= COMMUNITY SECTION ================= */}
-      <div className="max-w-7xl lg:max-w-screen-xl mx-auto mt-20 md:mt-28 px-4 sm:px-6">
+      <div className="max-w-7xl lg:max-w-screen-2xl mx-auto mt-20 md:mt-28 px-4 sm:px-6">
         {/* Stack on mobile, row only on lg */}
         <div className="bg-[#1E4E54] rounded-[28px] p-6 md:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
           {/* LEFT CARD */}
