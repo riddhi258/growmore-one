@@ -51,8 +51,8 @@ const Famliy = () => {
           </p>
 
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 leading-tight mb-6">
-            <span className="text-[#8FD07C]">Trusted Partner</span> for Your
+          <h2 className="text-xl md:text-5xl font-normal text-gray-900 leading-tight mb-6">
+            <span className="text-[#8FD07C] font-semibold">Trusted Partner</span> for Your
             <br className="hidden md:block" /> Immigration Journey
           </h2>
 
