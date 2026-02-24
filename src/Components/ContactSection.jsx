@@ -17,7 +17,7 @@ const ContactSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-gray-100 rounded-2xl shadow-md p-8">
+          <div className="bg-white rounded-2xl shadow-md p-8">
             <h3 className="text-2xl font-semibold text-center border-b pb-4 mb-6">
               Australia
             </h3>
@@ -114,7 +114,7 @@ const ContactSection = () => {
           </div>
 
           {/* India Card */}
-          <div className="bg-gray-100 rounded-2xl shadow-md p-6">
+          <div className="bg-white rounded-2xl shadow-md p-6">
             <h3 className="text-2xl font-semibold text-center border-b pb-3 mb-6">
               India
             </h3>
