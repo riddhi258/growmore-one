@@ -9,7 +9,7 @@ import { MdEmail } from "react-icons/md";
 
 const ContactSection = () => {
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 bg-[#eff9fb]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">
           <span className="text-green-600">Stay Connected</span> with <br />
