@@ -61,22 +61,16 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#0f4f55]/80"></div>
-
       <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
-        
         {/* LEFT */}
         <div className="flex flex-col justify-center text-left text-white">
-          
           <h6 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
             Welcome to Growmore Immigration
           </h6>
-<h1 className="text-xl md:text-2xl font-bold leading-tight mb-6 max-w-2xl">
-  The Best Immigration Consultant
-  Service <br />
-  For A Smooth Move To Australia
-</h1>
+          <h1 className="text-xl md:text-3xl leading-tight mb-6 max-w-3xl font-semibold">
+            The Best Immigration Consultant Service For A Smooth Move To
+            Australia
+          </h1>
 
           <p className="text-base md:text-lg mb-4 max-w-xl leading-relaxed">
             Start your journey to a New Life in Australia with{" "}
@@ -119,7 +113,6 @@ const Hero = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-
                 <div className="grid grid-cols-2 gap-4">
                   <input
                     name="name"
@@ -183,12 +176,10 @@ const Hero = () => {
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
-
               </form>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

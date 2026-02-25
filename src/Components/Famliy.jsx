@@ -120,17 +120,17 @@ const Famliy = () => {
           </div>
           <div className="flex items-center gap-5 mt-9">
             <Link to="/book-consultation">
-              <button className="bg-[#6dc7d1] text-white  rounded-full font-semibold hover:bg-black transition whitespace-nowrap px-6 py-3">
+              <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
                 Book Consultation →
               </button>
             </Link>
             <div className="bg-[#6dc7d1] hover:bg-black p-3 rounded-full  cursor-pointer">
-              <FaPhoneAlt className="h-6 w-6 text-white" />
+              <FaPhoneAlt className="h-8 w-8 text-white" />
             </div>
             <div>
               Need Help?
               <br />
-              <span className="text-black font-semibold">(+61) 38764 3334</span>
+              <span className="text-black font-bold text-lg">(+61) 38764 3334</span>
             </div>
           </div>
         </div>
