@@ -67,12 +67,12 @@ const Hero = () => {
           <h6 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
             Welcome to Growmore Immigration
           </h6>
-          <h1 className="text-xl md:text-3xl leading-tight mb-6 max-w-3xl font-semibold">
+          <h1 className="text-2xl md:text-4xl leading-tight mb-6 max-w-2xl font-semibold">
             The Best Immigration Consultant Service For A Smooth Move To
             Australia
           </h1>
 
-          <p className="text-base md:text-lg mb-4 max-w-xl leading-relaxed">
+          <p className="text-medium md:text-xl mb-4 max-w-xl leading-relaxed">
             Start your journey to a New Life in Australia with{" "}
             <span className="text-[#7ed957] font-semibold underline">
               Expert Visa Agent Support
