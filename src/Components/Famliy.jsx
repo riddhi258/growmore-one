@@ -118,13 +118,13 @@ const Famliy = () => {
               </ul>
             </div>
           </div>
-          <div className="flex items-center gap-5 mt-8">
+          <div className="flex items-center gap-5 mt-9">
             <Link to="/book-consultation">
-              <button className="bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition whitespace-nowrap">
+              <button className="bg-[#6dc7d1] text-white  rounded-full font-semibold hover:bg-black transition whitespace-nowrap px-6 py-3">
                 Book Consultation →
               </button>
             </Link>
-            <div className="bg-[#6dc7d1] hover:bg-black p-4 rounded-full  cursor-pointer">
+            <div className="bg-[#6dc7d1] hover:bg-black p-3 rounded-full  cursor-pointer">
               <FaPhoneAlt className="h-6 w-6 text-white" />
             </div>
             <div>
