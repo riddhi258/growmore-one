@@ -4,6 +4,7 @@ import Card from '../Components/Card'
 import Famliy from '../Components/Famliy'
 import Labour from '../Components/Labour'
 import FAQ from '../Components/FAQ'
+import BlogSection from '../Components/BlogSection'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
     <Card />
     <Famliy />
     <Labour/>
+    <BlogSection/>
     <FAQ/>
     </div>
   )
