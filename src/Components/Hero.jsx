@@ -11,7 +11,6 @@ const Hero = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const token = recaptchaRef.current.getValue();
 
     if (!token) {
@@ -35,24 +34,17 @@ const Hero = () => {
         source: "Website Form",
       };
 
-      // IMPORTANT: call OUR API, not the CRM directly
       const response = await fetch("/api/lead", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
 
-      if (!result.success) {
-        throw new Error("Submission failed");
-      }
+      if (!result.success) throw new Error("Submission failed");
 
       alert("Thank you! Our team will contact you shortly.");
-
-      // reset
       e.target.reset();
       setPhone("");
       recaptchaRef.current.reset();
@@ -69,28 +61,47 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#0f4f55]/80"></div>
+
       <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
+        
         {/* LEFT */}
-        <div className="flex flex-col justify-center text-left">
-          <h6 className="text-base md:text-lg font-semibold text-[#6dc7d1] mb-4">
+        <div className="flex flex-col justify-center text-left text-white">
+          
+          <h6 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
             Welcome to Growmore Immigration
           </h6>
+<h1 className="text-xl md:text-2xl font-bold leading-tight mb-6 max-w-2xl">
+  The Best Immigration Consultant
+  Service <br />
+  For A Smooth Move To Australia
+</h1>
 
-          <h1 className="text-2xl md:text-3xl font-bold text-white leading-snug mb-6 max-w-2xl">
-            The Best Immigration Consultant Service for a Smooth Move to
-            Australia
-          </h1>
-
-          <p className="text-medium md:text-lg text-gray-200 mb-4 max-w-xl leading-relaxed text-justify">
-            Start your journey to a New Life in Australia with Expert Visa Agent
-            Support and Seamless Immigration Assistance from Trusted Registered
-            Migration Agents.
+          <p className="text-base md:text-lg mb-4 max-w-xl leading-relaxed">
+            Start your journey to a New Life in Australia with{" "}
+            <span className="text-[#7ed957] font-semibold underline">
+              Expert Visa Agent Support
+            </span>{" "}
+            and Seamless{" "}
+            <span className="text-[#7ed957] font-semibold underline">
+              Immigration Assistance
+            </span>{" "}
+            from Trusted{" "}
+            <span className="text-[#7ed957] font-semibold underline">
+              Registered Migration Agents.
+            </span>
           </p>
-         <Link to="/who-we-are">
-          <button className="w-fit bg-[#6dc7d1] text-white px-7 py-3 rounded-full font-semibold hover:bg-black transition">
-            Read More →
-          </button>
-         </Link>
+
+          <h3 className="text-[#7ed957] font-bold text-xl mb-8">
+            ENS Visa SC18
+          </h3>
+
+          <Link to="/who-we-are">
+            <button className="w-fit bg-[#6dc7d1] text-white px-8 py-3 rounded-full font-semibold hover:bg-black transition duration-300">
+              Read More →
+            </button>
+          </Link>
         </div>
 
         {/* FORM */}
@@ -102,11 +113,13 @@ const Hero = () => {
               <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">
                 CONTACT US
               </p>
+
               <h2 className="text-3xl font-semibold text-white mb-6">
                 Make an Appointment
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+
                 <div className="grid grid-cols-2 gap-4">
                   <input
                     name="name"
@@ -166,14 +179,16 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-fit bg-[#6dc7d1] p-5 text-white py-3 rounded-full hover:bg-black focus:border-[#6dc7d1] transition disabled:opacity-50"
+                  className="w-fit bg-[#6dc7d1] px-8 py-3 text-white rounded-full hover:bg-black transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
+
               </form>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

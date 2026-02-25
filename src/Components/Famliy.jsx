@@ -52,17 +52,23 @@ const Famliy = () => {
 
           {/* Main Heading */}
           <h2 className="text-xl md:text-5xl font-normal text-gray-900 leading-tight mb-6">
-            <span className="text-[#8FD07C] font-semibold">Trusted Partner</span> for Your
+            <span className="text-[#8FD07C] font-semibold">
+              Trusted Partner
+            </span>{" "}
+            for Your
             <br className="hidden md:block" /> Immigration Journey
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 font-medium leading-relaxed mb-10 max-w-xl text-justify">
+          <p className="text-gray-600 font-medium leading-relaxed mb-6 max-w-xl text-justify">
             At Growmore Immigration, we pride ourselves on values that set us
-            apart. With a commitment to honesty and reliability, we ensure your
-            Australian immigration journey is guided by integrity and trust.
+            apart. With a commitment to honesty and reliability, we ensure your{" "}
+            <strong>Australian Immigration Journey</strong> is guided by
+            integrity and trust.{" "}
+            <span className="underline font-semibold">
+              Here’s why we are your ideal partner:
+            </span>
           </p>
-
           {/* ================= FEATURE CARDS ================= */}
           <div className="grid sm:grid-cols-2 gap-8">
             {/* Proven Integrity */}
@@ -122,11 +128,11 @@ const Famliy = () => {
               <FaPhoneAlt className="h-6 w-6 text-white" />
             </div>
             <div>
-                   Need Help? 
-            <br />
-            <span className="text-black font-semibold">(+61) 38764 3334</span>
+              Need Help?
+              <br />
+              <span className="text-black font-semibold">(+61) 38764 3334</span>
             </div>
-           </div>
+          </div>
         </div>
       </div>
     </section>
