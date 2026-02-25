@@ -177,7 +177,7 @@ const Navbar = () => {
       <Link
         to="/book-consultation"
         onClick={handleLinkClick}
-        className="hidden md:block bg-black text-white px-5 py-2 rounded-full hover:bg-[#6dc7d1] transition font-semibold"
+        className="hidden md:block bg-black text-white px-7 py-3 rounded-full hover:bg-[#6dc7d1] transition font-semibold"
       >
         Book Consultation →
       </Link>

@@ -30,7 +30,7 @@ const Labour = () => {
 
             {/* Button */}
             <Link to="/book-consultation">
-              <button className="bg-[#6dc7d1] text-white px-8 py-3 rounded-full font-semibold hover:bg-black transition duration-300">
+              <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
                 Book Consultation →
               </button>
             </Link>
