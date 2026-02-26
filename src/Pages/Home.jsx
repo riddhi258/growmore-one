@@ -3,8 +3,10 @@ import Hero from '../Components/Hero'
 import Card from '../Components/Card'
 import Famliy from '../Components/Famliy'
 import Labour from '../Components/Labour'
+import Process from '../Components/Process'
 import FAQ from '../Components/FAQ'
 import BlogSection from '../Components/BlogSection'
+import Member from '../Components/Member'
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
     <Hero />
     <Card />
     <Famliy />
+    <Process/>
+    <Member/>
     <Labour/>
     <BlogSection/>
     <FAQ/>

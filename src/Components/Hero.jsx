@@ -76,7 +76,7 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-10">
+      <div className="relative max-w-[1400px] mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-10">
         {/* LEFT */}
         <div className="flex flex-col justify-center text-left text-white">
           <h2 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">

@@ -5,7 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 const Famliy = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-4 md:px-12 grid lg:grid-cols-2 gap-10 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-12 grid lg:grid-cols-2 gap-10 items-center">
         {/* ================= LEFT IMAGE COLLAGE ================= */}
         <div className="grid grid-cols-2 gap-5 max-w-xl">
           {/* Big Family Image */}

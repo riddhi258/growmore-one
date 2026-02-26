@@ -26,7 +26,7 @@ const blogs = [
 const BlogSection = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
 
         {/* Subtitle */}
         <p className="text-[#7cc576] font-semibold tracking-widest uppercase mb-3">
