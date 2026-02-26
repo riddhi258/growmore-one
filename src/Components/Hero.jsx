@@ -8,7 +8,22 @@ const Hero = () => {
   const recaptchaRef = useRef(null);
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const texts = [
+    "Employer Visa Expert",
+    "Skill in Demand Visa SC482",
+    "ENS Visa SC186",
+    "Labour Agreements",
+  ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
+    }, 2000); // changes every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = recaptchaRef.current.getValue();
@@ -61,18 +76,18 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-12">
+      <div className="relative max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-10">
         {/* LEFT */}
         <div className="flex flex-col justify-center text-left text-white">
-          <h6 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
+          <h2 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
             Welcome to Growmore Immigration
-          </h6>
-          <h1 className="text-2xl md:text-4xl leading-tight mb-6 max-w-2xl font-semibold">
-            The Best Immigration Consultant Service For A Smooth Move To
+          </h2>
+          <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold leading-tight text-white mb-3">
+            The Best Immigration Consultant Service for a Smooth Move To
             Australia
           </h1>
 
-          <p className="text-medium md:text-xl mb-4 max-w-xl leading-relaxed">
+          <p className="text-medium md:text-xl mb-4 max-w-xl leading-relaxed max-w-[75.826%]">
             Start your journey to a New Life in Australia with{" "}
             <span className="text-[#7ed957] font-semibold underline">
               Expert Visa Agent Support
@@ -87,12 +102,15 @@ const Hero = () => {
             </span>
           </p>
 
-          <h3 className="text-[#7ed957] font-bold text-xl mb-8">
-            ENS Visa SC18
+          <h3
+            key={currentIndex}
+            className="text-[#7ed957] font-bold text-xl mb-8 animate-fade"
+          >
+            {texts[currentIndex]}
           </h3>
 
           <Link to="/who-we-are">
-            <button className="w-fit bg-[#6dc7d1] text-white px-8 py-3 rounded-full font-semibold hover:bg-black transition duration-300">
+            <button className="w-fit bg-[#6dc7d1] text-white px-7 py-4 rounded-full text-sm font-normal hover:bg-black transition duration-300">
               Read More →
             </button>
           </Link>

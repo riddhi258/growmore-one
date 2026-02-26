@@ -13,11 +13,6 @@ const FAQ = () => {
       ],
     },
       {
-      id: "Is Growmore Immigration licensed to provide immigration services?",
-      title: "Is Growmore Immigration licensed to provide immigration services?",
-      content: ["Yes, Krunal Nayak is a MARN: 2217941, and he owns a Growmore immigration as well as we have registered  migration agents  to provide professional visa assistance and immigration services. Our team ensures that all applications meet Australian immigration standards and are processed correctly. "],
-    },
-      {
       id: "Can Growmore Immigration help with business visa applications?",
       title: "Can Growmore Immigration help with business visa applications?",
       content: [
@@ -50,13 +45,14 @@ const FAQ = () => {
         "Depending on the type of visa you’re applying for, we will assist you in preparing and submitting all necessary documents. Our visa processing team  will stay connected with you and guide  you accordingly  by  ensuring a hassle-free application process. "
       ],
     },
-      {
-      id: "How do I contact Growmore Immigration for visa inquiries?",
-      title: "How do I contact Growmore Immigration for visa inquiries?",
+    {
+      id: "What is a General Migration Visa, and how can Growmore Immigration support me?",
+      title: "What is a General Migration Visa, and how can Growmore Immigration support me?",
       content: [
-        "For any queries or consultations regarding Australian immigration, simply reach out to us via WhatsApp https://wa.me/+61434202021 . Fill out the inquiry form, and one of our experienced Counsellor will contact you within 24 hours, or within 48 hours during weekends. We are here to offer reliable visa solutions and comprehensive immigration support. "
+        "A General Migration Visa is for individuals who want to move to Australia independently, without a specific employer sponsor. Growmore Immigration provides expert support for all types of general migration visas, including skilled migration pathways and regional migration options. Our experienced migration consultants help you determine your eligibility, prepare necessary documents, and assist with the application process to secure your visa. ",
       ],
     },
+
       {
       id: "Can Growmore Immigration help with Student Visa applications for Australia?",
       title: "Can Growmore Immigration help with Student Visa applications for Australia?",
@@ -78,19 +74,12 @@ const FAQ = () => {
         "A Labour Agreement allows Australian employers to hire overseas workers for specific roles that are in demand. Growmore Immigration assists both employers and employees in securing labor agreements and applying for the relevant visas. Our consultants ensure the labor agreement is in compliance with Australian immigration laws and help you navigate the complexities of hiring skilled workers for your business. ",
       ],
     },
-      {
-      id: "What is a General Migration Visa, and how can Growmore Immigration support me?",
-      title: "What is a General Migration Visa, and how can Growmore Immigration support me?",
-      content: [
-        "A General Migration Visa is for individuals who want to move to Australia independently, without a specific employer sponsor. Growmore Immigration provides expert support for all types of general migration visas, including skilled migration pathways and regional migration options. Our experienced migration consultants help you determine your eligibility, prepare necessary documents, and assist with the application process to secure your visa. ",
-      ],
-    },
 
   ];
 
   return (
     <section className=" py-10 px-6 bg-white">
-      <div className="max-w-8xl mx-auto bg-white rounded-[40px] px-10 py-16">
+      <div className="max-w-7xl mx-auto bg-white rounded-[40px] px-10 py-16">
         <p className="text-[#8FD07C] text-sm font-semibold tracking-widest mb-3">
            FAQS
           </p>
@@ -111,14 +100,14 @@ const FAQ = () => {
                     onClick={() =>
                       setActive(active === item.id ? null : item.id)
                     }
-                    className={`flex items-center justify-between px-3 py-3 rounded-2xl cursor-pointer transition border-gray-200 border-1
+                    className={`flex items-center justify-between px-2 py-2 text-sm font-semibold p-2  rounded-2xl cursor-pointer transition border-gray-200 border-1
             ${
               active === item.id
                 ? "bg-[#1f5257] text-white"
                 : "bg-white text-[#163c3d]"
             }`}
                   >
-                    <span className="text-lg font-medium">{item.title}</span>
+                    <span className="text-base md:text-base font-medium tracking-wide p-2 ">{item.title}</span>
 
                     <div
                       className={`w-10 h-10 flex items-center justify-center rounded-full 
@@ -134,7 +123,7 @@ const FAQ = () => {
 
                   {active === item.id && item.content && (
                     <div className="bg-white border border-[#1f5257] border-t-0 rounded-b-2xl px-8 py-6">
-                      <ul className="space-y-3  text-[#163c3d]">
+                      <ul className="space-y-3  text-[#163c3d] ">
                         {item.content.map((point, index) => (
                           <li key={index}>{point}</li>
                         ))}
@@ -155,17 +144,17 @@ const FAQ = () => {
                     onClick={() =>
                       setActive(active === item.id ? null : item.id)
                     }
-                    className={`flex items-center justify-between px-3 py-3 rounded-2xl cursor-pointer transition border-gray-200 border-1
+                    className={`flex items-center justify-between px-2 py-2 rounded-2xl cursor-pointer transition border-gray-200 border-1
             ${
               active === item.id
                 ? "bg-[#1f5257] text-white"
                 : "bg-white text-[#163c3d]"
             }`}
                   >
-                    <span className="text-lg font-medium">{item.title}</span>
+                    <span className="text-base md:text-base font-medium tracking-wide p-2 ">{item.title}</span>
 
                     <div
-                      className={`w-10 h-10 flex items-center justify-center rounded-full 
+                      className={`w-9 h-9 flex items-center justify-center rounded-full 
               ${active === item.id ? "bg-[#2d6f74]" : "bg-[#eff9fb]"}`}
                     >
                       {active === item.id ? (

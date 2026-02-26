@@ -60,12 +60,12 @@ const Famliy = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 font-medium leading-relaxed mb-6 max-w-xl text-justify">
+          <p className="text-gray-600 font-medium leading-relaxed mb-6 max-w-lg text-justify">
             At Growmore Immigration, we pride ourselves on values that set us
             apart. With a commitment to honesty and reliability, we ensure your{" "}
             <strong>Australian Immigration Journey</strong> is guided by
             integrity and trust.{" "}
-            <span className="underline font-semibold">
+            <span className="underline font-semibold text-gray-600">
               Here’s why we are your ideal partner:
             </span>
           </p>
@@ -97,26 +97,25 @@ const Famliy = () => {
             </div>
 
             {/* Trusted Expertise */}
-            <div className="border border-gray-200  rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-              <div className="flex items-start gap-4 mb-4">
-                <img
-                  src="/assets/card-img7.svg"
-                  alt="Trusted Expertise Icon"
-                  className="w-12 h-12"
-                />
+            <div className="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 max-w-md">
+  <div className="flex items-start gap-4 mb-4">
+    <img
+      src="/assets/card-img7.svg"
+      alt="Trusted Expertise Icon"
+      className="w-12 h-12"
+    />
+    <h3 className="text-xl text-justify font-bold text-gray-800 leading-snug">
+      Trusted Expertise
+    </h3>
+  </div>
 
-                <h3 className="text-xl text-justify font-bold text-gray-800 leading-snug">
-                  Trusted Expertise
-                </h3>
-              </div>
-
-              <ul className="space-y-2 text-gray-600 text-sm">
-                <li>✓ 16M+ views on Social Media</li>
-                <li>✓ 400+ Daily Live Q&A</li>
-                <li>✓ Trusted by 126+ employer</li>
-                <li>✓ Clear Communication</li>
-              </ul>
-            </div>
+  <ul className="space-y-2 text-gray-600 text-sm">
+    <li>✓ 16M+ views on Social Media</li>
+    <li>✓ 400+ Daily Live Q&A</li>
+    <li>✓ Trusted by 126+ employers</li>
+    <li>✓ Clear Communication</li>
+  </ul>
+</div>
           </div>
           <div className="flex items-center gap-5 mt-9">
             <Link to="/book-consultation">
