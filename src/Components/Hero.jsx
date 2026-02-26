@@ -126,7 +126,7 @@ const Hero = () => {
                 CONTACT US
               </p>
 
-              <h2 className="text-4xl font-bold  mb-6 text-[#6dc7d1]">
+              <h2 className="text-4xl font-bold  mb-6 text-[#6dc7d1] ">
                 Make an Appointment
               </h2>
 
