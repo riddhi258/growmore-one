@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const testimonials = [
+const data = [
   {
     text: `I want to say thank you to you, which has been really helpful in managing my application from the beginning of doing the skill assessment until my visa is granted. You have been actively in communication with the DHA or VETASSESS to ensure that my application was done in a timely manner. I also kept updated throughout the entire process. Highly recommended`,
     title: "Jovita Indahsari",
@@ -50,14 +50,14 @@ export default function Testimonials() {
   const [index, setIndex] = useState(0);
 
   const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+    setIndex((prev) => (prev === 0 ? data.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+    setIndex((prev) => (prev === data.length - 1 ? 0 : prev + 1));
   };
 
-  const item = testimonials[index];
+  const item = data[index];
 
   return (
     <section className="relative py-20 px-4 bg-[#eff9fb] overflow-hidden rounded-[60px] m-3">
