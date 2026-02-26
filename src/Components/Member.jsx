@@ -9,7 +9,7 @@ export default function Member() {
 
   return (
     <>
-      <section className="relative z-20 -mt-54 px-4 py-16">
+      <section className="relative z-20 -mt-60 px-4 py-16">
         <div className="max-w-[1400px] mx-auto bg-[#1F4E55] rounded-[40px] px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
           {/* LEFT CONTENT */}
           <div className="text-white max-w-[750px]">
@@ -25,10 +25,16 @@ export default function Member() {
             </p>
 
             <div className="flex items-center gap-6 flex-wrap">
-              <button className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
-                Become a member
-              </button>
-
+              <a
+                href="https://www.youtube.com/@growmoreimmigration"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:opacity-80 transition"
+              >
+                <button className="bg-white text-black px-8 py-3 rounded-full hover:bg-green-400 hover:text-white font-semibold transition">
+                  Become a member
+                </button>
+              </a>
               <div className="flex items-center gap-3 text-white text-lg font-medium">
                 <a
                   href="https://www.youtube.com/@growmoreimmigration"
