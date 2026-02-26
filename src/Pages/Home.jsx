@@ -8,7 +8,6 @@ import FAQ from '../Components/FAQ'
 import BlogSection from '../Components/BlogSection'
 import Member from '../Components/Member'
 import Testimonials from '../Components/testimonials'
-
 const Home = () => {
   return (
     <div className='bg-white'>
