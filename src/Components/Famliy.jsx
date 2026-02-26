@@ -60,12 +60,12 @@ const Famliy = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 font-medium leading-relaxed mb-6 max-w-lg text-justify">
+          <p className="text-[#727272] font-medium leading-relaxed mb-6 max-w-lg text-justify">
             At Growmore Immigration, we pride ourselves on values that set us
             apart. With a commitment to honesty and reliability, we ensure your{" "}
             <strong>Australian Immigration Journey</strong> is guided by
             integrity and trust.{" "}
-            <span className="underline font-semibold text-gray-600">
+            <span className="underline font-semibold text-[#727272]">
               Here’s why we are your ideal partner:
             </span>
           </p>

@@ -76,13 +76,13 @@ const Hero = () => {
       className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      <div className="relative max-w-[1400px] mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-10">
+      <div className="relative max-w-[1300px] mx-auto w-full grid md:grid-cols-2 gap-10 px-6 md:px-10">
         {/* LEFT */}
         <div className="flex flex-col justify-center text-left text-white">
-          <h2 className="text-xsmd:text-base font-semibold tracking-widest text-[#6dc7d1] uppercase mb-4">
+          <h2 className=" md:text-xs md:font-bold tracking-widest text-[#5DC2D3] uppercase mb-4">
             Welcome to Growmore Immigration
           </h2>
-          <h1 className="text-4xl md:text-3xl lg:text-4xl font-bold leading-tight text-white mb-3">
+          <h1 className="text-4xl md:text-3xl lg:text-[36px] font-semibold leading-tight text-white mb-3">
             The Best Immigration Consultant Service for a Smooth Move To
             Australia
           </h1>
@@ -118,15 +118,15 @@ const Hero = () => {
 
         {/* FORM */}
         <div className="flex justify-center md:justify-end">
-          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-md">
+          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-[480px]">
             <div className="h-5 bg-[#6dc7d1] w-full"></div>
 
             <div className="p-8">
-              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2">
+              <p className="text-[#6dc7d1] text-sm tracking-widest mb-2 font-bold">
                 CONTACT US
               </p>
 
-              <h2 className="text-3xl font-semibold text-white mb-6">
+              <h2 className="text-4xl font-bold  mb-6 text-[#6dc7d1]">
                 Make an Appointment
               </h2>
 

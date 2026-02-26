@@ -119,6 +119,7 @@ const PathwaySection = () => {
 
   return (
     <section className=" py-10 px-6 bg-white">
+      
       <div className="max-w-8xl mx-auto bg-[#eff9fb] rounded-[40px] px-10 py-16">
         {/* Heading */}
         <h2 className="text-lg md:text-5xl font-medium text-[#163c3d] mb-14">
