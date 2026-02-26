@@ -7,7 +7,7 @@ import Process from '../Components/Process'
 import FAQ from '../Components/FAQ'
 import BlogSection from '../Components/BlogSection'
 import Member from '../Components/Member'
-import Testimonials from '../Components/testimonials'
+import Testimonials from '../Components/Testimonials.jsx'
 const Home = () => {
   return (
     <div className='bg-white'>
