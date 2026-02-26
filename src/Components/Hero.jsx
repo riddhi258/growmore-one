@@ -23,7 +23,7 @@ const Hero = () => {
     }, 2000); // changes every 2 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [ ]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = recaptchaRef.current.getValue();
