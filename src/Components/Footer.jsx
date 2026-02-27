@@ -49,7 +49,7 @@ const Footer = () => {
         <div>
           <img src="/assets/logo1.png" alt="Growmore" className="h-12 mb-6" />
 
-          <p className="text-gray-200 text-sm w-[260px] leading-relaxed mb-6">
+          <p className="text-gray-200 text-sm w-[260px] leading-relaxed mb-6 text-justify">
             We are specialised in providing seamless visa solutions for
             individuals, students, and employers looking to make Australia their
             home.
