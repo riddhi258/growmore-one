@@ -18,6 +18,7 @@ import Blogs from './Pages/Blogs'
 import ContactUs from './Pages/ContactUs'
 import BookConsultation from './Pages/BookConsultation'
 import Footer from './Components/Footer'
+import Brochures from './Pages/Brochures'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="blogs" element={<Blogs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/book-consultation" element={<BookConsultation />} />
+        <Route path="/brochures" element={<Brochures/>} />
       </Routes>
       <Footer />
     </Router>

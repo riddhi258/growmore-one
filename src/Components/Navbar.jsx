@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav
         ref={navRef}
         className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 py-4 
-        bg-white/90 backdrop-blur-md shadow-md"
+        bg-white shadow-md"
       >
         {/* Logo */}
         <Link to="/" onClick={handleLinkClick}>
