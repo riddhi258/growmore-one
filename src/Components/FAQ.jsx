@@ -97,7 +97,7 @@ const FAQ = () => {
           </p>
         {/* Heading */}
         <h2 className="text-lg md:text-5xl font-medium text-[#163c3d] mb-14">Frequently {" "}
-         <span className="text-[#7cc576] font-semibold">Asked Questions</span>{" "}
+         <span className="text-[#8fd07c] font-semibold">Asked Questions</span>{" "}
           That Support Your<br/>Migration Goals Journey
         </h2>
         {/* Grid */}

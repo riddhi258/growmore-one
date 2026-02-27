@@ -62,7 +62,7 @@ export default function ProcessSection() {
 
           <h2 className="text-4xl font-normal">Proven Process</h2>
 
-          <p className="text-green-500 text-3xl font-bold mt-2">
+          <p className="text-[#8fd07c] text-3xl font-bold mt-2">
             Simplifying{" "}
             <span className="text-black text-4xl font-bold">
               Your Australian Immigration Journey

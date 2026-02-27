@@ -67,12 +67,12 @@ export default function Testimonials() {
       <div className="relative z-10 max-w-[1200px] mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
-          <p className="text-green-500 text-sm font-semibold tracking-widest mb-4">
+          <p className="text-[#8fd07c] text-sm font-semibold tracking-widest mb-4">
             CLIENT TESTIMONIALS
           </p>
 
           <h2 className="text-xl md:text-5xl  leading-tight">
-            Escape to <span className="text-green-500">Extraordinary</span>
+            Escape to <span className="text-[#8fd07c]">Extraordinary</span>
             <br />
             Where Every <span className="font-bold">Journey</span> Finds Its
             Voice

@@ -89,22 +89,22 @@ const Hero = () => {
 
           <p className="text-medium md:text-xl mb-4 max-w-xl leading-relaxed max-w-[75.826%]">
             Start your journey to a New Life in Australia with{" "}
-            <span className="text-[#7ed957] font-semibold underline">
+            <span className="text-[#8fd07c] font-semibold underline">
               Expert Visa Agent Support
             </span>{" "}
             and Seamless{" "}
-            <span className="text-[#7ed957] font-semibold underline">
+            <span className="text-[#8fd07c] font-semibold underline">
               Immigration Assistance
             </span>{" "}
             from Trusted{" "}
-            <span className="text-[#7ed957] font-semibold underline">
+            <span className="text-[#8fd07c] font-semibold underline">
               Registered Migration Agents.
             </span>
           </p>
 
           <h3
             key={currentIndex}
-            className="text-[#7ed957] font-bold text-xl mb-8 animate-fade"
+            className="text-[#8fd07c] font-bold text-xl mb-8 animate-fade"
           >
             {texts[currentIndex]}
           </h3>

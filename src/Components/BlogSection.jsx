@@ -29,14 +29,14 @@ const BlogSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
 
         {/* Subtitle */}
-        <p className="text-[#7cc576] font-semibold tracking-widest uppercase mb-3">
+        <p className="text-[#8fd07c] font-semibold tracking-widest uppercase mb-3">
           Recent Blogs
         </p>
 
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-medium text-[#163c3d] mb-14">
           Latest{" "}
-          <span className="text-[#7cc576] font-semibold">Insights</span> and
+          <span className="text-[#8fd07c] font-semibold">Insights</span> and
           Immigration <span className="font-semibold">Updates</span>
         </h2>
 
