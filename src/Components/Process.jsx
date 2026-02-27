@@ -56,7 +56,7 @@ export default function ProcessSection() {
         className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
       />
 
-      <div className="relative z-10 max-w-7xl h-[600px] mx-auto px-4">
+      <div className="relative z-10 max-w-7xl h-[600px] sm:h-[900px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-[#8FD07C] text-xs md:text-sm font-bold tracking-widest mb-4 md:mb-6">
