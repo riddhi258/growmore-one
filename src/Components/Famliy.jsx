@@ -44,7 +44,7 @@ const Famliy = () => {
             />
           </div>
         </div>
-        <div className="mt-[-60px]  ">
+        <div className="text-center lg:text-left lg:mt-[-50px]">
           {/* Small Heading */}
           <p className="text-[#8FD07C] text-sm font-semibold tracking-widest mb-3">
             WHY CHOOSE US

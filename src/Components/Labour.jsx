@@ -3,20 +3,35 @@ import { Link } from "react-router-dom";
 
 const Labour = () => {
   return (
-    <div className="px-4 md:px-8 mb-14">
-      {/* OUTER WRAPPER (controls side spacing) */}
-      <section className="bg-[#28535B] rounded-[40px] py-20 px-6 md:px-16 text-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <div className="px-4 sm:px-6 md:px-8 mb-14">
+      <section className="bg-[#28535B] rounded-3xl md:rounded-[40px] 
+                          py-14 sm:py-16 md:py-20 
+                          px-6 sm:px-10 md:px-16 
+                          text-white">
+
+        <div className="max-w-7xl mx-auto grid 
+                        grid-cols-1 
+                        md:grid-cols-2 
+                        gap-10 md:gap-14 
+                        items-center">
+
           {/* LEFT CONTENT */}
-          <div>
+          <div className="text-center md:text-left">
+
             {/* Heading */}
-            <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-6">
-              Boost Your Workforce <br />
+            <h2 className="text-2xl sm:text-3xl md:text-5xl 
+                           font-semibold leading-snug md:leading-tight 
+                           mb-5 md:mb-6">
+              Boost Your Workforce <br className="hidden md:block" />
               With <span className="text-[#8FD07C]">Labour Agreements</span>
             </h2>
 
             {/* Description */}
-            <p className="text-white font-medium leading-relaxed mb-10 max-w-xl text-justify">
+            <p className="text-sm sm:text-base md:text-lg 
+                          leading-relaxed 
+                          mb-8 md:mb-10 
+                          max-w-xl 
+                          mx-auto md:mx-0">
               Labour agreements are a powerful solution for businesses facing a
               shortage of local talent in key roles such as waiters, truck
               drivers, and care workers. These agreements allow employers to
@@ -30,20 +45,32 @@ const Labour = () => {
 
             {/* Button */}
             <Link to="/book-consultation">
-              <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
+              <button className="bg-[#6dc7d1] 
+                                 hover:bg-black 
+                                 transition 
+                                 rounded-full 
+                                 px-6 sm:px-7 
+                                 py-3 sm:py-4 
+                                 text-sm sm:text-base 
+                                 font-medium">
                 Book Consultation →
               </button>
             </Link>
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="flex justify-center md:justify-end md:pr-6">
+          <div className="flex justify-center md:justify-end">
             <img
               src="/assets/labour.png"
               alt="Labour Agreement"
-              className="w-[400px] max-w-md lg:max-w-lg h-auto rounded-2xl shadow-2xl"
+              className="w-full 
+                         max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg 
+                         h-auto 
+                         rounded-2xl 
+                         shadow-2xl"
             />
           </div>
+
         </div>
       </section>
     </div>
