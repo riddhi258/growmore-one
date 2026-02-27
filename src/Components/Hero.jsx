@@ -118,7 +118,7 @@ const Hero = () => {
 
         {/* FORM */}
         <div className="flex justify-center md:justify-end">
-          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-[480px]">
+          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-[500px]">
             <div className="h-5 bg-[#6dc7d1] w-full"></div>
 
             <div className="p-8">
@@ -136,20 +136,20 @@ const Hero = () => {
                     name="name"
                     placeholder="Your Name"
                     required
-                    className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                    className="bg-white rounded-lg px-4 py-2 w-full border border-gray-300"
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="Enter Email"
                     required
-                    className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                    className="bg-white rounded-lg px-4 py-2 w-full border border-gray-300"
                   />
                 </div>
 
-                <div className="bg-white rounded-lg p-1 border border-gray-300">
+                <div className="bg-white rounded-lg  border border-gray-300">
                   <PhoneInput
-                    country={"in"}
+                    country={"au"}
                     enableSearch
                     value={phone}
                     onChange={setPhone}
@@ -164,7 +164,7 @@ const Hero = () => {
                 <select
                   name="visaType"
                   required
-                  className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
+                  className="bg-white rounded-lg px-4 py-2 w-full border border-gray-300"
                 >
                   <option value="">Inquiry For</option>
                   <option>Student Visa</option>
@@ -190,7 +190,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-fit bg-[#6dc7d1] px-8 py-3 text-white rounded-full hover:bg-black transition disabled:opacity-50"
+                  className="w-fit bg-[#6dc7d1] px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
