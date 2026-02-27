@@ -80,7 +80,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/our-services/individuals"
-                className="hover:text-text-gray-400 transition"
+                className="hover:text-gray-400 transition"
               >
                 ✓ For Individuals
               </Link>
@@ -88,7 +88,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/our-services/employers"
-                className="hover:textext-gray-400  transition"
+                className="hover:text-gray-400  transition"
               >
                 ✓ For Employers
               </Link>
