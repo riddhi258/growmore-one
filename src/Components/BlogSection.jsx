@@ -29,7 +29,7 @@ const BlogSection = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
 
         {/* Subtitle */}
-        <p className="text-[#8fd07c] font-semibold tracking-widest uppercase mb-3">
+        <p className="text-[#8fd07c] font-semibold text-sm tracking-widest uppercase mb-3">
           Recent Blogs
         </p>
 

@@ -52,7 +52,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleMenu("about")}
-                className="flex items-center gap-1 hover:text-green-600 transition"
+                className="flex items-center gap-1 hover:text-green-600 transition cursor-pointer"
               >
                 About Us
                 <ChevronDown
@@ -101,7 +101,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleMenu("services")}
-                className="flex items-center gap-2 hover:text-green-600 transition"
+                className="flex items-center gap-2 hover:text-green-600 transition cursor-pointer"
               >
                 Services
                 <ChevronDown
@@ -165,7 +165,7 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={() => toggleMenu("updates")}
-                className="flex items-center gap-2 hover:text-green-600 transition"
+                className="flex items-center gap-2 hover:text-green-600 transition cursor-pointer"
               >
                 Latest Updates
                 <ChevronDown

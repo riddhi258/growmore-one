@@ -44,14 +44,14 @@ const Famliy = () => {
             />
           </div>
         </div>
-        <div className="text-center lg:text-left lg:mt-[-50px]">
+        <div className="text-center lg:text-left lg:mt-[-100px]">
           {/* Small Heading */}
           <p className="text-[#8FD07C] text-sm font-semibold tracking-widest mb-3">
             WHY CHOOSE US
           </p>
 
           {/* Main Heading */}
-          <h2 className="text-xl md:text-5xl font-normal text-gray-900 leading-tight mb-6">
+          <h2 className="text-xl md:text-4xl font-normal text-gray-900 leading-tight mb-6">
             <span className="text-[#8FD07C] font-semibold">
               Trusted Partner
             </span>{" "}
@@ -64,7 +64,7 @@ const Famliy = () => {
             At Growmore Immigration, we pride ourselves on values that set us
             apart. With a commitment to honesty and reliability, we ensure your{" "}
             <strong>Australian Immigration Journey</strong> is guided by
-            integrity and trust.{" "}
+            integrity and trust.
             <span className="underline font-semibold text-[#727272]">
               Here’s why we are your ideal partner:
             </span>
@@ -88,34 +88,64 @@ const Famliy = () => {
                 </div>
               </div>
 
-              <ul className="space-y-2 text-gray-600 text-sm">
-                <li>✓ Ethical and honest guidance</li>
-                <li>✓ Transparent Process</li>
-                <li>✓ Solving Live Query</li>
-                <li>✓ Confidentiality Guaranteed</li>
+              <ul className="space-y-3 text-gray-600 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-bold">✓</span>
+                  <span>Ethical and honest guidance</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-bold">✓</span>
+                  <span>Solving Live Query</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-bold">✓</span>
+                  <span>Transparent Process</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-bold">✓</span>
+                  <span>Confidentiality Guaranteed</span>
+                </li>
               </ul>
             </div>
 
             {/* Trusted Expertise */}
             <div className="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 max-w-md">
-  <div className="flex items-start gap-4 mb-4">
-    <img
-      src="/assets/card-img7.svg"
-      alt="Trusted Expertise Icon"
-      className="w-12 h-12"
-    />
-    <h3 className="text-xl text-justify font-bold text-gray-800 leading-snug">
-      Trusted Expertise
-    </h3>
-  </div>
+              <div className="flex items-start gap-4 mb-4">
+                <img
+                  src="/assets/card-img7.svg"
+                  alt="Trusted Expertise Icon"
+                  className="w-12 h-12"
+                />
+                <h3 className="text-xl text-justify font-bold text-gray-800 leading-snug">
+                  Trusted Expertise
+                </h3>
+              </div>
 
-  <ul className="space-y-2 text-gray-600 text-sm">
-    <li>✓ 16M+ views on Social Media</li>
-    <li>✓ 400+ Daily Live Q&A</li>
-    <li>✓ Trusted by 126+ employers</li>
-    <li>✓ Clear Communication</li>
-  </ul>
-</div>
+              <ul className="space-y-3 text-gray-600 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-semibold">✓</span>
+                  <span>16M+ views on Social Media</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-semibold">✓</span>
+                  <span>400+ Daily Live Q&A</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-semibold">✓</span>
+                  <span>Trusted by 126+ employers</span>
+                </li>
+
+                <li className="flex items-start gap-2">
+                  <span className="text-[#6dc7d1] font-semibold">✓</span>
+                  <span>Clear Communication</span>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="flex items-center gap-5 mt-9">
             <Link to="/book-consultation">
@@ -129,7 +159,9 @@ const Famliy = () => {
             <div>
               Need Help?
               <br />
-              <span className="text-black font-bold text-lg">(+61) 38764 3334</span>
+              <span className="text-black font-bold text-lg">
+                (+61) 38764 3334
+              </span>
             </div>
           </div>
         </div>

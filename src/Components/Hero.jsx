@@ -16,16 +16,36 @@ const Hero = () => {
     "Labour Agreements",
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // ✅ Fixed interval bug
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % texts.length);
-    }, 2500);
+    const currentWord =texts[currentWordIndex];
+    let typingSpeed = isDeleting ? 40 : 80;
 
-    return () => clearInterval(interval);
-  }, [texts.length]);
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        setDisplayText(currentWord.substring(0, displayText.length + 1));
+
+        if (displayText === currentWord) {
+          // ⏳ Wait 2.5 seconds before deleting
+          setTimeout(() => setIsDeleting(true), 2500);
+        }
+      } else {
+        // Deleting
+        setDisplayText(currentWord.substring(0, displayText.length - 1));
+
+        if (displayText === "") {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentWordIndex]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,65 +95,53 @@ const Hero = () => {
 
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center flex items-center py-16 md:py-0"
+      className="relative min-h-screen bg-cover bg-center flex items-center "
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 "></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full 
-                      grid grid-cols-1 lg:grid-cols-2 
-                      gap-10 lg:gap-12 
-                      px-4 sm:px-6 md:px-8">
-
+      <div
+        className="relative z-10 max-w-7xl mx-auto w-full 
+                      grid grid-cols-1 lg:grid-cols-2 "
+      >
         {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-center text-white text-center lg:text-left">
-
+        <div className="flex flex-col justify-center text-white text-center lg:text-left w-[1200px]">
           <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#5DC2D3] uppercase mb-4">
             Welcome to Growmore Immigration
           </h2>
-
-          <h1 className="
-            text-lg
-            sm:text-xl
-            md:text-2xl
-            lg:text-3xl
-            font-semibold
-            leading-tight
-            mb-4
-          ">
-            The Best Immigration Consultant <br className="hidden md:block" />
-            Service for a Smooth Move To Australia
+          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4 max-w-3xl">
+            The Best Immigration Consulting Services <br />
+            for a Smooth Move to Australia
           </h1>
-
-          <p className="text-sm sm:text-base md:text-lg mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Start your journey to a New Life in Australia with{" "}
-            <span className="text-[#8fd07c] font-semibold underline">
+          <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Start your journey to a new life in Australia with{" "}
+            <span className="text-[#8fd07c] font-semibold underline decoration-white">
               Expert Visa Agent Support
             </span>{" "}
-            and Seamless{" "}
-            <span className="text-[#8fd07c] font-semibold underline">
+            and seamless{" "}
+            <span className="text-[#8fd07c] font-semibold underline decoration-white">
               Immigration Assistance
             </span>{" "}
-            from Trusted{" "}
-            <span className="text-[#8fd07c] font-semibold underline">
+            from trusted{" "}
+            <span className="text-[#8fd07c] font-semibold underline decoration-white">
               Registered Migration Agents.
             </span>
           </p>
 
-          <h3
-            key={currentIndex}
-            className="text-[#8fd07c] font-bold text-lg sm:text-xl mb-8 transition-opacity duration-500"
-          >
-            {texts[currentIndex]}
-          </h3>
+      <h3 className="text-[#8fd07c] font-bold text-xl sm:text-2xl mb-8">
+      {displayText}
+      <span className="border-r-5 border-[#8fd07c] animate-pulse ml-1"></span>
+    </h3>
 
           <div className="flex justify-center lg:justify-start">
             <Link to="/who-we-are">
-              <button className="bg-[#6dc7d1] text-white 
+              <button
+                className="bg-[#6dc7d1] text-white 
                                  px-6 sm:px-8 py-3 
                                  rounded-full text-sm sm:text-base 
-                                 hover:bg-black transition duration-300">
+                                 hover:bg-black transition duration-300"
+              >
                 Read More →
               </button>
             </Link>
@@ -142,11 +150,10 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         <div className="flex justify-center lg:justify-end">
-          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-full max-w-md">
+          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-[500px]">
+            <div className="h-5 bg-[#6dc7d1] w-full rounded-xl"></div>
 
-            <div className="h-5 bg-[#6dc7d1] w-full"></div>
-
-            <div className="p-6 sm:p-8">
+            <div className="p-6 sm:p-8 rounded-lg">
               <p className="text-[#6dc7d1] text-sm tracking-widest mb-2 font-bold">
                 CONTACT US
               </p>
@@ -156,7 +163,6 @@ const Hero = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
@@ -226,12 +232,10 @@ const Hero = () => {
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
-
               </form>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

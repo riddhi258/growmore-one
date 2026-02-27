@@ -13,7 +13,7 @@ export default function Member() {
         <div className="max-w-[1400px] mx-auto bg-[#1F4E55] rounded-[40px] px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
           {/* LEFT CONTENT */}
           <div className="text-white max-w-[750px]">
-            <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+            <h2 className="text-4xl md:text-4xl font-semibold leading-tight mb-6">
               Become a <span className="text-red-500">YouTube</span> member
               <br /> today and get Exclusive Updates
             </h2>

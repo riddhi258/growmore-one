@@ -56,7 +56,7 @@ export default function ProcessSection() {
         className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
       />
 
-      <div className="relative z-10 max-w-7xl h-[600px] sm:h-[900px] mx-auto px-4">
+      <div className="relative z-10 max-w-7xl h-[600px] sm:h-[600px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-[#8FD07C] text-xs md:text-sm font-bold tracking-widest mb-4 md:mb-6">
@@ -82,7 +82,7 @@ export default function ProcessSection() {
                         lg:grid-cols-3 
                         xl:grid-cols-5 
                         gap-6 md:gap-8 
-                        justify-items-center 
+                        justify-items-center h-60
                         transition-all duration-700">
           {steps.map((step, index) => (
             <div
@@ -98,7 +98,7 @@ export default function ProcessSection() {
               <img
                 src={step.img}
                 alt={step.title}
-                className="w-10 h-auto mb-4"
+                className="w-10 h-auto mb-4 mt-5"
               />
               <h4 className="font-semibold text-lg md:text-xl text-[#095256] mb-2">
                 {step.title}

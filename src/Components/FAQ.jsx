@@ -92,13 +92,13 @@ const FAQ = () => {
   return (
     <section className=" py-10 px-6 bg-white">
       <div className="max-w-[1400px] mx-auto bg-white rounded-[40px] px-10 py-16">
-        <p className="text-[#8FD07C] text-sm font-semibold tracking-widest mb-3">
+        <p className="text-[#8FD07C] text-sm font-bold tracking-widest mb-3">
            FAQS
           </p>
         {/* Heading */}
-        <h2 className="text-lg md:text-5xl font-medium text-[#163c3d] mb-14">Frequently {" "}
+        <h2 className="text-lg md:text-4xl font-medium text-[#163c3d] mb-14">Frequently {" "}
          <span className="text-[#8fd07c] font-semibold">Asked Questions</span>{" "}
-          That Support Your<br/>Migration Goals Journey
+          That Support Your<br/><b>Migration Goals Journey</b>
         </h2>
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-6 ">
@@ -119,7 +119,7 @@ const FAQ = () => {
                 : "bg-white text-[#163c3d]"
             }`}
                   >
-                    <span className="text-base md:text-base font-medium tracking-wide p-2 ">{item.title}</span>
+                    <span className="text-base md:text-base font-semibold tracking-wide p-2 ">{item.title}</span>
 
                     <div
                       className={`w-10 h-10 flex items-center justify-center rounded-full 
@@ -163,7 +163,7 @@ const FAQ = () => {
                 : "bg-white text-[#163c3d]"
             }`}
                   >
-                    <span className="text-base md:text-base font-medium tracking-wide p-2 ">{item.title}</span>
+                    <span className="text-base md:text-base font-semibold tracking-wide p-2 ">{item.title}</span>
 
                     <div
                       className={`w-9 h-9 flex items-center justify-center rounded-full 
