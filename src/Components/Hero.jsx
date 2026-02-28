@@ -21,22 +21,17 @@ const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentWord =texts[currentWordIndex];
-    let typingSpeed = isDeleting ? 40 : 80;
+    const currentWord = texts[currentWordIndex];
+    const typingSpeed = isDeleting ? 40 : 80;
 
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing
         setDisplayText(currentWord.substring(0, displayText.length + 1));
-
         if (displayText === currentWord) {
-          // ⏳ Wait 2.5 seconds before deleting
-          setTimeout(() => setIsDeleting(true), 2500);
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
-        // Deleting
         setDisplayText(currentWord.substring(0, displayText.length - 1));
-
         if (displayText === "") {
           setIsDeleting(false);
           setCurrentWordIndex((prev) => (prev + 1) % texts.length);
@@ -86,7 +81,6 @@ const Hero = () => {
       setPhone("");
       recaptchaRef.current.reset();
     } catch (error) {
-      console.error(error);
       alert("Server error. Please try again.");
     } finally {
       setLoading(false);
@@ -94,27 +88,26 @@ const Hero = () => {
   };
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center flex items-center "
+    <section
+      className="relative min-h-screen bg-cover bg-center flex items-center"
       style={{ backgroundImage: "url('/assets/img2.png')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 "></div>
+      {/* Dark Overlay */}
 
-      <div
-        className="relative z-10 max-w-7xl mx-auto w-full 
-                      grid grid-cols-1 lg:grid-cols-2 "
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
+        
         {/* LEFT CONTENT */}
-        <div className="flex flex-col justify-center text-white text-center lg:text-left w-[1200px]">
+        <div className="text-white text-center lg:text-left lg:w-[1200px]">
           <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#5DC2D3] uppercase mb-4">
             Welcome to Growmore Immigration
           </h2>
-          <h1 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-4 max-w-3xl">
-            The Best Immigration Consulting Services <br />
+
+          <h1 className="text-3xl sm:text-4xl lg:text-4xl font-semibold leading-tight mb-6">
+            The Best Immigration Consulting Services <br className="hidden sm:block" />
             for a Smooth Move to Australia
           </h1>
-          <p className="text-base sm:text-lg md:text-xl mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
+
+          <p className="text-base sm:text-lg mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
             Start your journey to a new life in Australia with{" "}
             <span className="text-[#8fd07c] font-semibold underline decoration-white">
               Expert Visa Agent Support
@@ -129,19 +122,14 @@ const Hero = () => {
             </span>
           </p>
 
-      <h3 className="text-[#8fd07c] font-bold text-xl sm:text-2xl mb-8">
-      {displayText}
-      <span className="border-r-5 border-[#8fd07c] animate-pulse ml-1"></span>
-    </h3>
+          <h3 className="text-[#8fd07c] font-bold text-xl sm:text-2xl mb-8 min-h-[40px]">
+            {displayText}
+            <span className="border-r-2 border-[#8fd07c] animate-pulse ml-1"></span>
+          </h3>
 
-          <div className="flex justify-center lg:justify-start">
+          <div>
             <Link to="/who-we-are">
-              <button
-                className="bg-[#6dc7d1] text-white 
-                                 px-6 sm:px-8 py-3 
-                                 rounded-full text-sm sm:text-base 
-                                 hover:bg-black transition duration-300"
-              >
+              <button className="bg-[#6dc7d1] px-8 py-3 rounded-full text-sm sm:text-base hover:bg-black transition duration-300">
                 Read More →
               </button>
             </Link>
@@ -150,20 +138,21 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         <div className="flex justify-center lg:justify-end">
-          <div className="bg-black rounded-3xl overflow-hidden shadow-2xl w-[500px]">
-            <div className="h-5 bg-[#6dc7d1] w-full rounded-xl"></div>
+          <div className="bg-black rounded-3xl shadow-2xl w-full max-w-md">
+            
+            <div className="h-2 bg-[#6dc7d1] rounded-t-3xl"></div>
 
-            <div className="p-6 sm:p-8 rounded-lg">
+            <div className="p-6 sm:p-8">
               <p className="text-[#6dc7d1] text-sm tracking-widest mb-2 font-bold">
                 CONTACT US
               </p>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-[#6dc7d1]">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#6dc7d1]">
                 Make an Appointment
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Name + Email */}
+                
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     name="name"
@@ -180,7 +169,6 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Phone */}
                 <div className="bg-white rounded-lg border border-gray-300">
                   <PhoneInput
                     country={"au"}
@@ -195,7 +183,6 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* Select */}
                 <select
                   name="visaType"
                   required
@@ -210,7 +197,6 @@ const Hero = () => {
                   <option>PR Inquiries</option>
                 </select>
 
-                {/* Message */}
                 <textarea
                   rows="4"
                   name="message"
@@ -218,17 +204,15 @@ const Hero = () => {
                   className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
                 ></textarea>
 
-                {/* Captcha */}
                 <ReCAPTCHA
                   sitekey="YOUR_RECAPTCHA_SITE_KEY"
                   ref={recaptchaRef}
                 />
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-fit bg-[#6dc7d1] px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
+                  className="bg-[#6dc7d1] px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
@@ -236,8 +220,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
       </div>
-    </div>
+    </section>
   );
 };
 

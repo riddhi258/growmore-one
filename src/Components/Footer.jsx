@@ -12,11 +12,12 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  
   return (
     <footer className="bg-[#28535B] text-white">
-
       {/* ================= CTA SECTION ================= */}
       <div className="border-b border-white/20 py-8 px-6">
+      
         <div className="w-[1350px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
 
           <div className="flex items-center gap-4 text-center md:text-left">
