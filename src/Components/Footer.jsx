@@ -12,20 +12,22 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  
   return (
     <footer className="bg-[#28535B] text-white">
       {/* ================= CTA SECTION ================= */}
-      <div className="border-b border-white/20 py-8 px-6">
-      
+      <div className="border-b border-white/20 py-8 px-4 sm:px-6">
         <div className="w-[1350px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-
-          <div className="flex items-center gap-4 text-center md:text-left">
-            <div className="bg-[#6dc7d1] rounded-full">
-              <img src="/assets/img1.svg" alt="phone" className="h-14 w-14" />
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-center md:text-left w-[1400px]">
+            <div className="bg-[#6dc7d1] rounded-full p-2">
+              <img
+                src="/assets/img1.svg"
+                alt="phone"
+                className="h-12 w-12 sm:h-14 sm:w-14"
+              />
             </div>
-            <h2 className="text-2xl md:text-3xl font-semibold leading-snug">
-              Need An Expert Advice <br /> For Your Visa?
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug">
+              Need An Expert Advice <br className="hidden md:block" />
+              For Your Visa?
             </h2>
           </div>
 
@@ -33,24 +35,29 @@ const Footer = () => {
             {[FaEnvelope, FaWhatsapp, FaPhoneAlt].map((Icon, i) => (
               <div
                 key={i}
-                className="bg-[#6dc7d1] p-4 rounded-full hover:bg-white hover:text-[#28535B] transition cursor-pointer"
+                className="bg-[#6dc7d1] p-3 sm:p-4 rounded-full 
+                           hover:bg-white hover:text-[#28535B] 
+                           transition cursor-pointer"
               >
                 <Icon className="h-5 w-5" />
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
       {/* ================= MAIN FOOTER ================= */}
-      <div className="w-[1400px] mx-auto py-12 px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-15">
-
+      <div
+        className="w-[1400px] mx-auto py-12 px-4 sm:px-6 
+                      grid grid-cols-1 sm:grid-cols-2 
+                      md:grid-cols-3 lg:grid-cols-5 
+                      gap-10"
+      >
         {/* Logo & About */}
         <div>
           <img src="/assets/logo1.png" alt="Growmore" className="h-12 mb-6" />
 
-          <p className="text-gray-200 text-sm w-[260px] leading-relaxed mb-6 text-justify">
+          <p className="text-gray-200 text-sm leading-relaxed mb-6 max-w-sm text-justify">
             We are specialised in providing seamless visa solutions for
             individuals, students, and employers looking to make Australia their
             home.
@@ -63,12 +70,15 @@ const Footer = () => {
                   key={i}
                   className="hover:text-gray-400 cursor-pointer transition"
                 />
-              )
+              ),
             )}
           </div>
 
           <Link to="/brochures">
-            <button className="bg-[#6dc7d1] px-4 py-3 rounded-full font-medium hover:bg-black transition">
+            <button
+              className="bg-[#6dc7d1] px-5 py-3 rounded-full 
+                               font-medium hover:bg-black transition"
+            >
               Download Brochures →
             </button>
           </Link>
@@ -89,7 +99,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/our-services/employers"
-                className="hover:text-gray-400  transition"
+                className="hover:text-gray-400 transition"
               >
                 ✓ For Employers
               </Link>
@@ -102,7 +112,10 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
           <ul className="space-y-3 text-sm text-gray-200">
             <li>
-              <Link to="/points-calculator" className="hover:text-gray-400  transition">
+              <Link
+                to="/points-calculator"
+                className="hover:text-gray-400 transition"
+              >
                 › Points Calculator
               </Link>
             </li>
@@ -117,7 +130,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/youtube" className="hover:text-gray-400  transition">
+              <Link to="/youtube" className="hover:text-gray-400 transition">
                 › YouTube Channel
               </Link>
             </li>
@@ -128,10 +141,26 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-6">Useful Links</h3>
           <ul className="space-y-3 text-sm text-gray-200">
-            <li><Link to="#" className="hover:text-gray-400 transition">Terms & Services</Link></li>
-            <li><Link to="#" className="hover:text-gray-400 transition">Privacy Policy</Link></li>
-            <li><Link to="#" className="hover:text-gray-400 transition">Code of Conduct</Link></li>
-            <li><Link to="#" className="hover:text-gray-400 transition">Cancellation & Refund Policy</Link></li>
+            <li>
+              <Link to="#" className="hover:text-gray-400 transition">
+                Terms & Services
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:text-gray-400 transition">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:text-gray-400 transition">
+                Code of Conduct
+              </Link>
+            </li>
+            <li>
+              <Link to="#" className="hover:text-gray-400 transition">
+                Cancellation & Refund Policy
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -140,14 +169,13 @@ const Footer = () => {
           <img
             src="/assets/mara-card.png"
             alt="MARA Registration"
-            className="rounded-xl max-h-60 object-contain"
+            className="rounded-xl max-h-52 sm:max-h-60 object-contain"
           />
         </div>
-
       </div>
 
       {/* ================= COPYRIGHT ================= */}
-      <div className="border-t border-white/20 py-6 text-center text-xs text-gray-300">
+      <div className="border-t border-white/20 py-6 text-center text-xs text-gray-300 px-4">
         © {new Date().getFullYear()} Growmore Immigration | All Rights Reserved
       </div>
     </footer>

@@ -80,9 +80,7 @@ const Hero = () => {
       e.target.reset();
       setPhone("");
       recaptchaRef.current.reset();
-    } catch (error) {
-      alert("Server error. Please try again.");
-    } finally {
+    }  finally {
       setLoading(false);
     }
   };
@@ -138,9 +136,9 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         <div className="flex justify-center lg:justify-end">
-          <div className="bg-black rounded-3xl shadow-2xl w-full max-w-md">
+          <div className="bg-black rounded-3xl shadow-2xl w-[450px]">
             
-            <div className="h-2 bg-[#6dc7d1] rounded-t-3xl"></div>
+            <div className="h-6 bg-[#6dc7d1] rounded-t-3xl rounded-lg"></div>
 
             <div className="p-6 sm:p-8">
               <p className="text-[#6dc7d1] text-sm tracking-widest mb-2 font-bold">

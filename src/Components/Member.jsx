@@ -9,7 +9,7 @@ export default function Member() {
 
   return (
     <>
-      <section className="relative z-20 lg:-mt-80 sm:-mt-60 px-4 py-16">
+      <section className="relative z-20 lg:-mt-70 sm:-mt-60 px-4 py-16">
         <div className="max-w-[1400px] mx-auto bg-[#1F4E55] rounded-[40px] px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
           {/* LEFT CONTENT */}
           <div className="text-white max-w-[750px]">

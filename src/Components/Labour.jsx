@@ -6,38 +6,39 @@ const Labour = () => {
     <div className="px-4 sm:px-6 md:px-8 mb-14">
       <section
         className="bg-[#28535B] rounded-3xl md:rounded-[40px] 
-                          py-14 sm:py-16 md:py-20 
-                          px-6 sm:px-10 md:px-16 
-                          text-white"
+                   py-12 sm:py-16 md:py-20 
+                   px-6 sm:px-10 md:px-16 
+                   text-white"
       >
         <div
           className="max-w-7xl mx-auto grid 
-                        grid-cols-1 
-                        md:grid-cols-2 
-                        gap-10 md:gap-14 
-                        items-center"
+                     grid-cols-1 md:grid-cols-2 
+                     gap-10 md:gap-14 
+                     items-center"
         >
           {/* LEFT CONTENT */}
           <div className="text-center md:text-left">
+            
             {/* Heading */}
             <h2
               className="text-2xl sm:text-3xl md:text-4xl 
-                           font-normal leading-snug md:leading-tight 
-                           mb-5 md:mb-6"
+                         font-normal leading-snug md:leading-tight 
+                         mb-5 md:mb-6"
             >
               Boost Your Workforce <br className="hidden md:block" />
               With{" "}
-              <span className="text-[#8FD07C] text-4xl font-semibold">
+              <span className="text-[#8FD07C] text-2xl sm:text-3xl md:text-4xl font-semibold">
                 Labour Agreements
               </span>
             </h2>
 
             {/* Description */}
             <p
-              className="text-sm sm:text-base md:text-base
-                          leading-relaxed 
-                          mb-8 md:mb-10 w-[700px] 
-                          mx-auto md:mx-0 text-justify"
+              className="text-sm sm:text-base 
+                         leading-relaxed 
+                         mb-8 md:mb-10 
+                         max-w-2xl 
+                         mx-auto md:mx-0 text-justify"
             >
               Labour agreements are a powerful solution for businesses facing a
               shortage of local talent in key roles such as waiters, truck
@@ -57,13 +58,13 @@ const Labour = () => {
             <Link to="/book-consultation">
               <button
                 className="bg-[#6dc7d1] 
-                                 hover:bg-black 
-                                 transition 
-                                 rounded-full 
-                                 px-6 sm:px-7 
-                                 py-3 sm:py-4 
-                                 text-sm sm:text-base 
-                                 font-medium"
+                           hover:bg-black 
+                           transition 
+                           rounded-full 
+                           px-6 sm:px-7 
+                           py-3 sm:py-4 
+                           text-sm sm:text-base 
+                           font-medium"
               >
                 Book Consultation →
               </button>
@@ -75,8 +76,7 @@ const Labour = () => {
             <img
               src="/assets/labour.png"
               alt="Labour Agreement"
-              className="w-[400px] 
-                         max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg 
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg 
                          h-auto 
                          rounded-2xl 
                          shadow-2xl"
