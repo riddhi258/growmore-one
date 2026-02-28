@@ -92,7 +92,7 @@ const Hero = () => {
     >
       {/* Dark Overlay */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-2 lg:px-2 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
         
         {/* LEFT CONTENT */}
         <div className="text-white text-center lg:text-left lg:w-[1200px]">
@@ -136,7 +136,7 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         <div className="flex justify-center lg:justify-end">
-          <div className="bg-black rounded-3xl shadow-2xl w-[450px]">
+          <div className="bg-black rounded-3xl shadow-2xl w-[480px]">
             
             <div className="h-6 bg-[#6dc7d1] rounded-t-3xl rounded-lg"></div>
 
