@@ -80,7 +80,7 @@ const DAMA = () => {
             to know your eligibility and begin your application with confidence.
           </p>
 
-          <button className="bg-[#5EB8B3] hover:bg-[#4da7a3] text-white px-7 py-3 rounded-full transition duration-300 shadow-md">
+            <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Checklist Form
           </button>
         </div>
@@ -113,7 +113,7 @@ If you want to stay ahead of every Australian migration news, follow us on socia
 
           </p>
 
-          <button className="bg-[#5EB8B3] hover:bg-[#4da7a3] text-white px-7 py-3 rounded-full transition duration-300 shadow-md">
+           <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Book Consultation →
           </button>
         </div>

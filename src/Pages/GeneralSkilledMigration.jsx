@@ -79,7 +79,7 @@ const GSMPage = () => {
             a few minutes and helps identify the best pathway for you.
           </p>
 
-          <button className="bg-[#5EB8B3] hover:bg-[#4da7a3] text-white px-7 py-3 rounded-full transition duration-300 shadow-md">
+           <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Checklist Form
           </button>
         </div>
@@ -87,20 +87,20 @@ const GSMPage = () => {
         {/* ================= WHY GROWMORE ================= */}
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
-            Why Growmore Immigration is the Right Choice
+          Why Growmore Immigration Makes a Difference
           </h3>
 
           <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
             <li>
-              Trusted experts in Australian migration with thousands of
-              successful GSM clients
+             Licensed MARA agents to provide you with the right guidance in the Labour Agreement
+
             </li>
-            <li>Free eligibility check</li>
+            <li>Thousands of successful visa approvals and happy clients</li>
             <li>
-              Specialized support for skills assessment and EOI submission
-            </li>
-            <li>Updated occupation lists & point threshold expertise</li>
-            <li>Personalized consultation by registered MARA agents</li>
+Strong connections with Australian employers</li>
+
+            <li>Handle every paperwork and legal complexities accurately</li>
+            <li>Personalized solution and ongoing support</li>
           </ul>
 
           <h4 className="text-lg font-semibold text-gray-800 mb-3">
@@ -108,11 +108,10 @@ const GSMPage = () => {
           </h4>
 
           <p className="text-gray-600 mb-6 text-justify">
-            Follow us for updates, tips, and expert guidance on moving to
-            Australia and stay informed at every step of your journey.
+         Stay connected with Growmore Immigration for the latest tips, news, and expert insights on migrating to Australia. Follow us on social media and be a valuable part of our community.
           </p>
 
-          <button className="bg-[#5EB8B3] hover:bg-[#4da7a3] text-white px-7 py-3 rounded-full transition duration-300 shadow-md">
+            <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Book Consultation →
           </button>
         </div>
