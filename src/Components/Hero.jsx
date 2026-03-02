@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const recaptchaRef = useRef(null);
-  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [dialCode, setDialCode] = useState("61"); // Australia default
+  const [phoneNumber, setPhoneNumber] = useState("");
   const texts = [
     "Employer Visa Expert",
     "Skill in Demand Visa SC482",
@@ -42,48 +42,53 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentWordIndex]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = recaptchaRef.current?.getValue();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!token) {
-      alert("Please verify the captcha");
-      return;
-    }
+  const token = recaptchaRef.current?.getValue();
 
-    setLoading(true);
+  if (!token) {
+    alert("Please verify the captcha");
+    return;
+  }
 
-    try {
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
+  setLoading(true);
 
-      const payload = {
-        name: data.name,
-        email: data.email,
-        phone: phone,
-        visaType: data.visaType,
-        message: data.message,
-        captchaToken: token,
-        source: "Website Form",
-      };
+  try {
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const finalPhone = `+${dialCode}${phoneNumber}`;
 
-      const result = await response.json();
-      if (!result.success) throw new Error("Submission failed");
+    const payload = {
+      name: data.name,
+      email: data.email,
+      phone: finalPhone,
+      visaType: data.visaType,
+      message: data.message,
+      captchaToken: token,
+      source: "Website Form",
+    };
 
-      alert("Thank you! Our team will contact you shortly.");
-      e.target.reset();
-      setPhone("");
-      recaptchaRef.current.reset();
-    }  finally {
-      setLoading(false);
-    }
-  };
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+    if (!result.success) throw new Error("Submission failed");
+
+    alert("Thank you! Our team will contact you shortly.");
+
+    e.target.reset();
+    setPhoneNumber("");
+    recaptchaRef.current.reset();
+
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section
@@ -93,7 +98,6 @@ const Hero = () => {
       {/* Dark Overlay */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-2 lg:px-2 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-12">
-        
         {/* LEFT CONTENT */}
         <div className="text-white text-center lg:text-left lg:w-[1200px]">
           <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#5DC2D3] uppercase mb-4">
@@ -101,7 +105,8 @@ const Hero = () => {
           </h2>
 
           <h1 className="text-3xl sm:text-4xl lg:text-4xl font-semibold leading-tight mb-6">
-            The Best Immigration Consulting Services <br className="hidden sm:block" />
+            The Best Immigration Consulting Services{" "}
+            <br className="hidden sm:block" />
             for a Smooth Move to Australia
           </h1>
 
@@ -135,10 +140,10 @@ const Hero = () => {
         </div>
 
         {/* RIGHT FORM */}
+        {/* RIGHT FORM */}
         <div className="flex justify-center lg:justify-end">
           <div className="bg-black rounded-3xl shadow-2xl w-[480px]">
-            
-            <div className="h-6 bg-[#6dc7d1] rounded-t-3xl rounded-lg"></div>
+            <div className="h-6 bg-[#6dc7d1] rounded-t-3xl"></div>
 
             <div className="p-6 sm:p-8">
               <p className="text-[#6dc7d1] text-sm tracking-widest mb-2 font-bold">
@@ -150,7 +155,7 @@ const Hero = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                
+                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     name="name"
@@ -167,20 +172,43 @@ const Hero = () => {
                   />
                 </div>
 
-                <div className="bg-white rounded-lg border border-gray-300">
-                  <PhoneInput
-                    country={"au"}
-                    enableSearch
-                    value={phone}
-                    onChange={setPhone}
-                    inputStyle={{
-                      width: "100%",
-                      border: "none",
-                      height: "44px",
-                    }}
+                {/* 🔥 Split Phone Input */}
+                <div className="flex gap-3">
+                  {/* Country Code */}
+                  <div className="w-28 bg-white rounded-lg border border-gray-300">
+                    <PhoneInput
+                      country={"au"}
+                      enableSearch
+                      onChange={(value, data) => {
+                        setDialCode(data.dialCode);
+                      }}
+                      inputProps={{ readOnly: true }}
+                      containerStyle={{ width: "100%" }}
+                      inputStyle={{
+                        width: "100%",
+                        border: "none",
+                        height: "44px",
+                        backgroundColor: "white",
+                      }}
+                      buttonStyle={{
+                        border: "none",
+                        backgroundColor: "white",
+                      }}
+                    />
+                  </div>
+
+                  {/* Phone Number */}
+                  <input
+                    type="tel"
+                    placeholder="Contact Number"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="flex-1 bg-white rounded-lg px-4 py-2 border border-gray-300"
+                    required
                   />
                 </div>
 
+                {/* Visa Type */}
                 <select
                   name="visaType"
                   required
@@ -195,6 +223,7 @@ const Hero = () => {
                   <option>PR Inquiries</option>
                 </select>
 
+                {/* Message */}
                 <textarea
                   rows="4"
                   name="message"
@@ -218,7 +247,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DAMA = () => {
   return (
@@ -79,41 +80,36 @@ const DAMA = () => {
             and begin your smooth migration process now. Fill out this checklist
             to know your eligibility and begin your application with confidence.
           </p>
-
+          <Link to="/checklist-for-dama">
             <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
-            Checklist Form
-          </button>
+              Checklist Form
+            </button>
+          </Link>
         </div>
 
         {/* ================= WHY GROWMORE ================= */}
         <div>
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
-Why Growmore Immigration Stands Out
-</h3>
+            Why Growmore Immigration Stands Out
+          </h3>
 
           <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-8">
             <li>Truthful guidance from registered MARA agents</li>
             <li>Transparent and clear pricing structure</li>
-            <li>
-Free eligibility check for DAMA visas
-</li>
-            <li>Strong connections with regional employers
-</li>
-            <li>Complete support from application to visa grants
-</li>
+            <li>Free eligibility check for DAMA visas</li>
+            <li>Strong connections with regional employers</li>
+            <li>Complete support from application to visa grants</li>
           </ul>
 
           <h4 className="text-lg font-semibold text-gray-800 mb-3">
-Keep in Touch with Us
-
-</h4>
+            Keep in Touch with Us
+          </h4>
           <p className="text-gray-600 mb-6 text-justify">
-If you want to stay ahead of every Australian migration news, follow us on social media and get the reliable tips that you can trust.
-
-
+            If you want to stay ahead of every Australian migration news, follow
+            us on social media and get the reliable tips that you can trust.
           </p>
 
-           <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
+          <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Book Consultation →
           </button>
         </div>

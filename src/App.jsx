@@ -1,7 +1,10 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+
 import Home from './Pages/Home'
 import WhoWeAre from './Pages/WhoWeAre'
 import Migrate from './Pages/Migrate'
@@ -17,8 +20,10 @@ import News from './Pages/News'
 import Blogs from './Pages/Blogs'
 import ContactUs from './Pages/ContactUs'
 import BookConsultation from './Pages/BookConsultation'
-import Footer from './Components/Footer'
 import Brochures from './Pages/Brochures'
+
+import Checklist from './Components/Checklist'
+import Checklistgsm from './Components/Checklistgsm'
 
 function App() {
   return (
@@ -40,7 +45,12 @@ function App() {
         <Route path="blogs" element={<Blogs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/book-consultation" element={<BookConsultation />} />
-        <Route path="/brochures" element={<Brochures/>} />
+        <Route path="/brochures" element={<Brochures />} />
+        <Route path="/checklist-for-dama" element={<Checklist />} />
+        <Route
+          path="/checklist-for-gsm-general-skilled-migration"
+          element={<Checklistgsm />}
+        />
       </Routes>
       <Footer />
     </Router>

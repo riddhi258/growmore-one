@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GSMPage = () => {
   return (
@@ -78,10 +79,11 @@ const GSMPage = () => {
             Australia. Get a free GSM eligibility assessment now. It only takes
             a few minutes and helps identify the best pathway for you.
           </p>
-
+        <Link to="/checklist-for-gsm-general-skilled-migration">
            <button className="bg-[#6dc7d1] text-white  rounded-full  hover:bg-black transition whitespace-nowrap px-7 py-4 font-base text-sm">
             Checklist Form
           </button>
+        </Link>
         </div>
 
         {/* ================= WHY GROWMORE ================= */}

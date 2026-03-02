@@ -6,61 +6,56 @@ import ContactSection from "../Components/ContactSection";
 
 const ContactUs = () => {
   const recaptchaRef = useRef(null);
-  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [dialCode, setDialCode] = useState("61"); // Australia default
+  const [phoneNumber, setPhoneNumber] = useState("");
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const token = recaptchaRef.current.getValue();
+  const token = recaptchaRef.current?.getValue();
 
-    if (!token) {
-      alert("Please verify the captcha");
-      return;
-    }
+  if (!token) {
+    alert("Please verify the captcha");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
+  try {
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-      const payload = {
-        name: data.name,
-        email: data.email,
-        phone: phone,
-        visaType: data.visaType,
-        message: data.message,
-        captchaToken: token,
-        source: "Website Form",
-      };
+    const finalPhone = `+${dialCode}${phoneNumber}`;
 
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+    const payload = {
+      name: data.name,
+      email: data.email,
+      phone: finalPhone,
+      visaType: data.visaType,
+      message: data.message,
+      captchaToken: token,
+      source: "Website Form",
+    };
 
-      const result = await response.json();
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-      if (!result.success) {
-        throw new Error("Submission failed");
-      }
+    const result = await response.json();
+    if (!result.success) throw new Error("Submission failed");
 
-      alert("Thank you! Our team will contact you shortly.");
+    alert("Thank you! Our team will contact you shortly.");
 
-      e.target.reset();
-      setPhone("");
-      recaptchaRef.current.reset();
-    } catch (error) {
-      console.error(error);
-      alert("Server error. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    e.target.reset();
+    setPhoneNumber("");
+    recaptchaRef.current.reset();
+
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
    <div className="w-full">
@@ -114,19 +109,42 @@ const ContactUs = () => {
                 />
               </div>
 
-              <div className="bg-white rounded-lg p-1 border border-gray-300">
-                <PhoneInput
-                  country={"in"}
-                  enableSearch
-                  value={phone}
-                  onChange={setPhone}
-                  inputStyle={{
-                    width: "100%",
-                    border: "none",
-                    height: "44px",
-                  }}
-                />
-              </div>
+              
+                {/* 🔥 Split Phone Input */}
+                <div className="flex gap-3">
+                  {/* Country Code */}
+                  <div className="w-28 bg-white rounded-lg border border-gray-300">
+                    <PhoneInput
+                      country={"au"}
+                      enableSearch
+                      onChange={(value, data) => {
+                        setDialCode(data.dialCode);
+                      }}
+                      inputProps={{ readOnly: true }}
+                      containerStyle={{ width: "100%" }}
+                      inputStyle={{
+                        width: "100%",
+                        border: "none",
+                        height: "44px",
+                        backgroundColor: "white",
+                      }}
+                      buttonStyle={{
+                        border: "none",
+                        backgroundColor: "white",
+                      }}
+                    />
+                  </div>
+
+                  {/* Phone Number */}
+                  <input
+                    type="tel"
+                    placeholder="Contact Number"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="flex-1 bg-white rounded-lg px-4 py-2 border border-gray-300"
+                    required
+                  />
+                </div>
 
               <select
                 name="visaType"
