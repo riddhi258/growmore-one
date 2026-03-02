@@ -87,20 +87,6 @@ const FAQ = () => {
         "A General Migration Visa is for individuals who want to move to Australia independently, without a specific employer sponsor. Growmore Immigration provides expert support for all types of general migration visas, including skilled migration pathways and regional migration options. Our experienced migration consultants help you determine your eligibility, prepare necessary documents, and assist with the application process to secure your visa. ",
       ],
     },
-        {
-      id: "What is an Employer-Sponsored Visa, and how can Growmore Immigration assist with it?",
-      title: "What is an Employer-Sponsored Visa, and how can Growmore Immigration assist with it?",
-      content: [
-        "An Employer-Sponsored Visa allows Australian employers to sponsor overseas workers to fill positions that cannot be filled by local employees. Growmore Immigration helps both employers and employees with the entire process, from visa application to documentation submission. Our licensed immigration agents will guide you through the requirements and ensure your application is processed efficiently, ensuring you can work in Australia under an employer’s sponsorship.",
-      ],
-    },
-     {
-      id: "What is a General Migration Visa, and how can Growmore Immigration support me?",
-      title: "What is a General Migration Visa, and how can Growmore Immigration support me?",
-      content: [
-        "A General Migration Visa is for individuals who want to move to Australia independently, without a specific employer sponsor. Growmore Immigration provides expert support for all types of general migration visas, including skilled migration pathways and regional migration options. Our experienced migration consultants help you determine your eligibility, prepare necessary documents, and assist with the application process to secure your visa."
-      ],
-    },
   ];
 
   return (
