@@ -25,9 +25,9 @@ const IndividualVisaGsm = () => {
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column */}
-            <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
+             <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
               <div className="space-y-5">
-                <Link to="/our-services/individual/employer-sponsored-visa/">
+                <Link to="/our-services/employers/standard-business-sponsorship/">
                   <div className="group flex  items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Employer Sponsored Visa Australia Requirements
@@ -92,7 +92,7 @@ const IndividualVisaGsm = () => {
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/business-investor-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Business Investment Visa & Innovation Visa
@@ -100,7 +100,7 @@ const IndividualVisaGsm = () => {
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/refugee-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Refugee & Humanitarian Visa Program
@@ -108,7 +108,7 @@ const IndividualVisaGsm = () => {
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/working-holiday-work-holiday-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Working Holiday Visa Australia (Subclasses 462)
@@ -137,9 +137,9 @@ const IndividualVisaGsm = () => {
                   <li>
                     <strong>
                       {" "}
-                      <b className="text-black">
+                      <span className="text-black font-semibold">
                         Skilled Independent visa (subclass 189):
-                      </b>
+                      </span>
                     </strong>{" "}
                     This is a permanent visa that allows highly skilled
                     individuals to work and live anywhere in Australia. To be
@@ -149,9 +149,9 @@ const IndividualVisaGsm = () => {
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                      <span className="text-black font-semibold">
                         Skilled Nominated visa (subclass 190):
-                      </b>
+                      </span>
                     </strong>
                     his is a permanent visa that requires the applicants to be
                     nominated by an Australian state or territory government.
@@ -161,9 +161,9 @@ const IndividualVisaGsm = () => {
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                      <span className="text-black font-semibold">
                         Skilled Work Regional (Provisional) visa (subclass 491):
-                      </b>
+                      </span>
                     </strong>{" "}
                     This is a provisional visa that allows skilled workers to
                     live and work in a specified regional area of Australia for
@@ -176,11 +176,11 @@ const IndividualVisaGsm = () => {
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                      <span className="text-black font-semibold">
                         {" "}
                         The Permanent Residence (Skilled Regional) visa
                         (subclass 191):
-                      </b>
+                      </span>
                     </strong>
                     This is for skilled individuals who want to live and work
                     permanently in regional Australia. This visa is for
@@ -195,7 +195,7 @@ const IndividualVisaGsm = () => {
                   provisional visa, having lived and worked in regional
                   Australia for at least three years, meeting the health and
                   character requirements, and having an occupation listed on the{" "}
-                  <b className="text-black">Skilled Occupation List</b>.
+                  <span className="text-black font-semibold">Skilled Occupation List</span>.
                 </p>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
                  <b>Note:{" "}</b> eligibility criteria and requirements for each stream are

@@ -40,6 +40,9 @@ import IndividualVisaGsm from "./Pages/IndividualVisaGsm";
 import IndividualVisaFamily from "./Pages/IndividualVisaFamily";
 import IndividualVisaWork from "./Pages/IndividualVisaWork";
 import IndividualVisaGlobal from "./Pages/IndividualVisaGlobal";
+import IndividualVisaHoliday from "./Pages/IndividualVisaHoliday";
+import IndividualVisaBusiness from "./Pages/IndividualVisaBusiness";
+import IndividualVisaRefugee from "./Pages/IndividualVisaRefugee";
 
 
 function App() {
@@ -138,6 +141,18 @@ function App() {
           <Route
           path="/our-services/individual/global-talent-visa/"
           element={< IndividualVisaGlobal />}
+        />
+           <Route
+          path="/our-services/individual/working-holiday-work-holiday-visa/"
+          element={< IndividualVisaHoliday />}
+        />
+         <Route
+          path="/our-services/individual/business-investor-visa/"
+          element={< IndividualVisaBusiness/>}
+        />
+         <Route
+          path="/our-services/individual/refugee-visa/"
+          element={< IndividualVisaRefugee />}
         />
       </Routes>
       <Footer />

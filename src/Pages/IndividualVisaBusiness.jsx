@@ -2,20 +2,20 @@ import React from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const IndividualVisa = () => {
+const IndividualVisaBusiness = () => {
   return (
     <div>
       <div>
         <section className="bg-[#28535B] py-12 sm:py-16">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
-              Individual Sponsored Visa Services
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white">
+              Business Innovation and Investment (Provisional) Visa
             </h1>
 
             <p className="text-white font-medium mt-3 text-sm sm:text-base">
-              Home &gt; <span className=" cursor-pointer">Employers</span> &gt;{" "}
+              Home &gt; <span className=" cursor-pointer">Individual</span> &gt;{" "}
               <span className=" cursor-pointer">
-                Individual Sponsored Visa Services
+                Business Investment Visa & Innovation Visa
               </span>
             </p>
           </div>
@@ -119,128 +119,103 @@ const IndividualVisa = () => {
                          </div>
                        </div>
             {/* Right Column */}
-            <div className="md:col-span-2 pl-6 sm:pl-16 lg:pl-26">
+            <div className="md:col-span-2 pl-6 sm:pl-16 lg:pl-26 text-justify">
               {" "}
               <h3 className="text-xl sm:text-2xl font-semibold text-[#28535B] ">
-                Individual Journey with Expert Immigration Support{" "}
+                Business Investment Visa & Innovation Visa{" "}
               </h3>
               <div>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Introduction:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  In a move to safeguard the integrity of Australia’s
-                  international education sector and protect genuine
-                  international students, the Albanese Government has announced
-                  a comprehensive package of measures.
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
+                  Business Innovation and Investment (Provisional) visa, also
+                  known as subclass 188, is a type of visa designed for
+                  entrepreneurs, investors, and business owners who are
+                  interested in starting a new business or investing in
+                  Australia. The visa has 5 streams:
                 </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  As the fourth-largest export industry for the nation,
-                  international education plays a vital role in the economy and
-                  regional relationships. This initiative aims to address
-                  loopholes, prevent misuse, and enhance the overall quality of
-                  the sector
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Closing the Loophole:
-                </h2>
+
+                <ol className="list-decimal pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
+                  <li>
+                    <strong>
+                      {" "}
+                      <span className="text-black font-semibold">
+                        Business Innovation Stream:
+                      </span>
+                    </strong>{" "}
+                    This stream is for individuals who have a successful
+                    business background and wish to establish, manage and grow a
+                    new or existing business in Australia. To be eligible for
+                    this stream, you must have at least <b className="text-black">AUD$800,000</b> in
+                    funding available for your proposed business and an overall
+                    successful business background.
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Investor Stream:
+                      </span>
+                    </strong>
+                    This stream is for individuals who are willing to make a
+                    designated investment of at least AUD$1.5 million in an
+                    Australian state or territory and maintain business and
+                    investment activity in Australia. You must also have a net
+                    personal and business asset of at least{" "}
+                    <b className="text-black">AUD$2.25 million</b> and a successful investment
+                    background.
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Significant Investor Stream:
+                      </span>
+                    </strong>
+                    his stream is for individuals who are willing to make a
+                    designated investment of at least<b className="text-black">AUD$5 million</b> into
+                    complying significant investments in Australia and maintain
+                    business and investment activity in Australia. You must also
+                    have a successful investment background.
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Entrepreneur Stream:
+                      </span>
+                    </strong>
+                    This stream is for individuals who have a business idea and
+                    access to funding to establish a new business in Australia.
+                    To be eligible, you must have funding of at least{" "}
+                    <b className="text-black">AUD$200,000</b>and a successful business track record.
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Premium Investor Stream:
+                      </span>
+                    </strong>
+                    This stream is for high net worth individuals who are
+                    willing to make a designated investment of at least{" "}
+                    <b className="text-black">AUD$15 million</b> into complying premium investments in
+                    Australia. You must also have a net personal and business
+                    asset of at least <b className="text-black">AUD$40 million</b>.
+                  </li>
+                </ol>
 
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  One of the key measures is the closure of a loophole that
-                  allowed education providers to transition
-                  internationalstudents, present in Australia for less than six
-                  months, fromlegitimate study to anangements facilitating work
-                  access.
-                </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  This change, effective immediately, prevents second providers
-                  from enrolling students before they have completed the
-                  required six months of study at ther Initial institution. This
-                  step is vital to maintain the sector’s credibility and prevent
-                  predatory operators from taking advantage of vulnerable
-                  students
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Financial Requirements Update:
-                </h2>
-
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  To ensure that international students can support themselves
-                  and avoid exploitation due to financial constraints, the
-                  government has revised the financial requirement for obtaining
-                  a student visa, effective October 1, 2023.
-                </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  Prospective students will need to demonstrate evidence of
-                  $24,505 in savings. reflecting a 17% increase from previous
-                  levels to accommodate rising living expenses. This change
-                  underscores the government’s commitment to ensuring students’
-                  well-being while{" "}
-                  <span className="text-blue-500">studying in Australia</span>
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Increased Scrutiny and Fraud Prevention:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  Recognizing the need for stringent measures to prevent fraud,
-                  the government willintensify scrutiny of high-risk student
-                  cohorts and request additional documentation during the
-                  application process. This step is aimed at identifying
-                  potential fraudulent activities and maintaining the sector’s
-                  credibility
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Using Government Powers:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  In a landmark move, the Albanese Government is considering
-                  employing its powers under Section 97 of the Education
-                  Services for Overseas Students Act (ESOS Act) to issue
-                  suspension certificates to high-risk education providers. This
-                  action would prevent these providers from recruiting
-                  international students.
-                </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  Clear criteria for issuing suspension certificates, such as
-                  application rates involving fraudulent documents and provider
-                  refusal rates, will be outlined through consultations. This
-                  proactive approach demonstrates the government’s commitment to
-                  tackling substandard providers head-on.
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Future Measures and Migration Strategy:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  The government’s dedication to upholding the integrity of the
-                  international education system doesn’t stophere As part of the
-                  upcoming Migration Strategy, due later this year, additional
-                  measures will be explored to further strengthen the sector’s
-                  integrity
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Conclusion:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  The Albanese Government’s commitment to preserving the quality
-                  and integrity of{" "}
+                  <b className="text-black">Note: </b> eligibility criteria and requirements for each
+                  stream are subject to change, and it is always advisable to
+                  consult a registered migration agent to understand the latest
+                  immigration requirements. You can also check DHA website{" "}
                   <span className="text-blue-500">
-                    Australia’s international education{" "}
+                    https://immi.homeaffairs.gov.au/visas{" "}
                   </span>
-                  sector is evident through the comprehensive package of
-                  measures announced.
+                  to know about any of the mentioned visas.
                 </p>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  By closing loopholes, revising financial requirements,
-                  increasing scrutiny, and exploring the use of suspension
-                  certificates for high-risk providers, the government aims to
-                  protect genuine students, maintain the sector’s global
-                  reputation, and contribute to a skilled workforce for the
-                  future.
-                </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  These measures align with the government’s determination to
-                  create a fair and secure environment for internationalstudents
-                  pursuing their educational dreams in Australia
+                  Our migration agent at{" "}
+                  <span className="text-blue-500">Growmore Immigration </span>
+                  can help you with the latest information and requirements for
+                  the Business Innovation and Investment (Provisional) visa, and
+                  guide you through the entire visa application process. Book a
+                  consultation with us today to learn more.
                 </p>
               </div>
               <Link to="/book-consultation">
@@ -256,4 +231,4 @@ const IndividualVisa = () => {
   );
 };
 
-export default IndividualVisa;
+export default IndividualVisaBusiness;

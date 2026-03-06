@@ -2,20 +2,20 @@ import React from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const IndividualVisaEmployer = () => {
+const IndividualVisaRefugee = () => {
   return (
     <div>
       <div>
         <section className="bg-[#28535B] py-12 sm:py-16">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white">
-              Employer Sponsored Visas
+              What is a Refugee and Humanitarian Visa in Australia?
             </h1>
 
             <p className="text-white font-medium mt-3 text-sm sm:text-base">
-              Home &gt; <span className=" cursor-pointer">Employers</span> &gt;{" "}
+              Home &gt; <span className=" cursor-pointer">Individual</span> &gt;{" "}
               <span className=" cursor-pointer">
-                Employer Sponsored Visa Australia Requirements
+                Refugee & Humanitarian Visa Program
               </span>
             </p>
           </div>
@@ -25,7 +25,7 @@ const IndividualVisaEmployer = () => {
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column */}
-              <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
+            <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
               <div className="space-y-5">
                 <Link to="/our-services/employers/standard-business-sponsorship/">
                   <div className="group flex  items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
@@ -119,93 +119,96 @@ const IndividualVisaEmployer = () => {
               </div>
             </div>
             {/* Right Column */}
-            <div className="md:col-span-2 pl-6 sm:pl-16 lg:pl-26">
+            <div className="md:col-span-2 pl-6 sm:pl-16 lg:pl-26 text-justify">
               {" "}
               <h3 className="text-xl sm:text-2xl font-semibold text-[#28535B] ">
-                Employer Sponsored Visa Australia Requirements{" "}
+                Refugee & Humanitarian Visa Program{" "}
               </h3>
               <div>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  The Australian Employer Sponsored Visas are a range of visa
-                  options for skilled workers seeking to work in Australia under
-                  sponsorship from an Australian employer.
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
+                  Refugee and humanitarian visas provide an opportunity for
+                  individuals and families who are persecuted in their home
+                  country to seek protection and safety in Australia.
                 </p>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  The three main visa subclasses in this category are the
-                  Subclass 407 Training Visa, the Subclass 482 Skills in Demand
-                  Visa (SID) Visa, and the Subclass 186 Employer Nomination
-                  Scheme (ENS) visa.
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Subclass 407 Training Visa:
-                </h2>
-
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  This visa is for individuals who are sponsored by their
-                  employer to undertake structured training in their field in
-                  Australia. This visa is valid for up to two years.
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
+                  <b>
+                    The following are the main visa subclasses available under
+                    this Category:
+                  </b>
                 </p>
 
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Skills in Demand Visa (subclass 482):
-                </h2>
+                <ol className="list-decimal pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
+                  <li>
+                    <strong>
+                      {" "}
+                      <span className="text-black font-semibold">
+                        Global Special Humanitarian (subclass 202):
+                      </span>
+                    </strong>{" "}
+                    This visa is for individuals outside Australia who are
+                    sponsored by an Australian citizen, permanent resident or
+                    eligible New Zealand citizen, and who have suffered
+                    substantial and persistent violations of their human
+                    rights.{" "}
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Protection visa (subclass 866):
+                      </span>
+                    </strong>
+                    This visa is for individuals in Australia who claim to be
+                    refugees, and who are unable to return to their home country
+                    due to a well-founded fear of persecution.{" "}
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Refugee visas (subclass 200, 201, 203 and 204):
+                      </span>
+                    </strong>
+                    These visas are for individuals outside Australia who are
+                    refugees and in need of resettlement.
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Temporary Protection visa (subclass 785):
+                      </span>
+                    </strong>
+                    This visa is for individuals in Australia who are found to
+                    be refugees but are unable to return to their home
+                    country.{" "}
+                  </li>
+                  <li>
+                    <strong>
+                      <span className="text-black font-semibold">
+                        Premium Investor Stream:
+                      </span>
+                    </strong>
+                    This visa is for individuals who have arrived in Australia
+                    and are seeking protection but do not meet the criteria for
+                    a permanent protection visa.{" "}
+                  </li>
+                </ol>
 
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  The Skills in Demand Visa (Subclass 482) under the Core Skills
-                  Stream is designed to address labor shortages in Australia by
-                  allowing employers to sponsor skilled workers in occupations
-                  listed on the Medium and Long-term Strategic Skills List
-                  (MLTSSL). This temporary visa enables individuals to work in
-                  Australia for up to four years, with a pathway to permanent
-                  residency for eligible applicants.
-                </p>
-
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Skilled Employer Sponsored Regional (provisional) visa
-                  (subclass 494):{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  This visa is for individuals who are sponsored by an eligible
-                  employer in a designated regional area of Australia. The
-                  applicants must have a relevant skills assessment and meet the
-                  English language requirements.
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Using Government Powers:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  In a landmark move, the Albanese Government is considering
-                  employing its powers under Section 97 of the Education
-                  Services for Overseas Students Act (ESOS Act) to issue
-                  suspension certificates to high-risk education providers. This
-                  action would prevent these providers from recruiting
-                  international students.
-                </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
-                  Subclass 186 Employer Nomination Scheme (ENS) Visa:{" "}
-                </h2>
-                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  This is a permanent visa option for skilled workers who are
-                  sponsored by an Australian employer and nominated for a
-                  permanent position in Australia. The applicant must meet
-                  certain criteria including age, English language proficiency,
-                  and qualifications relevant to the nominated position.
-                </p>
-               <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                 <b>Note:{" "}</b> eligibility criteria and requirements for each stream are
-                  subject to change, and it is always advisable to consult a
-                  registered migration agent to understand the latest
-                  immigration requirements. You can also check DHA website{" "}
+                  <b className="text-black">Note: </b> eligibility criteria and
+                  requirements for each stream are subject to change, and it is
+                  always advisable to consult a registered migration agent to
+                  understand the latest immigration requirements. You can also
+                  check DHA website{" "}
                   <span className="text-blue-500">
                     https://immi.homeaffairs.gov.au/visas{" "}
                   </span>
                   to know about any of the mentioned visas.
                 </p>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                  Our migration agent at <span className="text-blue-500">Growmore Immigration </span>can help you with
-                  the latest information and requirements for the Business
-                  Innovation and Investment (Provisional) visa, and guide you
-                  through the entire visa application process. Book a
+                  Our migration agent at{" "}
+                  <span className="text-blue-500">Growmore Immigration </span>
+                  can help you with the latest information and requirements for
+                  the Business Innovation and Investment (Provisional) visa, and
+                  guide you through the entire visa application process. Book a
                   consultation with us today to learn more.
                 </p>
               </div>
@@ -222,4 +225,4 @@ const IndividualVisaEmployer = () => {
   );
 };
 
-export default IndividualVisaEmployer;
+export default IndividualVisaRefugee;

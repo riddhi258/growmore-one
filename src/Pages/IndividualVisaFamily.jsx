@@ -24,10 +24,9 @@ Applying For a Family Visa
         {/* Main Section */}
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {/* Left Column */}
-            <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
+           <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
               <div className="space-y-5">
-                <Link to="/our-services/individual/employer-sponsored-visa/">
+                <Link to="/our-services/employers/standard-business-sponsorship/">
                   <div className="group flex  items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Employer Sponsored Visa Australia Requirements
@@ -92,7 +91,7 @@ Applying For a Family Visa
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/business-investor-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Business Investment Visa & Innovation Visa
@@ -100,7 +99,7 @@ Applying For a Family Visa
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/refugee-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Refugee & Humanitarian Visa Program
@@ -108,7 +107,7 @@ Applying For a Family Visa
                     <IoIosArrowDroprightCircle className="text-green-500 text-3xl group-hover:text-[#28535B]" />
                   </div>
                 </Link>
-                <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                <Link to="/our-services/individual/working-holiday-work-holiday-visa/">
                   <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       Working Holiday Visa Australia (Subclasses 462)
@@ -132,15 +131,15 @@ Applying For a Family Visa
                   family-related circumstances.
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
-                  <b>Let’s take a closer look at each one:</b>
+                  <b>Let’s take a closer look at each one:</b >
                 </p>
                 <ol className="list-decimal pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
                   <li>
                     <strong>
                       {" "}
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         Adoption visa (subclass 102):
-                      </b>
+                      </span >
                     </strong>{" "}
                     This visa is for children who are being adopted by an
                     Australian citizen, permanent resident or eligible New
@@ -149,9 +148,9 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         Aged Dependent Relative visa (subclass 114 and 838):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for individuals who are dependent on an
                     Australian relative for financial support and who are aged
@@ -160,9 +159,9 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         Aged Parent visa (subclass 804):
-                      </b>
+                      </span >
                     </strong>{" "}
                     This visa is for parents of an Australian citizen, permanent
                     resident or eligible New Zealand citizen who are aged 65
@@ -172,10 +171,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Carer visa (subclass 836 and 116):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for individuals who are willing to come to
                     Australia to provide care for someone who has a medical
@@ -185,10 +184,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Child visa (subclass 101 and 802):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for children of Australian citizens, permanent
                     residents or eligible New Zealand citizens who are outside
@@ -197,11 +196,11 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Contributory Aged Parent (Temporary) visa (subclass 884)
                         and Contributory Aged Parent visa (subclass 864):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for aged parents of an Australian citizen,
                     permanent resident or eligible New Zealand citizen who are
@@ -211,21 +210,21 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Contributory Parent (Temporary) visa (subclass 173) &
                         Contributory Parent visa (subclass 143):
-                      </b>
+                      </span >
                     </strong>
                     For parents of Australian citizens or permanent residents
                     who wish to migrate to Australia
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Dependent Child visa (subclass 445):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for dependent children of temporary visa
                     holders who are in Australia. The children must be under 18
@@ -233,11 +232,11 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         New Zealand Citizen Family Relationship (temporary) visa
                         (subclass 461):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for New Zealand citizens who have a close
                     family member in Australia and who want to come to Australia
@@ -245,10 +244,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Orphan Relative (subclass 117 and 837):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for individuals who are related to an
                     Australian citizen, permanent resident or eligible New
@@ -257,7 +256,7 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black"> Parent visa (subclass 103):</b>
+                     <span className="text-black font-semibold"> Parent visa (subclass 103):</span >
                     </strong>
                     This visa is for parents of an Australian citizen, permanent
                     resident or eligible New Zealand citizen who are willing to
@@ -265,13 +264,13 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Partner (Provisional and Migrant) visa (subclass 309
                         100) and Partner visa (subclass 820 801):
-                      </b>
+                      </span >
                     </strong>
-                    This <b>Partner Visa Australia</b> is for individuals who
+                    This <b>Partner Visa Australia</b > is for individuals who
                     are in a married or de facto relationship with an Australian
                     citizen, permanent resident, or eligible New Zealand
                     citizen. The visa allows the partner to live in Australia
@@ -279,10 +278,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Prospective Marriage visa (subclass 300):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for individuals who are engaged to be married
                     to an Australian citizen, permanent resident or eligible New
@@ -291,10 +290,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Remaining Relative visa (subclass 115 and 835):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for individuals who are the only members of
                     their family who are able to migrate to Australia and who
@@ -302,10 +301,10 @@ Applying For a Family Visa
                   </li>
                   <li>
                     <strong>
-                      <b className="text-black">
+                     <span className="text-black font-semibold">
                         {" "}
                         Sponsored Parent (Temporary) visa (subclass 870):
-                      </b>
+                      </span >
                     </strong>
                     This visa is for parents of an Australian citizen, permanent
                     resident or eligible New Zealand citizen who want to come to
@@ -314,7 +313,7 @@ Applying For a Family Visa
                 </ol>
 
                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                 <b>Note:{" "}</b> eligibility criteria and requirements for each stream are
+                 <b>Note:{" "}</b > eligibility criteria and requirements for each stream are
                   subject to change, and it is always advisable to consult a
                   registered migration agent to understand the latest
                   immigration requirements. You can also check DHA website{" "}
