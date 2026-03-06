@@ -1,21 +1,19 @@
 import React from "react";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { Link } from "react-router-dom";
 
-const IndividualVisaFamily = () => {
+const IndividualVisaGurdian = () => {
   return (
     <div>
       <div>
         <section className="bg-[#28535B] py-12 sm:py-16">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-white">
-Applying For a Family Visa
+              Student Guardian Visa (Subclass 590)
             </h1>
 
             <p className="text-white font-medium mt-3 text-sm sm:text-base">
               Home &gt; <span className=" cursor-pointer">Individual</span> &gt;{" "}
               <span className=" cursor-pointer">
-              What is a Family Visa?
+                How to Apply Student Guardian Visa in Australia
               </span>
             </p>
           </div>
@@ -24,7 +22,7 @@ Applying For a Family Visa
         {/* Main Section */}
         <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-           <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
+            <div className="bg-[#eff9fb] p-6 rounded-3xl md:col-span-1 w-full sm:h-100 lg:h-220 md:w-[400px] lg:w-[500px] mx-auto md:mx-0">
               <div className="space-y-5">
                 <Link to="/our-services/employers/standard-business-sponsorship/">
                   <div className="group flex  items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
@@ -121,202 +119,183 @@ Applying For a Family Visa
             <div className="md:col-span-2 pl-6 sm:pl-16 lg:pl-26">
               {" "}
               <h3 className="text-xl sm:text-2xl font-semibold text-[#28535B] ">
-                What is a Family Visa?{" "}
+                How to Apply Student Guardian Visa in Australia{" "}
               </h3>
               <div>
                 <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
-                  Australian family-sponsored visas offer individuals the
-                  opportunity to reunite with their loved ones in Australia.
-                  There are various visa subclasses that cater to different
-                  family-related circumstances.
+                  The student and Guardian visas are intended for those seeking
+                  to study full-time in Australia. These visas permit
+                  individuals to remain in the country for the length of their
+                  course and grant specific work rights.
+                </p>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>STUDENT VISA (SUBCLASS 500)</b>
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
-                  <b>Let’s take a closer look at each one:</b >
+                  The Subclass 500 Visa, commonly known as the Student Visa,
+                  allows international students to study full-time at a
+                  registered educational institution in Australia for up to 5
+                  years. To qualify for a student visa, applicants must meet the
+                  eligibility criteria, including enrolment in an approved
+                  course, demonstrating adequate financial support, and proving
+                  English language proficiency.
+                </p>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>To be Eligible for a Student Visa, Individuals Must:</b>
+                </p>
+                <ol className="list-disc pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
+                  <li>
+                    Be enrolled in a registered course of study in Australia
+                  </li>
+                  <li>Meet the English language proficiency standards</li>
+                  <li>
+                    Sufficient financial capacity to cover tuition, living, and
+                    travel costs
+                  </li>
+                  <li>Have adequate health insurance</li>
+                  <li>
+                    Hold Genuine Temporary Entrant (GTE) status, demonstrating
+                    intent to stay temporarily for study purposes
+                  </li>
+                  <li>
+                    Make welfare arrangements if you are under 18 years of age
+                  </li>
+                  <li>
+                    Be able to show an understanding that studying in Australia
+                    is the primary reason for your student visa
+                  </li>
+                  <li>Meet our character requirements</li>
+                  <li>Not had a visa canceled or an application refused</li>
+                </ol>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>Key Features of the Subclass 500 Visa:</b>
+                </p>
+                <ol className="list-disc pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
+                  <li>
+                    <strong>
+                      {" "}
+                      <span>Study Opportunity:</span>
+                    </strong>{" "}
+                    Enroll in an accredited course in Australia.
+                  </li>
+                  <li>
+                    <strong>Stay Duration:</strong>
+                    Stay in Australia for the length of your course, with
+                    possible extensions based on your circumstances.
+                  </li>
+                  <li>
+                    <strong>Work Rights:</strong>
+                    Work up to 48 hours per fortnight during study periods and
+                    unlimited hours during course breaks.
+                  </li>{" "}
+                  <li>
+                    <strong>Family Inclusion:</strong>
+                    Bring eligible family members, such as your partner or
+                    children, as dependents.
+                  </li>{" "}
+                  <li>
+                    <strong>Health Cover:</strong>
+                    Maintain Overseas Student Health Cover (OSHC) for the
+                    duration of your stay.
+                  </li>
+                </ol>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>STUDENT GUARDIAN VISA (SUBCLASS 590)</b>
+                </p>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
+                  The Subclass 590 Visa, also known as the Student Guardian
+                  Visa, is intended for parents, guardians, or relatives of
+                  international students under 18 years of age who are studying
+                  in Australia. In certain cases, it may also apply to guardians
+                  of students over 18 requiring special care.
+                </p>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>
+                    To be eligible for a Student Guardian Visa, individuals
+                    must:
+                  </b>
+                </p>
+                <ol className="list-disc pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
+                  <li>
+                    Be a parent, legal guardian, or relative (21 years or older)
+                    of the student visa holder
+                  </li>
+                  <li>Meet health and character requirements</li>
+                  <li>
+                    Have sufficient financial resources to support yourself, the
+                    student, and any accompanying dependents
+                  </li>
+                  <li>
+                    Agree to abide by visa conditions, including not leaving
+                    Australia without making adequate arrangements for the
+                    student’s caree
+                  </li>
+                  <li>
+                    Be able to provide accommodation, welfare, and other support
+                  </li>
+                  <li>Hold an eligible substantive visa, if in Australia</li>
+                </ol>
+                <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-xl">
+                  <b>Key Features of the Subclass 590 Visa:</b>
                 </p>
                 <ol className="list-decimal pl-6 mt-6 space-y-4 text-gray-600 text-sm sm:text-base">
                   <li>
                     <strong>
                       {" "}
-                     <span className="text-black font-semibold">
-                        Adoption visa (subclass 102):
-                      </span >
+                      <span className="text-black font-semibold">
+                        Support Role:
+                      </span>
                     </strong>{" "}
-                    This visa is for children who are being adopted by an
-                    Australian citizen, permanent resident or eligible New
-                    Zealand citizen. The child must be under 18 years of age and
-                    meet the health and character requirements.
+                    Provides guardianship and care for an international student
+                    in Australia.
                   </li>
                   <li>
                     <strong>
-                     <span className="text-black font-semibold">
-                        Aged Dependent Relative visa (subclass 114 and 838):
-                      </span >
-                    </strong>
-                    This visa is for individuals who are dependent on an
-                    Australian relative for financial support and who are aged
-                    66 years or older. The sponsor must be an Australian
-                    citizen, permanent resident or eligible New Zealand citiz
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        Aged Parent visa (subclass 804):
-                      </span >
+                      <span className="text-black font-semibold">
+                        Stay Duration:
+                      </span>
                     </strong>{" "}
-                    This visa is for parents of an Australian citizen, permanent
-                    resident or eligible New Zealand citizen who are aged 65
-                    years or older. The visa allows them to live in Australia
-                    permanently with their children and access to Australia’s
-                    health care system.
+                    The visa’s length is determined by the student visa holder’s
+                    stay and age
                   </li>
                   <li>
                     <strong>
-                     <span className="text-black font-semibold">
+                      <span className="text-black font-semibold">
                         {" "}
-                        Carer visa (subclass 836 and 116):
-                      </span >
+                        Work Rights:
+                      </span>
                     </strong>
-                    This visa is for individuals who are willing to come to
-                    Australia to provide care for someone who has a medical
-                    condition and requires assistance with daily living. Both
-                    the caregiver and the person in need of care must meet
-                    certain criteria.
+                    This visa does not permit the holder to work in Australia.
                   </li>
                   <li>
                     <strong>
-                     <span className="text-black font-semibold">
+                      <span className="text-black font-semibold">
                         {" "}
-                        Child visa (subclass 101 and 802):
-                      </span >
+                        Study Option:
+                      </span>
                     </strong>
-                    This visa is for children of Australian citizens, permanent
-                    residents or eligible New Zealand citizens who are outside
-                    of Australia. The visa allows them to live in Australia
-                    permanently with their parents.
+                    Enroll in a short-term study or training course of up to 3
+                    months.
                   </li>
                   <li>
                     <strong>
-                     <span className="text-black font-semibold">
+                      <span className="text-black font-semibold">
                         {" "}
-                        Contributory Aged Parent (Temporary) visa (subclass 884)
-                        and Contributory Aged Parent visa (subclass 864):
-                      </span >
+                        Family Inclusion:
+                      </span>
                     </strong>
-                    This visa is for aged parents of an Australian citizen,
-                    permanent resident or eligible New Zealand citizen who are
-                    willing to make a significant financial contribution to
-                    Australia. The visa allows them to live in Australia
-                    temporarily or permanently with their children.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Contributory Parent (Temporary) visa (subclass 173) &
-                        Contributory Parent visa (subclass 143):
-                      </span >
-                    </strong>
-                    For parents of Australian citizens or permanent residents
-                    who wish to migrate to Australia
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Dependent Child visa (subclass 445):
-                      </span >
-                    </strong>
-                    This visa is for dependent children of temporary visa
-                    holders who are in Australia. The children must be under 18
-                    years of age and meet the health and character requirements.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        New Zealand Citizen Family Relationship (temporary) visa
-                        (subclass 461):
-                      </span >
-                    </strong>
-                    This visa is for New Zealand citizens who have a close
-                    family member in Australia and who want to come to Australia
-                    temporarily.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Orphan Relative (subclass 117 and 837):
-                      </span >
-                    </strong>
-                    This visa is for individuals who are related to an
-                    Australian citizen, permanent resident or eligible New
-                    Zealand citizen and who have no parents or only one parent
-                    living.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold"> Parent visa (subclass 103):</span >
-                    </strong>
-                    This visa is for parents of an Australian citizen, permanent
-                    resident or eligible New Zealand citizen who are willing to
-                    live in Australia permanently with their children.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Partner (Provisional and Migrant) visa (subclass 309
-                        100) and Partner visa (subclass 820 801):
-                      </span >
-                    </strong>
-                    This <b>Partner Visa Australia</b > is for individuals who
-                    are in a married or de facto relationship with an Australian
-                    citizen, permanent resident, or eligible New Zealand
-                    citizen. The visa allows the partner to live in Australia
-                    with their sponsor.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Prospective Marriage visa (subclass 300):
-                      </span >
-                    </strong>
-                    This visa is for individuals who are engaged to be married
-                    to an Australian citizen, permanent resident or eligible New
-                    Zealand citizen and who want to come to Australia to get
-                    married.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Remaining Relative visa (subclass 115 and 835):
-                      </span >
-                    </strong>
-                    This visa is for individuals who are the only members of
-                    their family who are able to migrate to Australia and who
-                    have no close relatives living outside Australia.
-                  </li>
-                  <li>
-                    <strong>
-                     <span className="text-black font-semibold">
-                        {" "}
-                        Sponsored Parent (Temporary) visa (subclass 870):
-                      </span >
-                    </strong>
-                    This visa is for parents of an Australian citizen, permanent
-                    resident or eligible New Zealand citizen who want to come to
-                    Australia temporarily to be with their children.
+                    Bring your dependent children under certain conditions,
+                    provided they meet the requirements.
                   </li>
                 </ol>
-
-               <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
-                 <b>Note:{" "}</b > eligibility criteria and requirements for each stream are
-                  subject to change, and it is always advisable to consult a
-                  registered migration agent to understand the latest
-                  immigration requirements. You can also check DHA website{" "}
+                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
+                  <b>Note: </b> eligibility criteria and requirements for each
+                  stream are subject to change, and it is always advisable to
+                  consult a registered migration agent to understand the latest
+                  immigration requirements.{" "}
+                </p>
+                <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
+                You can also check the DHA website
                   <span className="text-blue-500">
                     https://immi.homeaffairs.gov.au/visas{" "}
                   </span>
@@ -344,4 +323,4 @@ Applying For a Family Visa
   );
 };
 
-export default IndividualVisaFamily;
+export default IndividualVisaGurdian;

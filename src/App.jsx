@@ -44,6 +44,7 @@ import IndividualVisaHoliday from "./Pages/IndividualVisaHoliday";
 import IndividualVisaBusiness from "./Pages/IndividualVisaBusiness";
 import IndividualVisaRefugee from "./Pages/IndividualVisaRefugee";
 import IndividualVisaETA from "./Pages/IndividualVisaETA";
+import IndividualVisaGurdian from "./Pages/IndividualVisaGurdian";
 
 
 function App() {
@@ -158,6 +159,10 @@ function App() {
         <Route
           path="/our-services/individual/visitor-evisitor-eta-visa/"
           element={< IndividualVisaETA />}
+        />
+        <Route
+          path="/our-services/individual/student-guardian-visa/"
+          element={< IndividualVisaGurdian />}
         />
       </Routes>
       <Footer />
