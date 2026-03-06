@@ -84,7 +84,7 @@ const IndividualVisaBusiness = () => {
                              </div>
                            </Link>
            
-                           <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                           <Link to="/our-services/individual/visitor-evisitor-eta-visa/">
                              <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                                <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                                  What is the Electronic Travel Authority ETA for e-Visa?

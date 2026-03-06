@@ -43,6 +43,7 @@ import IndividualVisaGlobal from "./Pages/IndividualVisaGlobal";
 import IndividualVisaHoliday from "./Pages/IndividualVisaHoliday";
 import IndividualVisaBusiness from "./Pages/IndividualVisaBusiness";
 import IndividualVisaRefugee from "./Pages/IndividualVisaRefugee";
+import IndividualVisaETA from "./Pages/IndividualVisaETA";
 
 
 function App() {
@@ -153,6 +154,10 @@ function App() {
          <Route
           path="/our-services/individual/refugee-visa/"
           element={< IndividualVisaRefugee />}
+        />
+        <Route
+          path="/our-services/individual/visitor-evisitor-eta-visa/"
+          element={< IndividualVisaETA />}
         />
       </Routes>
       <Footer />

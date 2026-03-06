@@ -84,7 +84,7 @@ const IndividualVisa = () => {
                              </div>
                            </Link>
            
-                           <Link to="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/">
+                           <Link to="/our-services/individual/visitor-evisitor-eta-visa/">
                              <div className="group mt-3 flex items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                                <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                                  What is the Electronic Travel Authority ETA for e-Visa?
@@ -125,7 +125,7 @@ const IndividualVisa = () => {
                 Individual Journey with Expert Immigration Support{" "}
               </h3>
               <div>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Introduction:{" "}
                 </h2>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
@@ -141,7 +141,7 @@ const IndividualVisa = () => {
                   loopholes, prevent misuse, and enhance the overall quality of
                   the sector
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Closing the Loophole:
                 </h2>
 
@@ -160,7 +160,7 @@ const IndividualVisa = () => {
                   predatory operators from taking advantage of vulnerable
                   students
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Financial Requirements Update:
                 </h2>
 
@@ -178,7 +178,7 @@ const IndividualVisa = () => {
                   well-being while{" "}
                   <span className="text-blue-500">studying in Australia</span>
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Increased Scrutiny and Fraud Prevention:{" "}
                 </h2>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
@@ -189,7 +189,7 @@ const IndividualVisa = () => {
                   potential fraudulent activities and maintaining the sector’s
                   credibility
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Using Government Powers:{" "}
                 </h2>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
@@ -207,7 +207,7 @@ const IndividualVisa = () => {
                   proactive approach demonstrates the government’s commitment to
                   tackling substandard providers head-on.
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Future Measures and Migration Strategy:{" "}
                 </h2>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
@@ -217,7 +217,7 @@ const IndividualVisa = () => {
                   measures will be explored to further strengthen the sector’s
                   integrity
                 </p>
-                <h2 className="text-2xl sm:text-2xl font-semibold text-black mt-6">
+                <h2 className="text-xl sm:text-xl font-semibold text-black mt-6">
                   Conclusion:{" "}
                 </h2>
                 <p className="text-gray-500 mt-6 leading-relaxed  text-justify text-sm sm:text-base">
