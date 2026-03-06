@@ -46,7 +46,7 @@ const IndividualVisaGsm = () => {
                   </div>
                 </Link>
 
-                <Link to="/our-services/employers/nomination-application/">
+                <Link to="/our-services/individual/student-guardian-visa/">
                   <div className="group flex mt-3 items-center justify-between gap-6 bg-white px-5 py-4  rounded-3xl cursor-pointer transition-all duration-300 hover:shadow-md">
                     <span className="flex-1 text-[#28535B]  font-semibold group-hover:text-[#5dc2d3] transition-colors duration-300">
                       How to Apply Student Guardian Visa in Australia
