@@ -31,7 +31,7 @@ const Card = () => {
 
           {/* Arrow */}
           <div className="mt-4">
-            <Link to="/our-services/individual"><span className="inline-flex items-center  justify-center w-9 h-9 ml-15">
+            <Link to="/our-services/individual/employer-sponsored-visa/"><span className="inline-flex items-center  justify-center w-9 h-9 ml-15">
               →
             </span></Link>
           </div>
@@ -61,7 +61,7 @@ const Card = () => {
 
           {/* Arrow */}
           <div className="mt-4">
-            <Link to="/our-services/gsm-general-skilled-migration/"><span className="inline-flex items-center  justify-center w-9 h-9 ml-15">
+            <Link to="/our-services/individual/general-skilled-visa/"><span className="inline-flex items-center  justify-center w-9 h-9 ml-15">
               →
             </span></Link>
           </div>
