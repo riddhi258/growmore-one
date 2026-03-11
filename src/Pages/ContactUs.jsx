@@ -81,17 +81,17 @@ const ContactUs = () => {
         </div>
 
         {/* FORM */}
-        <div className="w-full md:w-3/4 flex flex-col items-center">
-          {/* Heading */}
-          <div className="w-full max-w-md mb-6 text-left ml-4">
-            <p className="text-green-400 text-sm font-semibold">
-              Contact Information
-            </p>
-            <h2 className="text-3xl font-semibold text-green-400 mt-2">
-              Get in Touch with Us
-            </h2>
-          </div>
-          <div className="bg-[#EFF9FB] rounded-3xl shadow-2xl w-full max-w-md p-8">
+          <div className="w-full md:w-3/4 flex flex-col items-center ml-12">
+            {/* Heading */}
+            <div className="w-full max-w-md mb-6 text-left -mt-24 mr-28">
+              <p className="text-[#8fd07c] text-[14px] font-semibold ml-1">
+                Contact Information
+              </p>
+              <h2 className="text-[#8fd07c] text-[40px] font-semibold">
+                Get in Touch with Us
+              </h2>
+            </div>
+            <div className="bg-[#EFF9FB] rounded-3xl shadow-2xl w-full max-w-xl p-8">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
@@ -115,7 +115,7 @@ const ContactUs = () => {
                   {/* Country Code */}
                   <div className="w-28 bg-white rounded-lg border border-gray-300">
                     <PhoneInput
-                      country={"au"}
+                      country={"in"}
                       enableSearch
                       onChange={(value, data) => {
                         setDialCode(data.dialCode);
