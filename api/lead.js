@@ -10,10 +10,12 @@ export default async function handler(req, res) {
   try {
 
     const body = new URLSearchParams({
-      Name: req.body.name || "",
-      Email: req.body.email || "",
-      Phone: req.body.phone || "",
-      Country_Code: req.body.countryCode || "+91",
+      Name: req.body.name,
+      Email: req.body.email,
+      Phone: req.body.phone.replace("+91", ""), 
+      Country_Code: "+91",
+      Inquiries: req.body.visaType,
+      Source: req.body.source || "Website",
       Message: req.body.message || ""
     });
 
