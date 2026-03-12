@@ -9,13 +9,19 @@ export default async function handler(req, res) {
 
   try {
 
+    const phone = req.body.phone || "";
+
+    const countryCodeMatch = phone.match(/^\+\d{1,4}/);
+    const countryCode = countryCodeMatch ? countryCodeMatch[0] : "";
+    const phoneNumber = phone.replace(countryCode, "");
+
     const body = new URLSearchParams({
-      Name: req.body.name,
-      Email: req.body.email,
-      Phone: req.body.phone.replace("+91", ""), 
-      Country_Code: "+91",
-      Inquiries: req.body.visaType,
-      Source: req.body.source || "Website",
+      Name: req.body.name || "",
+      Email: req.body.email || "",
+      Phone: phoneNumber,
+      Country_Code: countryCode,
+      Inquiries: req.body.visaType || "General Inquiry",
+      Source: req.body.source || "Website Form",
       Message: req.body.message || ""
     });
 
@@ -34,7 +40,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      crmResponse: data,
+      crmResponse: data
     });
 
   } catch (error) {
