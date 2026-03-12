@@ -1,5 +1,3 @@
-// api/lead.js
-
 export default async function handler(req, res) {
 
   if (req.method !== "POST") {
@@ -18,7 +16,12 @@ export default async function handler(req, res) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(req.body),
+        body: JSON.stringify({
+          Name: req.body.name,
+          Email: req.body.email,
+          Phone: req.body.phone,
+          Message: req.body.message
+        }),
       }
     );
 
