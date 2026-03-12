@@ -2,7 +2,6 @@ import nodemailer from "nodemailer";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 export default async function handler(req, res) {
-  // Allow only POST requests
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
@@ -13,15 +12,13 @@ export default async function handler(req, res) {
   try {
     const { name, email, phone, visaType, message, source } = req.body;
 
-    // Validate required fields
     if (!name || !email || !phone) {
       return res.status(400).json({
         success: false,
-        message: "Name, email and phone are required",
+        message: "Name, email, and phone are required",
       });
     }
 
-    // Parse phone using libphonenumber-js
     const phoneNumberObj = parsePhoneNumberFromString(phone);
     if (!phoneNumberObj || !phoneNumberObj.isValid()) {
       return res.status(400).json({
@@ -32,7 +29,6 @@ export default async function handler(req, res) {
     const countryCode = phoneNumberObj.countryCallingCode;
     const phoneNumber = phoneNumberObj.nationalNumber;
 
-    // Prepare data for CRM webhook
     const body = new URLSearchParams({
       Name: name,
       Email: email,
@@ -43,7 +39,6 @@ export default async function handler(req, res) {
       Message: message || "",
     });
 
-    // Send data to CRM
     const crmResponse = await fetch(
       "https://case.growmore.one/api/webhooks/website-form",
       {
@@ -59,19 +54,18 @@ export default async function handler(req, res) {
 
     const crmData = await crmResponse.json();
 
-    // Setup Nodemailer transporter
+    // Nodemailer with hardcoded credentials (not secure)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "dipvarsa",
+        user: "upadhyayriddhi445@gmail.com", // your Gmail
+        pass: "dipvarsa", // your Gmail App Password
       },
     });
 
-    // Send email (async, but we won't block CRM success if it fails)
     try {
       await transporter.sendMail({
-        from: `"Website Form" <${"upadhyayriddhi445@gmail.com"}>`,
+        from: `"Website Form" <upadhyayriddhi445@gmail.com>`,
         to: "info@growmore.one",
         subject: "New Website Inquiry",
         html: `
@@ -87,7 +81,6 @@ export default async function handler(req, res) {
       console.error("Email sending failed:", emailError);
     }
 
-    // Success response
     return res.status(200).json({
       success: true,
       crmResponse: crmData,
