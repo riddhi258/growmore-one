@@ -99,7 +99,7 @@ const Footer = () => {
                 to="/our-services/individuals"
                 className="hover:text-gray-400 transition"
               >
-                ✓ For Individuals
+                <span className="text-white font-semibold">✓</span> For Individuals
               </Link>
             </li>
             <li>
@@ -107,7 +107,7 @@ const Footer = () => {
                 to="/our-services/employers"
                 className="hover:text-gray-400 transition"
               >
-                ✓ For Employers
+                <span className="text-white font-semibold">✓</span> For Employers
               </Link>
             </li>
           </ul>
@@ -124,22 +124,22 @@ const Footer = () => {
                 to="/points-calculator"
                 className="hover:text-gray-400 transition"
               >
-                › Points Calculator
+                <span className="text-white font-semibold">›</span> Points Calculator
               </Link>
             </li>
             <li>
               <Link to="/blogs" className="hover:text-gray-400 transition">
-                › Insights
+                <span className="text-white font-semibold">›</span> Insights
               </Link>
             </li>
             <li>
               <Link to="/contact-us" className="hover:text-gray-400 transition">
-                › Contact Us
+                <span className="text-white font-semibold">›</span> Contact Us
               </Link>
             </li>
             <li>
+                <span className="text-white font-semibold ">›</span> YouTube Channel
               <Link to="/youtube" className="hover:text-gray-400 transition">
-                › YouTube Channel
               </Link>
             </li>
           </ul>
