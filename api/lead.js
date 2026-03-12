@@ -20,6 +20,7 @@ export default async function handler(req, res) {
           Name: req.body.name,
           Email: req.body.email,
           Phone: req.body.phone,
+          Country_Code: req.body.countryCode,
           Message: req.body.message
         }),
       }
