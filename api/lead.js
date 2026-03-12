@@ -1,13 +1,4 @@
-// api/lead.js
-
 export default async function handler(req, res) {
-
-  if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    return res.status(200).end();
-  }
 
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -18,14 +9,43 @@ export default async function handler(req, res) {
 
   try {
 
+    if (!req.body.name || !req.body.email || !req.body.phone) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email and phone are required"
+      });
+    }
+
+    const phone = req.body.phone || "";
+
+    // remove +
+    const cleanPhone = phone.replace("+", "");
+
+    // extract country code (1–3 digits)
+    const countryCodeMatch = cleanPhone.match(/^\d{1,2}/);
+    const countryCode = countryCodeMatch ? countryCodeMatch[0] : "";
+
+    // remove country code from phone
+    const phoneNumber = cleanPhone.replace(countryCode, "");
+
+    const body = new URLSearchParams({
+      Name: req.body.name || "",
+      Email: req.body.email || "",
+      Phone: phoneNumber,
+      Country_Code: countryCode,
+      Inquiries: req.body.visaType || "General Inquiry",
+      Source: req.body.source || "Website Form",
+      Message: req.body.message || ""
+    });
+
     const response = await fetch(
-      "https://case.growmore.one/webhook/lead", // correct webhook URL
+      "https://leads.growmore.one/api/website-form",
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify(req.body),
+        body: body.toString(),
       }
     );
 
@@ -33,7 +53,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      crmResponse: data,
+      crmResponse: data
     });
 
   } catch (error) {
@@ -42,7 +62,7 @@ export default async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
-      message: "Failed to send lead",
+      message: error.message
     });
 
   }
