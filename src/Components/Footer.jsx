@@ -71,16 +71,27 @@ const Footer = () => {
             individuals, students, and employers looking to make Australia their
             home.
           </p>
-          <div className="flex gap-3 mb-4 sm:mb-6 text-lg">
-            {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaYoutube].map(
-              (Icon, i) => (
-                <Icon
-                  key={i}
-                  className="hover:text-gray-400 cursor-pointer transition"
-                />
-              ),
-            )}
-          </div>
+         <div className="flex gap-3 mb-4 sm:mb-6 text-lg">
+  {[
+    { icon: FaFacebookF, link: "https://www.facebook.com/growmore.one" },
+    { icon: FaInstagram, link: "https://www.instagram.com/growmore.one/" },
+    { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/growmore-immigration/" },
+    { icon: FaTiktok, link: "https://tiktok.com" },
+    { icon: FaYoutube, link: "https://www.youtube.com/@growmoreimmigration" },
+  ].map((item, i) => {
+    const Icon = item.icon;
+    return (
+      <a
+        key={i}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon className="hover:text-gray-400 cursor-pointer transition" />
+      </a>
+    );
+  })}
+</div>
           <Link to="/brochures" className="w-full sm:w-auto">
             <button className="bg-[#6dc7d1] px-4 sm:px-5 py-2 sm:py-3 rounded-full font-medium hover:bg-black transition w-full sm:w-auto">
               Download Brochures →
