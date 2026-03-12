@@ -168,7 +168,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="#" className="hover:text-gray-400 transition">
+              <Link to="https://www.legislation.gov.au/F2021L01856/latest/text" className="hover:text-gray-400 transition">
                 Code of Conduct
               </Link>
             </li>
