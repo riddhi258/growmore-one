@@ -76,7 +76,7 @@ const Footer = () => {
     { icon: FaFacebookF, link: "https://www.facebook.com/growmore.one" },
     { icon: FaInstagram, link: "https://www.instagram.com/growmore.one/" },
     { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/growmore-immigration/" },
-    { icon: FaTiktok, link: "https://tiktok.com" },
+    { icon: FaTiktok, link: "https://tiktok.com/@growmore.immigration" },
     { icon: FaYoutube, link: "https://www.youtube.com/@growmoreimmigration" },
   ].map((item, i) => {
     const Icon = item.icon;
