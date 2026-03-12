@@ -1,3 +1,5 @@
+import nodemailer from "nodemailer";
+
 export default async function handler(req, res) {
 
   if (req.method !== "POST") {
@@ -18,14 +20,11 @@ export default async function handler(req, res) {
 
     const phone = req.body.phone || "";
 
-    // remove +
     const cleanPhone = phone.replace("+", "");
 
-    // extract country code (1–3 digits)
-    const countryCodeMatch = cleanPhone.match(/^\d{1,2}/);
+    const countryCodeMatch = cleanPhone.match(/^\d{1,3}/);
     const countryCode = countryCodeMatch ? countryCodeMatch[0] : "";
 
-    // remove country code from phone
     const phoneNumber = cleanPhone.replace(countryCode, "");
 
     const body = new URLSearchParams({
@@ -38,6 +37,7 @@ export default async function handler(req, res) {
       Message: req.body.message || ""
     });
 
+    // Send to CRM webhook
     const response = await fetch(
       "https://case.growmore.one/api/webhooks/website-form",
       {
@@ -51,12 +51,39 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
+
+    // EMAIL SETUP
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "YOUR_EMAIL@gmail.com",
+        pass: "YOUR_APP_PASSWORD"
+      }
+    });
+
+    // Email Content
+    await transporter.sendMail({
+      from: `"Website Form" <YOUR_EMAIL@gmail.com>`,
+      to: "info@growmore.one",
+      subject: "New Website Inquiry",
+      html: `
+        <h2>New Website Lead</h2>
+
+        <p><b>Name:</b> ${req.body.name}</p>
+        <p><b>Email:</b> ${req.body.email}</p>
+        <p><b>Phone:</b> +${countryCode} ${phoneNumber}</p>
+        <p><b>Visa Type:</b> ${req.body.visaType}</p>
+        <p><b>Message:</b> ${req.body.message}</p>
+      `
+    });
+
+
     return res.status(200).json({
       success: true,
       crmResponse: data
     });
 
-  } catch (error) { 
+  } catch (error) {
 
     console.error("Webhook error:", error);
 
