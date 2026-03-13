@@ -239,7 +239,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#6dc7d1] px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
+                  className="bg-[#6dc7d1] hover:border-[#6dc7d1] hover:border-2  px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>

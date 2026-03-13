@@ -324,7 +324,7 @@ const Migrate = () => {
                 />
 
                 {/* CAPTCHA */}
-                <div className="flex justify-center">
+                <div className="flex justify-start">
                   <ReCAPTCHA
                     sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
                     ref={recaptchaRef}
@@ -335,7 +335,7 @@ const Migrate = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition disabled:opacity-50"
+                  className="w-64 bg-[#373737] hover:bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition disabled:opacity-50"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
