@@ -37,7 +37,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex items-center space-x-8 text-[16px] font-jakarta font-medium text-[#1F4E55]">
+          <ul className="hidden lg:flex items-center space-x-8 text-[16px] text-base md:text-base font-semibold text-[#1F4E55]">
             <li>
               <Link
                 to="/"
@@ -246,7 +246,7 @@ const Navbar = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t px-6 py-3 space-y-4 font-semibold text-base text-green-700">
+        <div className="lg:hidden bg-white border-t px-6 py-3 space-y-4 text-base md:text-base font-semibold text-green-700">
           <Link
             to="/"
             onClick={closeAll}
