@@ -71,7 +71,7 @@ export default function VisaStep({ updateScore, nextStep }) {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "end",
           marginTop: "25px",
         }}
       >
