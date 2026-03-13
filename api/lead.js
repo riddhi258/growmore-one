@@ -54,7 +54,7 @@ export default async function handler(req, res) {
       service: "gmail",
       auth: {
         user: "upadhyayriddhi445@gmail.com",
-        pass: "dipvarsa", // Replace with Gmail App Password
+        pass: "rodq fksy juyo tvlm"
       },
     });
 
