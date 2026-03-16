@@ -30,18 +30,59 @@ const Checklist = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const finalPhone = `+${dialCode}${phoneNumber}`;
+  // 1. Get reCAPTCHA Token
+  const token = recaptchaRef.current.getValue();
+  if (!token) {
+    alert("Please complete the CAPTCHA");
+    return;
+  }
 
-    const finalData = {
-      ...formData,
-      phone: finalPhone,
-    };
-
-    console.log(finalData);
+  const finalPhone = `+${dialCode}${phoneNumber}`;
+  const finalData = {
+    ...formData,
+    phone: finalPhone,
+    captchaToken: token,
   };
+
+  try {
+    const response = await fetch("/api/dama", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(finalData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Form submitted successfully! We will contact you soon.");
+      // Optional: Reset form or redirect
+      setFormData({
+        fullName: "",
+        email: "",
+        country: "",
+        location: "",
+        qualification: "",
+        occupation: "",
+        skillsAssessment: "",
+        experience: "",
+        jobOffer: "",
+        resume: null,
+      });
+      setPhoneNumber("");
+      recaptchaRef.current.reset();
+    } else {
+      alert("Error: " + result.message);
+    }
+  } catch (error) {
+    console.error("Submission Error:", error);
+    alert("Something went wrong. Please try again later.");
+  }
+};
 
   return (
     <div>
