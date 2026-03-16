@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  // Only allow POST
+  // 1. Only allow POST
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, message: "Method not allowed" });
   }
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   try {
     const data = req.body;
 
-    // 1. Validation
+    // 2. Validation
     if (!data.fullName || !data.email) {
       return res.status(400).json({ success: false, message: "Name and Email are required" });
     }
@@ -21,18 +21,25 @@ export default async function handler(req, res) {
       Phone: data.phone || "",
       Country: data.country || "",
       Inquiries: "GSM Visa Eligibility Assessment",
-      Source: "Website GSM Form",
-      Message: data.comments || "",
+      Source: data.source || "Website GSM Form",
+      // Combining key eligibility info into the CRM Message field
+      Message: `
+        Occupation: ${data.occupation || 'N/A'}
+        Points: ${data.estimatedPoints || 'N/A'}
+        In Australia: ${data.location || 'N/A'}
+        Comments: ${data.comments || "None"}
+      `.trim(),
     });
 
     try {
-      await fetch("https://case.growmore.one/api/webhooks/website-form", {
+      // Fire-and-forget fetch to CRM
+      fetch("https://case.growmore.one/api/webhooks/website-form", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: crmBody.toString(),
-      });
+      }).catch(err => console.error("CRM Background Error:", err));
     } catch (err) {
-      console.error("CRM API Error (Non-blocking):", err);
+      console.error("CRM API setup error:", err);
     }
 
     /* ========= Nodemailer Configuration ========= */
@@ -40,22 +47,23 @@ export default async function handler(req, res) {
       service: "gmail",
       auth: {
         user: "upadhyayriddhi445@gmail.com",
-        pass: "rodq fksy juyo tvlm" // Warning: Use process.env in production!
+        pass: "rodq fksy juyo tvlm" // Use process.env.EMAIL_PASS in production
       },
     });
 
     const emailHtml = `
-      <div style="font-family: sans-serif; line-height: 1.6;">
-        <h2 style="color: #28535B;">GSM Visa Eligibility Assessment</h2>
+      <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
+        <h2 style="color: #28535B;">New GSM Visa Assessment Lead</h2>
         <p><b>Name:</b> ${data.fullName}</p>
         <p><b>Email:</b> ${data.email}</p>
         <p><b>Phone:</b> ${data.phone}</p>
         <p><b>Country:</b> ${data.country}</p>
         <p><b>Currently in Australia:</b> ${data.location}</p>
-        <hr/>
-        <h3>Eligibility Details</h3>
+        <hr style="border: none; border-top: 1px solid #eee;" />
+        <h3 style="color: #28535B;">Eligibility Details</h3>
         <p><b>Occupation:</b> ${data.occupation}</p>
         <p><b>Skills Assessment:</b> ${data.skillsAssessment}</p>
+        <p><b>English Test:</b> ${data.englishTest}</p>
         <p><b>Estimated Points:</b> ${data.estimatedPoints}</p>
         <p><b>Comments:</b> ${data.comments || "None"}</p>
       </div>
@@ -64,7 +72,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: `"Growmore Immigration" <upadhyayriddhi445@gmail.com>`,
       to: "growmoreimmigration@gmail.com",
-      subject: `New GSM Assessment: ${data.fullName}`,
+      subject: `GSM Assessment: ${data.fullName}`,
       html: emailHtml,
     });
 
