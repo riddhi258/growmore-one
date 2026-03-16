@@ -54,7 +54,7 @@ const handleSubmit = async (e) => {
       source: "GSM Visa Assessment Form",
     };
 
-    const response = await fetch("/api/gsm", {
+    const response = await fetch("/api/GSM", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
