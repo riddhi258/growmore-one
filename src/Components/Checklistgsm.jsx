@@ -58,7 +58,7 @@ const Checklistgsm = () => {
   formPayload.append("phone", `+${dialCode}${phoneNumber}`);
 
   try {
-    const response = await fetch("/api/gsm-assessment", {
+    const response = await fetch("/api/gsm", {
       method: "POST",
       body: formPayload,
     });
