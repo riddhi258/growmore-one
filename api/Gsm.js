@@ -9,6 +9,7 @@ export const config = {
 };
 
 export default async function handler(req, res) {
+
   if (req.method !== "POST") {
     return res.status(405).json({
       success: false,
@@ -22,10 +23,11 @@ export default async function handler(req, res) {
   });
 
   try {
+
     const [fields, files] = await form.parse(req);
 
-    // Handle array values from formidable
-    const getValue = (value) => (Array.isArray(value) ? value[0] : value);
+    const getValue = (value) =>
+      Array.isArray(value) ? value[0] : value;
 
     const fullName = getValue(fields.fullName);
     const email = getValue(fields.email);
@@ -49,11 +51,11 @@ export default async function handler(req, res) {
     if (!fullName || !email) {
       return res.status(400).json({
         success: false,
-        message: "Name and email are required",
+        message: "Name and Email are required",
       });
     }
 
-    /* ================= CRM API ================= */
+    /* ========= CRM API ========= */
 
     const body = new URLSearchParams({
       Name: fullName,
@@ -68,6 +70,7 @@ export default async function handler(req, res) {
     let crmData = null;
 
     try {
+
       const crmResponse = await fetch(
         "https://case.growmore.one/api/webhooks/website-form",
         {
@@ -80,23 +83,25 @@ export default async function handler(req, res) {
       );
 
       crmData = await crmResponse.json();
+
     } catch (err) {
-      console.error("CRM error:", err);
+      console.error("CRM API Error:", err);
     }
 
-    /* ================= Nodemailer ================= */
+    /* ========= Nodemailer ========= */
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: {
+        auth: {
         user: "upadhyayriddhi445@gmail.com",
         pass: "rodq fksy juyo tvlm"
       },
     });
 
-    let attachments = [];
+    const attachments = [];
 
     if (files.resume) {
+
       const resume = Array.isArray(files.resume)
         ? files.resume[0]
         : files.resume;
@@ -105,10 +110,11 @@ export default async function handler(req, res) {
         filename: resume.originalFilename,
         content: fs.createReadStream(resume.filepath),
       });
+
     }
 
     await transporter.sendMail({
-      from: `"Growmore Immigration"`,
+      from: `"Growmore Immigration" `,
       to: "growmoreimmigration@gmail.com",
       subject: "New GSM Visa Eligibility Assessment",
       html: `
@@ -152,13 +158,17 @@ export default async function handler(req, res) {
       crmResponse: crmData,
       message: "Form submitted successfully",
     });
+
   } catch (error) {
-    console.error(error);
+
+    console.error("Server Error:", error);
 
     return res.status(500).json({
       success: false,
       message: "Something went wrong",
       error: error.message,
     });
+
   }
 }
+
