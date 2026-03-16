@@ -40,17 +40,40 @@ const Checklistgsm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const captchaValue = recaptchaRef.current.getValue();
-    if (!captchaValue) {
-      alert("Please verify reCAPTCHA");
-      return;
+  const captchaValue = recaptchaRef.current.getValue();
+  if (!captchaValue) {
+    alert("Please verify reCAPTCHA");
+    return;
+  }
+
+  const formPayload = new FormData();
+
+  Object.keys(formData).forEach((key) => {
+    formPayload.append(key, formData[key]);
+  });
+
+  formPayload.append("phone", `+${dialCode}${phoneNumber}`);
+
+  try {
+    const response = await fetch("/api/gsm-assessment", {
+      method: "POST",
+      body: formPayload,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("Form submitted successfully!");
+    } else {
+      alert("Something went wrong");
     }
-
-    console.log(formData);
-  };
+  } catch (error) {
+    console.error(error);
+  }
+};
   return (
     <div>
       <section className="bg-[#28535B] py-16 md:py-20">
