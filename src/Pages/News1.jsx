@@ -193,6 +193,43 @@ const News1 = () => {
                 residency consultant in Australia, to plan the right strategy
                 for your skilled migration pathway.
               </p>
+              <div className="w-full bg-[#2ED09B]  rounded-lg p-5 shadow-sm my-8">
+                <div className="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-4  pl-3 text-black font-semibold text-center text-[15px] sm:text-[17px]">
+                  <div className="flex items-center">
+                    <span>Email: </span>
+                    <a
+                      href="mailto:info@growmore.one"
+                      className="ml-1 text-blue-500 transition-colors"
+                    >
+                      info@growmore.one
+                    </a>
+                  </div>
+
+                  <span className="hidden md:inline text-black">|</span>
+
+                  <div className="flex items-center">
+                    <span>WhatsApp: </span>
+                    <a
+                      href="https://wa.me/61434202021"
+                      className="ml-1 text-blue-500 "
+                    >
+                      +61 434 202 021
+                    </a>
+                  </div>
+
+                  <span className="hidden md:inline text-black">|</span>
+
+                  <div className="flex items-center">
+                    <span>Phone: </span>
+                    <a
+                      href="tel:+61387643334"
+                      className="ml-1 text-black "
+                    >
+                      +61 3 8764 3334
+                    </a>
+                  </div>
+                </div>
+              </div>
               <Link to="/book-consultation">
                 <button className="bg-[#5dc2d3] text-white rounded-full hover:bg-black transition px-12 py-4 text-sm font-bold shadow-lg">
                   Book Consultation →

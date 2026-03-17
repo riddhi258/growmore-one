@@ -5,28 +5,31 @@ import { Link } from "react-router-dom";
 const blogs = [
   {
     id: 1,
+    slug:"vic-invitation-round-17-mar-2026",
+    title: "VIC Invitation Round 17 Mar 2026: Who Got Invited This Time?",
+    date: "March 17, 2026",
+    image: "/assets/bg3.jpg",
+  },
+  {
+    id: 2,
     slug:"tasmania-state-nomination-program-final-quarter",
     title: "Tasmania State Nomination Program Enters Its Final Quarter",
     date: "March 13, 2026",
     image: "/assets/bg1.jpg",
   },
-  {
-    id: 2,
-    title: "Australia Confirms 4-Tier Occupation Ceilings for 189 & 491 Visas",
-    date: "February 25, 2026",
-    image: "/assets/blog5.jpg",
-  },
-    {
+   {
     id: 3,
-    title: "Western Australia’s Feb State Nomination Invites Released",
-    date: "February 24, 2026",
-    image: "/assets/blog1.png",
+    slug:"vetassess-to-pause-applications-and-remove-two-occupations-under-tra-changes",
+    title: "VETASSESS to Pause Applications and Remove Two Occupations Under TRA Changes",
+    date: "March 12, 2026",
+    image: "/assets/bg4.jpg",
   },
   {
     id: 4,
-    title: "Canberra Matrix Tentative Invitation Dates Changed: See New Dates",
-    date: "February 23, 2026",
-    image: "/assets/blog2.png",
+    slug: "tasmania-12-march-invitation-round-fewer-candidates-invited",
+    title:"Tasmania 12 March Invitation Round: Fewer Candidates Invited",
+    date: "March 12, 2026",
+    image: "/assets/bg2.png",
   },
   {
     id: 5,
@@ -86,7 +89,7 @@ const NewsSection = () => {
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-lg font-semibold text-[#163c3d] mb-4 leading-snug">
+                <h3 className="text-lg font-semibold text-[#163c3d] mb-6">
                   {blog.title}
                 </h3>
 

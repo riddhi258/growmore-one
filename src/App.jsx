@@ -49,6 +49,9 @@ import Terms from "./Pages/Terms";
 import Policy from "./Pages/Policy";
 import Refund from "./Pages/Refund";
 import News1 from "./Pages/News1";
+import News2 from "./Pages/News2";
+import News3 from "./Pages/News3";
+import News4 from "./Pages/News4";
 
 
 function App() {
@@ -183,6 +186,18 @@ function App() {
         <Route 
     path="/tasmania-state-nomination-program-final-quarter/" 
     element={<News1 />} 
+  />
+    <Route 
+    path="/tasmania-12-march-invitation-round-fewer-candidates-invited/" 
+    element={<News2 />} 
+  />
+   <Route 
+    path="/vic-invitation-round-17-mar-2026/" 
+    element={<News3 />} 
+  />
+  <Route 
+    path="/vetassess-to-pause-applications-and-remove-two-occupations-under-tra-changes/" 
+    element={<News4 />} 
   />
       </Routes>
       <Footer />
