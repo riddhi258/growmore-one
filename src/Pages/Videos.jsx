@@ -69,12 +69,12 @@ useEffect(() => {
           <p className="text-gray-500 max-w-4xl mx-auto text-base leading-relaxed">
             Explore our YouTube channel for expert migration advice, step-by-step guides, and inspiring success stories. Stay informed with the latest updates and tips to simplify your Australian immigration journey.
           </p>
-        </div>
           {error && (  <p className="text-gray-600 max-w-6xl p-4  mx-auto text-base md:text-lg leading-relaxed mt-3 text-left">
             Could Not Fetch The Videos At The Moment, Please Try Again In Some
             Time.
           </p>
            )}
+            </div>
       </section>
 
       {/* ================= COMPONENT 1: LATEST VIDEOS SLIDER ================= */}
