@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
@@ -40,9 +41,9 @@ export default async function handler(req, res) {
     /* ========= Nodemailer Notification ========= */
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodq fksy juyo tvlm"
+     auth: {
+        user: process.env.USER,
+        pass: process.env.PASS
       },
     });
 
