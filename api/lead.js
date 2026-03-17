@@ -52,10 +52,10 @@ export default async function handler(req, res) {
     // Setup Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodq fksy juyo tvlm"
-      },
+        auth: {
+    user: import.meta.env.VITE_USER,
+    pass: import.meta.env.VITE_PASS,
+  },
     });
 
     // Send Email

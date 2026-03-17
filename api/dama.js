@@ -2,7 +2,9 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
+    return res
+      .status(405)
+      .json({ success: false, message: "Method not allowed" });
   }
 
   try {
@@ -10,7 +12,9 @@ export default async function handler(req, res) {
 
     // Basic server-side validation
     if (!data.fullName || !data.email || !data.captchaToken) {
-      return res.status(400).json({ success: false, message: "Missing required fields" });
+      return res
+        .status(400)
+        .json({ success: false, message: "Missing required fields" });
     }
 
     /* ========= CRM Integration ========= */
@@ -34,14 +38,14 @@ export default async function handler(req, res) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: crmBody.toString(),
-    }).catch(err => console.error("CRM Sync Error:", err));
+    }).catch((err) => console.error("CRM Sync Error:", err));
 
     /* ========= Email Notification ========= */
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodq fksy juyo tvlm" 
+        user: import.meta.env.VITE_USER,
+        pass: import.meta.env.VITE_PASS,
       },
     });
 
@@ -67,15 +71,16 @@ export default async function handler(req, res) {
     `;
 
     await transporter.sendMail({
-       from: `"Growmore Immigration"`,
+      from: `"Growmore Immigration"`,
       to: "info@growmore.one", // Primary destination
       bcc: "info@growmoreimmigration.com", // Optional backup
       subject: `DAMA Interest: ${data.fullName} (${data.occupation})`,
       html: emailHtml,
     });
 
-    return res.status(200).json({ success: true, message: "Submission successful" });
-
+    return res
+      .status(200)
+      .json({ success: true, message: "Submission successful" });
   } catch (error) {
     console.error("API Error:", error);
     return res.status(500).json({ success: false, error: error.message });

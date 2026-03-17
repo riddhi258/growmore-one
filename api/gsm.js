@@ -2,7 +2,9 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
+    return res
+      .status(405)
+      .json({ success: false, message: "Method not allowed" });
   }
 
   try {
@@ -10,15 +12,20 @@ export default async function handler(req, res) {
 
     // 1. Server-side validation
     if (!data.companyName || !data.abn || !data.captchaToken) {
-      return res.status(400).json({ success: false, message: "Missing required business information." });
+      return res
+        .status(400)
+        .json({
+          success: false,
+          message: "Missing required business information.",
+        });
     }
 
     // 2. Email Configuration
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodq fksy juyo tvlm", // Application-specific password
+        user: import.meta.env.VITE_USER,
+        pass: import.meta.env.VITE_PASS,
       },
     });
 
@@ -31,7 +38,7 @@ export default async function handler(req, res) {
           <h3 style="color: #28535B; border-bottom: 1px solid #eee;">Business Information</h3>
           <p><strong>Company:</strong> ${data.companyName}</p>
           <p><strong>ABN:</strong> ${data.abn}</p>
-          <p><strong>Website:</strong> ${data.website || 'N/A'}</p>
+          <p><strong>Website:</strong> ${data.website || "N/A"}</p>
           <p><strong>Address:</strong> ${data.businessAddress}</p>
           <p><strong>Revenue:</strong> ${data.turnoverRange}</p>
           <p><strong>Total Employees:</strong> ${data.totalEmployees}</p>
@@ -40,8 +47,8 @@ export default async function handler(req, res) {
           <h3 style="color: #28535B; border-bottom: 1px solid #eee; margin-top: 20px;">Position Details</h3>
           <p><strong>Job Title:</strong> ${data.jobTitle}</p>
           <p><strong>ANZSCO Code:</strong> ${data.anzscoCode}</p>
-          <p><strong>Contract Type:</strong> ${data.employmentType === 'Other' ? data.otherEmploymentType : data.employmentType}</p>
-          <p><strong>PAYG Arrangement:</strong> ${data.paygArrangement === 'Other' ? data.otherPaygArrangement : data.paygArrangement}</p>
+          <p><strong>Contract Type:</strong> ${data.employmentType === "Other" ? data.otherEmploymentType : data.employmentType}</p>
+          <p><strong>PAYG Arrangement:</strong> ${data.paygArrangement === "Other" ? data.otherPaygArrangement : data.paygArrangement}</p>
           <p><strong>LMT Conducted:</strong> ${data.labourMarketTesting}</p>
 
           <h3 style="color: #28535B; border-bottom: 1px solid #eee; margin-top: 20px;">Contact Person</h3>
@@ -62,10 +69,13 @@ export default async function handler(req, res) {
       html: emailHtml,
     });
 
-    return res.status(200).json({ success: true, message: "Assessment submitted successfully." });
-
+    return res
+      .status(200)
+      .json({ success: true, message: "Assessment submitted successfully." });
   } catch (error) {
     console.error("API Error:", error);
-    return res.status(500).json({ success: false, message: "Internal server error." });
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal server error." });
   }
 }
