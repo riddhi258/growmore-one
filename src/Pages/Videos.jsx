@@ -15,40 +15,40 @@ const Videos = () => {
   const [liveStreams, setLiveStreams] = useState([]);
   const [error, setError] = useState(false);
 
-useEffect(() => {
-  const fetchYouTubeData = async (type, eventType = "") => {
-    try {
-      // 1. Build the URL - Using BACKTICKS ``
-      // NOTE: We must include &type=video whenever eventType is used
-      let url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6&type=video`;
-      
-      if (eventType) {
-        url += `&eventType=${eventType}`;
-      }
+  useEffect(() => {
+    const fetchYouTubeData = async (type, eventType = "") => {
+      try {
+        // 1. Build the URL - Using BACKTICKS ``
+        // NOTE: We must include &type=video whenever eventType is used
+        let url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6&type=video`;
 
-      const res = await fetch(url);
-      const data = await res.json();
+        if (eventType) {
+          url += `&eventType=${eventType}`;
+        }
 
-      // 2. Check for API-specific errors (like invalid keys or quota)
-      if (data.error) {
-        console.error("YouTube API Error:", data.error.message);
+        const res = await fetch(url);
+        const data = await res.json();
+
+        // 2. Check for API-specific errors (like invalid keys or quota)
+        if (data.error) {
+          console.error("YouTube API Error:", data.error.message);
+          setError(true);
+          return [];
+        }
+
+        console.log(`Fetched ${eventType || "latest"} videos:`, data.items);
+        return data.items || [];
+      } catch (err) {
+        console.error("Network/Fetch Error:", err);
         setError(true);
         return [];
       }
+    };
 
-      console.log(`Fetched ${eventType || 'latest'} videos:`, data.items);
-      return data.items || [];
-    } catch (err) {
-      console.error("Network/Fetch Error:", err);
-      setError(true);
-      return [];
-    }
-  };
-
-  // 3. Execution
-  fetchYouTubeData("video").then(setLatestVideos);
-  fetchYouTubeData("video", "completed").then(setLiveStreams);
-}, []);
+    // 3. Execution
+    fetchYouTubeData("video").then(setLatestVideos);
+    fetchYouTubeData("video", "completed").then(setLiveStreams);
+  }, []);
   return (
     <div className="w-full bg-white">
       {/* ================= HEADER ================= */}
@@ -62,25 +62,33 @@ useEffect(() => {
 
       {/* ================= CONTENT SECTION ================= */}
       <section className="pt-16 md:pt-20 pb-10">
-          <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-4xl font-medium text-[#28535B] mb-6">
             Explore Our YouTube Insights & Resources
           </h2>
-          <p className="text-gray-500 max-w-4xl mx-auto text-base leading-relaxed">
-            Explore our YouTube channel for expert migration advice, step-by-step guides, and inspiring success stories. Stay informed with the latest updates and tips to simplify your Australian immigration journey.
+
+          <p className="text-gray-500 max-w-7xl mx-auto font-base text-base md:text-base leading-relaxed">
+            Explore our YouTube channel for expert migration advice,
+            step-by-step guides, and inspiring success stories. Stay informed
+            with the latest updates and tips to simplify your Australian
+            immigration journey. Empower your dreams with valuable insights and
+            resources today! .
           </p>
-          {error && (  <p className="text-gray-600 max-w-6xl p-4  mx-auto text-base md:text-lg leading-relaxed mt-3 text-left">
-            Could Not Fetch The Videos At The Moment, Please Try Again In Some
-            Time.
-          </p>
-           )}
-            </div>
+          {error && (
+            <p className="text-gray-600 max-w-6xl p-4  mx-auto text-base md:text-lg leading-relaxed mt-3 text-left">
+              Could Not Fetch The Videos At The Moment, Please Try Again In Some
+              Time.
+            </p>
+          )}
+        </div>
       </section>
 
       {/* ================= COMPONENT 1: LATEST VIDEOS SLIDER ================= */}
       {!error && latestVideos.length > 0 && (
         <section className="pb-16 px-6 md:px-16 max-w-7xl mx-auto">
-          <h3 className="text-2xl font-semibold text-[#28535B] mb-8 border-l-4 border-[#28535B] pl-4">Latest Uploads</h3>
+          <h3 className="text-2xl font-semibold text-[#28535B] mb-8 border-l-4 border-[#28535B] pl-4">
+            Latest Uploads
+          </h3>
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={24}
@@ -120,7 +128,9 @@ useEffect(() => {
       {!error && liveStreams.length > 0 && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6 md:px-16">
-            <h3 className="text-2xl font-semibold text-[#28535B] mb-8 border-l-4 border-red-600 pl-4">Past Live Sessions</h3>
+            <h3 className="text-2xl font-semibold text-[#28535B] mb-8 border-l-4 border-red-600 pl-4">
+              Past Live Sessions
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {liveStreams.map((stream) => (
                 <div key={stream.id.videoId} className="flex flex-col">
