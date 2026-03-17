@@ -15,7 +15,10 @@ export default defineConfig([
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser, // Keeps browser variables like 'window'
+        ...globals.node,    // 👈 THIS SOLVES IT: Adds 'process', 'module', etc.
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
