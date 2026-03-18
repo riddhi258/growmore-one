@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const News9 = () => {
   return (
@@ -17,7 +17,7 @@ const News9 = () => {
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <img
-            src="/assets/n5.jpg"
+            src="/assets/n5.png"
             alt="Tasmania Background"
             className="w-full h-auto rounded-xl my-6 shadow-sm"
           />{" "}
@@ -28,7 +28,7 @@ const News9 = () => {
                 Salary Thresholds Rise for Employer-Sponsored Visas from 1 July
                 2026
               </h2>
-              <div className="space-y-4 text-justify  text-[18px] text-[#042325] leading-relaxed">
+              <div className="space-y-4 text-justify  text-[17px] text-[#042325] leading-relaxed">
                 <p>
                   If you are an employer sponsoring skilled workers or a
                   professional planning to apply for an Australian visa, the
@@ -46,68 +46,97 @@ const News9 = () => {
 
             <div>
               <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
-What’s Changing?
+                What’s Changing?
               </h3>
-               <p className="mb-4 text-justify text-[16px] text-[#042325] font-bold">
-               The updated salary thresholds for employer-sponsored visas from 1 July 2026 are:
-
+              <p className="mb-4 text-justify text-[16px] text-[#042325] font-bold">
+                The updated salary thresholds for employer-sponsored visas from
+                1 July 2026 are:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-4 text-left text-[16px] text-[#042325]">
                 <li>
-                 Core Skills Income Threshold (CSIT): $79,499 (up from $76,515)
+                  Core Skills Income Threshold (CSIT): $79,499 (up from $76,515)
                 </li>
                 <li>
-                  Specialist Skills Income Threshold (SSIT): $146,717 (up from $141,210)
+                  Specialist Skills Income Threshold (SSIT): $146,717 (up from
+                  $141,210)
                 </li>{" "}
               </ul>
-                <p className="mb-4 text-justify text-[16px] text-[#042325] font-bold">
-              These thresholds will mainly apply to:
+              <p className="mb-4 text-justify text-[16px] text-[#042325] font-bold">
+                These thresholds will mainly apply to:
               </p>
               <ul className="list-disc pl-6 space-y-2 mb-4 text-left text-[16px] text-[#042325]">
                 <li>
-                 <strong>Subclass 482 –</strong> Core & Specialist streams
+                  <strong>Subclass 482 –</strong> Core & Specialist streams
                 </li>
                 <li>
-                 <strong>Subclass 186 –</strong> Temporary Residence Transition (TRT) & Direct Entry
+                  <strong>Subclass 186 –</strong> Temporary Residence Transition
+                  (TRT) & Direct Entry
                 </li>{" "}
                 <li>
-                 <strong>Labour Agreement streams</strong> under Subclass 482 and 186 (unless specified otherwise)
+                  <strong>Labour Agreement streams</strong> under Subclass 482
+                  and 186 (unless specified otherwise)
                 </li>{" "}
               </ul>
-               <p className="mb-4 text-justify text-[18px] text-[#042325]">
-              However, note that Subclass 494 and Subclass 187 TRT visas are not automatically updated because they are tied to TSMIT and require separate legislative changes.
+              <p className="mb-4 text-justify text-[17px] text-[#042325]">
+                However, note that Subclass 494 and Subclass 187 TRT visas are
+                not automatically updated because they are tied to TSMIT and
+                require separate legislative changes.
               </p>
             </div>
 
-            {/* Subclass 190 & Green Pass Section */}
             <div>
               <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
-                How to Stay Ahead
+                Critical Details for Sponsoring Skilled Workers
               </h3>
-              <p className="text-[17px] font-semibold text-[#333333] mb-4">
-                If you are planning to apply for OSAP or TSS:
+              <p className="mb-4 text-justify text-[16px] text-[#042325]">
+                <b>Meet deadlines:</b> Nominations lodged before 1 July 2026
+                will be assessed against current thresholds. Applications lodged
+                after this date must meet the updated CSIT/SSIT.
               </p>
+              <p className="mb-4 text-justify text-[16px] text-[#042325]">
+                <b>Plan salaries strategically:</b>Base salary alone counts
+                toward thresholds; superannuation, bonuses, and other benefits
+                cannot be included.
+              </p>
+              <p className="mb-4 text-justify text-[16px] text-[#042325]">
+                <b>Budget effectively:</b>Wage increases will impact sponsorship
+                costs, recruitment strategy, and workforce planning.
+              </p>
+              <p className="mb-4 text-justify text-[16px] text-[#042325]">
+                <b>Prepare documentation early:</b> Confirming position details,
+                salary, and supporting documents ahead of time reduces delays
+                and risk.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
+                Practical Steps for Employers
+              </h3>
               <ul className="list-disc pl-6 space-y-2 mb-4 text-left text-[16px] text-[#042325] mt-4">
-                <li>Ensure all your documents are ready</li>
-                <li>Check your application for accuracy</li>
-                <li>Make any pending payments before 29 March 2026</li>
+                <li>
+                  If you want to lodge nominations under the current salary
+                  thresholds, the minimum 4-week advertising period must be
+                  completed by this time.
+                </li>
+                <li>
+                  Applications filed before this date will be evaluated based on
+                  the present CSIT and SSIT, avoiding the higher thresholds that
+                  will be implemented on July 1, 2026.
+                </li>
+                <li>
+                  You can also seek expert advice from the best migration agent
+                  in Australia to ensure your nominations meet the updated
+                  salary thresholds
+                </li>
               </ul>
               <p className="mb-4 text-justify text-[16px] text-[#042325]">
-                This temporary pause is a short-term delay, and applicants can
-                expect a smoother process once the updates are complete.
+                So, if you’re preparing employer-sponsored visa applications and
+                these changes are causing confusion, get expert guidance from
+                Growmore Immigration to ensure all salary thresholds are met
+                accurately.
               </p>
             </div>
             <div>
-              <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
-                Plan Ahead with Growmore Immigration
-              </h3>
-              <p className="mb-4 text-justify text-[16px] text-[#042325]">
-                So, if you are planning to apply for OSAP or TSS, note that TRA
-                currently has registrations on hold. If you wish to make a
-                payment for an existing application, ensure it is completed
-                before 29 March 2026, and for any further guidance on Australian
-                immigration, you can contact us.
-              </p>
               <div className="w-full bg-[#2ED09B]  rounded-lg p-5 shadow-sm my-8">
                 <div className="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-4  pl-3 text-black font-semibold text-center text-[15px] sm:text-[17px]">
                   <div className="flex items-center">
