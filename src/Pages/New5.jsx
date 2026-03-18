@@ -90,11 +90,15 @@ const New5 = () => {
               </p>
             </div>
             <div>
-                <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
+              <h3 className="text-[24px] font-semibold text-[#333333] mb-4">
                 Plan Ahead with Growmore Immigration
               </h3>
-                <p className="mb-4 text-justify text-[16px] text-[#042325]">
-                So, if you are planning to apply for OSAP or TSS, note that TRA currently has registrations on hold. If you wish to make a payment for an existing application, ensure it is completed before 29 March 2026, and for any further guidance on Australian immigration, you can contact us.
+              <p className="mb-4 text-justify text-[16px] text-[#042325]">
+                So, if you are planning to apply for OSAP or TSS, note that TRA
+                currently has registrations on hold. If you wish to make a
+                payment for an existing application, ensure it is completed
+                before 29 March 2026, and for any further guidance on Australian
+                immigration, you can contact us.
               </p>
               <div className="w-full bg-[#2ED09B]  rounded-lg p-5 shadow-sm my-8">
                 <div className="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-4  pl-3 text-black font-semibold text-center text-[15px] sm:text-[17px]">
@@ -143,6 +147,7 @@ const New5 = () => {
                 </button>
               </Link>
             </div>
+            <CommentSection />
           </div>
         </div>
       </section>

@@ -5,9 +5,9 @@ const News1 = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-     <section className="bg-[#28535B] py-12 sm:py-16">
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+      <section className="bg-[#28535B] py-12 sm:py-16">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
             Tasmania State Nomination Enters Final Quarter
           </h2>
         </div>
@@ -17,10 +17,10 @@ const News1 = () => {
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-8">
           <img
-  src="/assets/bg1.jpg"
-  alt="Tasmania Background"
-  className="w-full h-auto rounded-xl my-6 shadow-sm"
-/>{" "}
+            src="/assets/bg1.jpg"
+            alt="Tasmania Background"
+            className="w-full h-auto rounded-xl my-6 shadow-sm"
+          />{" "}
           <div className="space-y-10 text-[#727272]">
             {/* Header Section */}
             <div>
@@ -221,10 +221,7 @@ const News1 = () => {
 
                   <div className="flex items-center">
                     <span>Phone: </span>
-                    <a
-                      href="tel:+61387643334"
-                      className="ml-1 text-black "
-                    >
+                    <a href="tel:+61387643334" className="ml-1 text-black ">
                       +61 3 8764 3334
                     </a>
                   </div>
@@ -235,8 +232,8 @@ const News1 = () => {
                   Book Consultation →
                 </button>
               </Link>
-               <span className="flex flex-cols border-1 border-gray-400"></span>
             </div>
+            <CommentSection />
           </div>
         </div>
       </section>

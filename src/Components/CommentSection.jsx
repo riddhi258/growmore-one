@@ -135,7 +135,7 @@ export default function CommentSection() {
             <div className="mt-2">
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey="YOUR_SITE_KEY"
+                 sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
                 onChange={(value) => setToken(value)}
               />
             </div>

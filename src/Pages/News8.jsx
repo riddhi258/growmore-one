@@ -210,8 +210,8 @@ const News8 = () => {
                   Book Consultation →
                 </button>
               </Link>
-               <span className="flex flex-cols border-1 border-gray-400"></span>
-            </div>
+               </div>
+            <CommentSection />
           </div>
         </div>
       </section>
