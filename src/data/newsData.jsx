@@ -1,5 +1,12 @@
 export const blogs = [
-    {
+  {
+    id: 0,
+    slug: "australia-2025-26-state-nomination-where-spots-are-still-available",
+    title: "Australia 2025–26 State Nomination : Where Spots Are Still Available",
+    date: "March 19, 2026",
+    image: "/assets/ng1.png",
+  } ,
+  {
     id: 1,
     slug: "tra-temporarily-pauses-osap-tss-registrations",
     title: "TRA Temporarily Pauses OSAP & TSS Registrations",
