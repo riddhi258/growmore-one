@@ -3,34 +3,34 @@ import { FaCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const blogs = [
-    {
+  {
     id: 1,
-    slug:"tra-temporarily-pauses-osap-tss-registrations",
+    slug: "australia-2025-26-state-nomination-where-spots-are-still-available",
+    title:
+      "Australia 2025–26 State Nomination : Where Spots Are Still Available",
+    date: "March 19, 2026",
+    image: "/assets/ng1.png",
+  },
+  {
+    id: 2,
+    slug: "tra-temporarily-pauses-osap-tss-registrations",
     title: "TRA Temporarily Pauses OSAP & TSS Registrations",
     date: "March 17, 2026",
     image: "/assets/n1.jpg",
   },
   {
-    id: 2,
-    slug:"omara-ai-migration-assistance",
+    id: 3,
+    slug: "omara-ai-migration-assistance",
     title: "AI in Migration: Key Legal Rules Every RMA Must Follow",
     date: "March 17, 2026",
     image: "/assets/n2.jpg",
-  },
-  {
-    id: 3,
-    slug:"vic-invitation-round-17-mar-2026",
-    title: "VIC Invitation Round 17 Mar 2026: Who Got Invited This Time?",
-    date: "March 17, 2026",
-    image: "/assets/bg3.jpg",
   },
 ];
 
 const BlogSection = () => {
   return (
-   <section className="bg-white py-20">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-
+    <section className="bg-white py-20">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Subtitle */}
         <p className="text-[#8fd07c] font-semibold text-sm tracking-widest uppercase mb-3">
           Recent Blogs
@@ -38,13 +38,12 @@ const BlogSection = () => {
 
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-medium text-[#163c3d] mb-14">
-          Latest{" "}
-          <span className="text-[#8fd07c] font-semibold">Insights</span> and
-          Immigration <span className="font-semibold">Updates</span>
+          Latest <span className="text-[#8fd07c] font-semibold">Insights</span>{" "}
+          and Immigration <span className="font-semibold">Updates</span>
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => (
-        <div
+            <div
               key={blog.id}
               className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col"
             >
@@ -64,7 +63,8 @@ const BlogSection = () => {
                 </h3>
 
                 <p className="text-gray-500 text-sm mb-6 flex items-center gap-2">
-                  <FaCalendar className="h-4 w-4 text-[#7cc576] font-medium" /> {blog.date}
+                  <FaCalendar className="h-4 w-4 text-[#7cc576] font-medium" />{" "}
+                  {blog.date}
                 </p>
 
                 <div className="mt-auto">
