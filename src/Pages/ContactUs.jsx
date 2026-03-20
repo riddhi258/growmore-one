@@ -10,6 +10,8 @@ const ContactUs = () => {
   const [dialCode, setDialCode] = useState("61");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+const Sitekey = import.meta.env.VITE_sitekey;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -185,7 +187,7 @@ const ContactUs = () => {
                 {/* CAPTCHA */}
                 <div className="flex justify-start">
                   <ReCAPTCHA
-                    sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
+                    sitekey={Sitekey}
                     ref={recaptchaRef}
                   />
                 </div>
