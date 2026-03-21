@@ -1,7 +1,4 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,9 +9,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, visaType, message, source } = req.body;
+    const { name, email, phone, visaType, message, source } =
+      typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
-    // ✅ Validation
     if (!name || !email || !phone) {
       return res.status(400).json({
         success: false,
@@ -22,13 +19,12 @@ export default async function handler(req, res) {
       });
     }
 
-    // ✅ Clean phone number
+    // ✅ Phone parsing
     const cleanPhone = phone.replace("+", "");
-    const countryCodeMatch = cleanPhone.match(/^\d{1,3}/);
-    const countryCode = countryCodeMatch ? countryCodeMatch[0] : "";
-    const phoneNumber = cleanPhone.replace(countryCode, "");
+    const countryCode = cleanPhone.slice(0, 3);
+    const phoneNumber = cleanPhone.slice(3);
 
-    // ✅ Prepare CRM payload
+    // ✅ CRM
     const body = new URLSearchParams({
       Name: name,
       Email: email,
@@ -39,33 +35,18 @@ export default async function handler(req, res) {
       Message: message || "",
     });
 
-    // ✅ Send data to CRM
-    const response = await fetch(
-      "https://case.growmore.one/api/webhooks/website-form",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: body.toString(),
-      }
-    );
+    await fetch("https://case.growmore.one/api/webhooks/website-form", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    });
 
-    const crmData = await response.json();
-
-    // ✅ DEBUG (remove after testing)
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-
-    // ❌ Stop if email config missing
+    // ✅ ENV check
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      return res.status(500).json({
-        success: false,
-        message: "Email configuration missing",
-      });
+      throw new Error("Email ENV missing");
     }
 
-    // ✅ Setup Nodemailer (FIXED)
+    // ✅ transporter
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -76,36 +57,31 @@ export default async function handler(req, res) {
       },
     });
 
-    // ✅ Send Email
+    // ✅ email
     await transporter.sendMail({
       from: `"Growmore Immigration" <${process.env.EMAIL_USER}>`,
       to: "info@growmore.one",
       bcc: "info@growmoreimmigration.com",
-      subject: "Appointment Booking from the website",
+      subject: "Appointment Booking from Website",
       html: `
-        <h3>New Lead Received</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> +${countryCode} ${phoneNumber}</p>
-        <p><strong>Visa Type:</strong> ${visaType || "General Inquiry"}</p>
-        <p><strong>Message:</strong> ${message || "N/A"}</p>
-        <p><strong>Source:</strong> ${source || "Website Form"}</p>
+        <h3>New Lead</h3>
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Phone: +${countryCode} ${phoneNumber}</p>
       `,
     });
 
     return res.status(200).json({
       success: true,
-      crmResponse: crmData,
-      message: "Lead submitted and email sent successfully",
+      message: "Success",
     });
 
   } catch (error) {
-    console.error("Webhook / Email error:", error);
+    console.error("ERROR:", error);
 
     return res.status(500).json({
       success: false,
-      message: "Something went wrong",
-      error: error.message,
+      message: error.message, // ✅ important
     });
   }
 }
