@@ -37,16 +37,13 @@ export default async function handler(req, res) {
       body: crmBody.toString(),
     }).catch(err => console.error("CRM Error:", err));
 
-   console.log("User:", process.env.EMAIL_USER ? "Loaded" : "MISSING");
-console.log("Pass:", process.env.EMAIL_PASS ? "Loaded" : "MISSING");
-
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+  const transporter = nodemailer.createTransport({
+        service: "gmail",
+          auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+      });
     const emailHtml = `
       <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
         <h2 style="color: #28535B;">New GSM Assessment Lead</h2>
