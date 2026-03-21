@@ -52,55 +52,53 @@ const Teams = () => {
           ))}
         </div>
       </div>
+{/* ================= COMMUNITY SECTION ================= */}
+<div className="max-w-7xl lg:max-w-screen-2xl mx-auto mt-16 md:mt-24 px-4 sm:px-6">
+  <div className="bg-[#1E4E54] rounded-[20px] md:rounded-[28px] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
 
-      {/* ================= COMMUNITY SECTION ================= */}
-      <div className="max-w-7xl lg:max-w-screen-2xl mx-auto mt-20 md:mt-28 px-4 sm:px-6">
-        {/* Stack on mobile, row only on lg */}
-        <div className="bg-[#1E4E54] rounded-[28px] p-8 md:p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-10">
-          {/* LEFT CARD */}
-          <div
-            className="bg-white rounded-2xl w-full lg:w-1/2 h-[320px] 
-                px-18  py-15 ml-6 flex flex-col justify-center shadow-sm"
-          >
-            <h2 className="text-4xl font-semibold text-[#6dc7d1] mb-4">
-              Community
-            </h2>
+    {/* LEFT CARD */}
+    <div className="bg-white rounded-2xl w-full lg:w-1/2 p-6 sm:p-8 md:p-10 flex flex-col justify-center shadow-sm">
+      
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#6dc7d1] mb-3 md:mb-4">
+        Community
+      </h2>
 
-            <p className="text-gray-600 mb-6 max-w-md">
-              Stay updated with the latest news, tips, and success stories by
-              connecting with us on our social media platforms:
-            </p>
+      <p className="text-gray-600 text-sm sm:text-base mb-5 md:mb-6 max-w-md">
+        Stay updated with the latest news, tips, and success stories by
+        connecting with us on our social media platforms:
+      </p>
 
-            {/* SOCIAL ICONS */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <a href="https://www.facebook.com/growmore.one">
-                <img src="/assets/f.svg" alt="Facebook" className="w-9 h-9" />
-              </a>
-              <a href="https://www.instagram.com/growmore.one/">
-                <img src="/assets/i.svg" alt="Instagram" className="w-9 h-9" />
-              </a>
-              <a href="https://www.linkedin.com/company/growmore-immigration/">
-                <img src="/assets/l.svg" alt="LinkedIn" className="w-9 h-9" />
-              </a>
-              <a href="https://tiktok.com/@growmore.immigration">
-                <img src="/assets/t.svg" alt="Tiktok" className="w-9 h-9" />
-              </a>
-              <a href="https://www.youtube.com/@growmoreimmigration">
-                <img src="/assets/y.svg" alt="YouTube" className="w-9 h-9" />
-              </a>
-            </div>
-          </div>
-
-          {/* RIGHT IMAGE */}
-          <div className="w-full lg:w-1/2">
-            <img
-              src="/assets/c.png"
-              alt="community"
-              className="rounded-2xl w-full h-[220px] sm:h-[260px] md:h-[340px] lg:h-[360px] object-cover lg:ml-[-60px]  mb-2"
-            />
-          </div>
-        </div>
+      {/* SOCIAL ICONS */}
+      <div className="flex flex-wrap gap-4 sm:gap-5 pt-2">
+        <a href="https://www.facebook.com/growmore.one">
+          <img src="/assets/f.svg" alt="Facebook" className="w-7 h-7 sm:w-9 sm:h-9" />
+        </a>
+        <a href="https://www.instagram.com/growmore.one/">
+          <img src="/assets/i.svg" alt="Instagram" className="w-7 h-7 sm:w-9 sm:h-9" />
+        </a>
+        <a href="https://www.linkedin.com/company/growmore-immigration/">
+          <img src="/assets/l.svg" alt="LinkedIn" className="w-7 h-7 sm:w-9 sm:h-9" />
+        </a>
+        <a href="https://tiktok.com/@growmore.immigration">
+          <img src="/assets/t.svg" alt="Tiktok" className="w-7 h-7 sm:w-9 sm:h-9" />
+        </a>
+        <a href="https://www.youtube.com/@growmoreimmigration">
+          <img src="/assets/y.svg" alt="YouTube" className="w-7 h-7 sm:w-9 sm:h-9" />
+        </a>
       </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div className="w-full lg:w-1/2">
+      <img
+        src="/assets/c.png"
+        alt="community"
+        className="rounded-2xl w-full h-[200px] sm:h-[260px] md:h-[320px] lg:h-[360px] object-cover"
+      />
+    </div>
+
+  </div>
+</div>
     </div>
   );
 };
