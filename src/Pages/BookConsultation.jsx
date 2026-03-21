@@ -42,49 +42,8 @@ const BookConsultation = () => {
       {/* Cards Section */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-4">
+
           {/* Card 1 */}
-          <div className="bg-white rounded-3xl shadow-lg overflow-hidden text-center hover:shadow-2xl transition duration-300">
-            <div className="h-[350px] overflow-hidden rounded-t-3xl">
-              <img
-                src="/assets/c1.jpg"
-                alt="Rapid Consultation"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-
-            <div className="p-4">
-              <h2 className="text-[22px] font-bold text-[#042325]">$99</h2>
-
-              <h3 className="mt-3 text-lg font-bold">
-                Rapid Q&A with Krunal Nayak (15 Mins)
-              </h3>
-
-              <p className="text-[#042325] text-[15px] mt-4 leading-relaxed text-justify">
-                Book your online Rapid consultation with our Principal Migration
-                Agents specialised in Australian visas — appointments available
-                in approximately 3 weeks.
-              </p>
-              <a
-                href="https://6fvy.short.gy/icfactsheet"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 text-[15px] mt-4 block"
-              >
-                {" "}
-                View Factsheet{" "}
-              </a>
-              <button
-                onClick={() =>
-                  openCalendly("https://calendly.com/krunalnayak/rapid")
-                }
-                className="mt-6 bg-[#5aa7ad] hover:bg-[#4b9398] text-white px-8 py-3 rounded-full transition duration-300"
-              >
-                Book Now
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2 */}
           <div className="bg-white rounded-3xl shadow-lg overflow-hidden text-center hover:shadow-2xl transition duration-300">
             <div className="h-[350px] overflow-hidden rounded-t-3xl">
               <img
@@ -125,7 +84,46 @@ const BookConsultation = () => {
               </button>
             </div>
           </div>
+          <div className="bg-white rounded-3xl shadow-lg overflow-hidden text-center hover:shadow-2xl transition duration-300">
+            <div className="h-[350px] overflow-hidden rounded-t-3xl">
+              <img
+                src="/assets/c1.jpg"
+                alt="Rapid Consultation"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
 
+            <div className="p-4">
+              <h2 className="text-[22px] font-bold text-[#042325]">$150</h2>
+
+              <h3 className="mt-3 text-lg font-bold">
+                Rapid Q&A with Krunal Nayak (15 Mins)
+              </h3>
+
+              <p className="text-[#042325] text-[15px] mt-4 leading-relaxed text-justify">
+                Book your online Rapid consultation with our Principal Migration
+                Agents specialised in Australian visas — appointments available
+                in approximately 3 weeks.
+              </p>
+              <a
+                href="https://6fvy.short.gy/icfactsheet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 text-[15px] mt-4 block"
+              >
+                {" "}
+                View Factsheet{" "}
+              </a>
+              <button
+                onClick={() =>
+                  openCalendly("https://calendly.com/krunalnayak/rapid")
+                }
+                className="mt-6 bg-[#5aa7ad] hover:bg-[#4b9398] text-white px-8 py-3 rounded-full transition duration-300"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
           {/* Card 3 */}
           <div className="bg-white rounded-3xl shadow-lg overflow-hidden text-center hover:shadow-2xl transition duration-300">
             <div className="h-[350px] overflow-hidden rounded-t-3xl">
