@@ -65,7 +65,7 @@ export const blogs = [
   },
   {
     id: 10,
-    slug: "glazier-tra-skills-assessment-journey",
+    slug: "refusals-dont-stop-dreams-a-glaziers-tra-skills-assessment-journey",
     title:
       "Refusals Don’t Stop Dreams: A Glazier’s TRA Skills Assessment Journey",
     date: "February 12, 2026",
