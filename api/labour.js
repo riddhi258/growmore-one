@@ -70,11 +70,7 @@ export default async function handler(req, res) {
           <p><b>Previous Applications:</b> ${data.previousLabourAgreement}</p>
           <p><b>Current Overseas Workers:</b> ${data.overseasWorkers || "0"}</p>
           <p><b>Contact Person:</b> ${data.contactPerson}</p>
-        </div>
-        
-        <div style="background-color: #f4f4f4; padding: 15px; text-align: center; font-size: 12px;">
-          This is an automated assessment lead generated from Growmore.one
-        </div>
+  
       </div>
     `;
 

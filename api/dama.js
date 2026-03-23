@@ -37,14 +37,15 @@ export default async function handler(req, res) {
       body: crmBody.toString(),
     }).catch(err => console.error("CRM Sync Error:", err));
 
-    /* ========= Email Notification ========= */
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
+   const transporter = nodemailer.createTransport({
+         host: "smtp.gmail.com",
+         port: 587,
+         secure: false,
          auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodqfksyjuyotvlm"
-      },
-    });
+           user: process.env.EMAIL_USER,
+           pass: process.env.EMAIL_PASS,
+         },
+       });
 
     const emailHtml = `
       <div>

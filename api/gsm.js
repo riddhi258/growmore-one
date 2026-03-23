@@ -38,12 +38,14 @@ export default async function handler(req, res) {
 
     /* ========= Nodemailer Notification ========= */
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-         auth: {
-        user: "upadhyayriddhi445@gmail.com",
-        pass: "rodqfksyjuyotvlm"
-      },
-    });
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false,
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+          },
+        });
 
     const emailHtml = `
       <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
