@@ -185,9 +185,9 @@ const ContactUs = () => {
                 {/* CAPTCHA */}
                 <div className="flex justify-start">
                   <ReCAPTCHA
-                    sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
-                    ref={recaptchaRef}
-                  />
+  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+  ref={recaptchaRef}
+/>
                 </div>
 
                 {/* Submit */}
