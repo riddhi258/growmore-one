@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const Checklist = () => {
   const recaptchaRef = useRef(null);
-
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -30,70 +30,70 @@ const Checklist = () => {
     });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // 1. Get reCAPTCHA Token
-  const token = recaptchaRef.current.getValue();
-  if (!token) {
-    alert("Please complete the CAPTCHA");
-    return;
-  }
-
-  const finalPhone = `+${dialCode}${phoneNumber}`;
-  const finalData = {
-    ...formData,
-    phone: finalPhone,
-    captchaToken: token,
-  };
-
-  try {
-    const response = await fetch("/api/dama", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalData),
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      alert("Form submitted successfully! We will contact you soon.");
-      // Optional: Reset form or redirect
-      setFormData({
-        fullName: "",
-        email: "",
-        country: "",
-        location: "",
-        qualification: "",
-        occupation: "",
-        skillsAssessment: "",
-        experience: "",
-        jobOffer: "",
-        resume: null,
-      });
-      setPhoneNumber("");
-      recaptchaRef.current.reset();
-    } else {
-      alert("Error: " + result.message);
+    // 1. Get reCAPTCHA Token
+    const token = recaptchaRef.current.getValue();
+    if (!token) {
+      alert("Please complete the CAPTCHA");
+      return;
     }
-  } catch (error) {
-    console.error("Submission Error:", error);
-    alert("Something went wrong. Please try again later.");
-  }
-};
+    setLoading(true);
+
+    const finalPhone = `+${dialCode}${phoneNumber}`;
+    const finalData = {
+      ...formData,
+      phone: finalPhone,
+      captchaToken: token,
+    };
+
+    try {
+      const response = await fetch("/api/dama", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Thank you! Our team will contact you shortly.");
+        // Optional: Reset form or redirect
+        setFormData({
+          fullName: "",
+          email: "",
+          country: "",
+          location: "",
+          qualification: "",
+          occupation: "",
+          skillsAssessment: "",
+          experience: "",
+          jobOffer: "",
+          resume: null,
+        });
+        setPhoneNumber("");
+        recaptchaRef.current.reset();
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  };
 
   return (
     <div>
-          <section className="bg-[#28535B] py-16 md:py-20">
+      <section className="bg-[#28535B] py-16 md:py-20">
         <div className="max-w-[1400px] mx-auto px-6 md:px-15">
           <h1 className="text-3xl md:text-5xl font-semibold text-white mb-3">
             DAMA Visa Interest & Pre-Screening Form
           </h1>
         </div>
-      </section>
-      {" "}
+      </section>{" "}
       <section className="bg-gray-100 py-16 px-4">
         <div className="max-w-3xl mx-auto p-8 md:p-10 rounded-2xl shadow-md bg-[#eff9fb]">
           <h2 className="text-xl font-semibold mb-6">
@@ -300,9 +300,10 @@ const Checklist = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition"
+              disabled={loading}
+              className="bg-[#6dc7d1] px-8 py-2 text-white rounded-full"
             >
-              Submit →
+              {loading ? "Submitting..." : "Submit →"}
             </button>
           </form>
         </div>

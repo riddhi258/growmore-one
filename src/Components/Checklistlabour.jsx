@@ -3,7 +3,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const Checklistlabour = () => {
   const recaptchaRef = useRef(null);
-
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     labourAgreementApproved: "",
     companyName: "",
@@ -44,7 +44,7 @@ const Checklistlabour = () => {
     alert("Please verify reCAPTCHA");
     return;
   }
-
+  setLoading(true)
   // Add a loading state if you wish
   try {
     const response = await fetch("/api/labour", {
@@ -59,7 +59,7 @@ const Checklistlabour = () => {
     const result = await response.json();
 
     if (result.success) {
-      alert("Success! Our migration specialists will review your business profile.");
+      alert("Thank you! Our team will contact you shortly.");
       // Clear form or redirect
     } else {
       alert("Submission failed: " + result.message);
@@ -352,9 +352,10 @@ const Checklistlabour = () => {
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800"
+              disabled={loading}
+              className="bg-[#6dc7d1] px-8 py-2 text-white rounded-full"
             >
-              Submit →
+              {loading ? "Submitting..." : "Submit →"}
             </button>
           </form>
         </div>
