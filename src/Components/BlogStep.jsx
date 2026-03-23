@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCalendar } from "react-icons/fa";
 import { blogs } from "../data/blogsData";
 import { Link } from "react-router-dom";
 const BlogStep = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const blogsPerPage = 10;
+
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+
+  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const totalPages = Math.ceil(blogs.length / blogsPerPage);
   return (
     <section className="bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
+          {currentBlogs.map((blog) => (
             <div
               key={blog.id}
               className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col"
@@ -35,7 +44,7 @@ const BlogStep = () => {
 
                 {/* Push button to bottom */}
                 <div className="mt-auto">
-                <Link to={`/blogs/${blog.slug}`}>
+                  <Link to={`/blogs/${blog.slug}`}>
                     <button className="group text-[#6dc7d1] font-semibold flex items-center gap-2 justify-end w-full transition-all duration-300">
                       <span className="relative">
                         READ MORE
@@ -47,12 +56,37 @@ const BlogStep = () => {
                     </button>
                   </Link>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
+        <div className="flex justify-center items-center  mt-12">
+          {/* PREV */}
+          <button
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+            disabled={currentPage === 1}
+            className={`px-5 py-2 rounded-lg transition ${
+              currentPage === 1
+                ? "text-blue-400 cursor-pointer hover:text-green-500"
+                : "text-black hover:text-green-500 cursor-pointer"
+            }`}
+          >
+            Prev
+          </button>
 
+          {/* NEXT */}
+          <button
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-5 py-2 rounded-lg transition ${
+              currentPage === totalPages
+                ? "text-blue-400 cursor-pointer hover:text-green-500"
+                : "text-black hover:text-green-500 cursor-pointer"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </section>
   );
