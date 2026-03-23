@@ -1,0 +1,103 @@
+export const blogs = [
+  {
+    id: 1,
+    slug: "how-to-get-employer-sponsorship-in-australia",
+    title: "How to Get Employer Sponsorship in Australia",
+    date: "March 18, 2026",
+    image: "/assets/g1.jpg",
+  },
+  {
+    id: 2,
+    slug: "subclass-494-employer-sponsored-visa-success",
+    title:
+      "Subclass 494 Employer-Sponsored Visa Success : A Pharmacist’s Journey",
+    date: "March 14, 2026",
+    image: "/assets/g2.jpg",
+  },
+  {
+    id: 3,
+    slug: "from-408-visa-to-australia-pr-a-real-186-visa-success-story",
+    title: "From 408 Visa to Australia PR: A Real 186 Visa Success Story",
+    date: "March 7, 2026",
+    image: "/assets/g3.jpg",
+  },
+  {
+    id: 4,
+    slug: "417-visa-to-482-visa-your-guide-to-unlock-long-term-work-opportunities",
+    title: "417 Visa to 482 Visa: Employer Sponsorship Guide",
+    date: "March 6, 2026",
+    image: "/assets/g4.png",
+  },
+  {
+    id: 5,
+    slug: "healthcare-professionals-australia-pr-2026",
+    title: "How Can Healthcare Professionals Get Australia PR in 2026?",
+    date: "February 23, 2026",
+    image: "/assets/blog3.jpg",
+  },
+  {
+    id: 6,
+    slug: "subclass-186-direct-entry-requirements",
+    title: "Subclass 186 Direct Entry – Requirements",
+    date: "February 19, 2026",
+    image: "/assets/b2.jpg",
+  },
+  {
+    id: 7,
+    slug: "new-points-test-2026-reform",
+    title: "New Points Test in 2026? A Closer Look at the Proposed Reform",
+    date: "February 18, 2026",
+    image: "/assets/b3.jpg",
+  },
+  {
+    id: 8,
+    slug: "australia-pr-2026-eligibility-process-jobs",
+    title: "Australia PR 2026: Eligibility, Process & In-Demand Jobs",
+    date: "February 17, 2026",
+    image: "/assets/b4.png",
+  },
+  {
+    id: 9,
+    slug: "485-visa-pr-options-australia",
+    title: "Living in Australia on a 485 Visa? Explore Your PR Options",
+    date: "February 16, 2026",
+    image: "/assets/b5.jpg",
+  },
+  {
+    id: 10,
+    slug: "glazier-tra-skills-assessment-journey",
+    title:
+      "Refusals Don’t Stop Dreams: A Glazier’s TRA Skills Assessment Journey",
+    date: "February 12, 2026",
+    image: "/assets/b6.jpg",
+  },
+  {
+    id: 11,
+    slug: "tourist-visa-600-invitation-letter-guide",
+    title: "Australian Tourist Visa (Subclass 600) Invitation Letter Guide",
+    date: "February 9, 2026",
+    image: "/assets/b7.jpg",
+  },
+  {
+    id: 12,
+    slug: "parent-visa-804-australia-guide",
+    title: "Parent Visa 804 Australia – A Simple Guide for Families",
+    date: "February 6, 2026",
+    image: "/assets/b8.jpg",
+  },
+  {
+    id: 13,
+    slug: "australian-migration-hunger-games",
+    title:
+      "Fastest Finger First: Why Australian Migration Feels Like the Hunger Games",
+    date: "January 20, 2026",
+    image: "/assets/b9.png",
+  },
+  {
+    id: 14,
+    slug: "skills-assessment-guide-australia",
+    title: "Australia Skills Assessment Guide: Eligibility, Fees & Timeline",
+    date: "January 13, 2026",
+    image: "/assets/b10.jpg",
+  },
+];

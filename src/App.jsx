@@ -49,7 +49,7 @@ import Terms from "./Pages/Terms";
 import Policy from "./Pages/Policy";
 import Refund from "./Pages/Refund";
 import NewsArticle from "./Pages/NewsArtical";
-
+import BlogsArtical from "./Pages/BlogsArtical";
 
 function App() {
   return (
@@ -87,18 +87,9 @@ function App() {
           path="/checklist-for-labour-agreement"
           element={<Checklistlabour />}
         />
-        <Route
-          path="/terms-services"
-          element={<Terms />}
-        />
-        <Route
-          path="/privacy-policy"
-          element={<Policy />}
-        />
-        <Route
-          path="/cancellation-and-refund-policy"
-          element={<Refund/>}
-        />
+        <Route path="/terms-services" element={<Terms />} />
+        <Route path="/privacy-policy" element={<Policy />} />
+        <Route path="/cancellation-and-refund-policy" element={<Refund />} />
         <Route
           path="/our-services/student-visa/student-visa-australia/"
           element={<StudentAustralia />}
@@ -132,61 +123,60 @@ function App() {
           path="/our-services/employers/business-case-preparation/"
           element={<EmployerVisaStrategic />}
         />
-         <Route
+        <Route
           path="/our-services/employers/training-plan/"
           element={<EmployerVisaTraining />}
         />
-          <Route
+        <Route
           path="/our-services/employers/labour-market-testing-lmt-for-sc494-and-sc482-visas/"
           element={<EmployerVisaLMT />}
         />
         <Route
           path="/our-services/individual/employer-sponsored-visa/"
-          element={< IndividualVisaEmployer />}
+          element={<IndividualVisaEmployer />}
         />
-           <Route
+        <Route
           path="/our-services/individual/general-skilled-visa/"
-          element={< IndividualVisaGsm />}
+          element={<IndividualVisaGsm />}
         />
-            <Route
+        <Route
           path="/our-services/individual/family-visa/"
-          element={< IndividualVisaFamily />}
+          element={<IndividualVisaFamily />}
         />
-          <Route
+        <Route
           path="/our-services/individual/temporary-work-short-stay-visa/"
-          element={< IndividualVisaWork />}
+          element={<IndividualVisaWork />}
         />
-          <Route
+        <Route
           path="/our-services/individual/global-talent-visa/"
-          element={< IndividualVisaGlobal />}
+          element={<IndividualVisaGlobal />}
         />
-           <Route
+        <Route
           path="/our-services/individual/working-holiday-work-holiday-visa/"
-          element={< IndividualVisaHoliday />}
+          element={<IndividualVisaHoliday />}
         />
-         <Route
+        <Route
           path="/our-services/individual/business-investor-visa/"
-          element={< IndividualVisaBusiness/>}
+          element={<IndividualVisaBusiness />}
         />
-         <Route
+        <Route
           path="/our-services/individual/refugee-visa/"
-          element={< IndividualVisaRefugee />}
+          element={<IndividualVisaRefugee />}
         />
         <Route
           path="/our-services/individual/visitor-evisitor-eta-visa/"
-          element={< IndividualVisaETA />}
+          element={<IndividualVisaETA />}
         />
         <Route
           path="/our-services/individual/student-guardian-visa/"
-          element={< IndividualVisaGurdian />}
+          element={<IndividualVisaGurdian />}
         />
-<Route 
-  path="/:slug" 
-  element={<NewsArticle key={window.location.pathname} />} 
-/>
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:slug" element={<BlogsArtical />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/:slug" element={<NewsArticle />} />
       </Routes>
       <Footer />
-
     </Router>
   );
 }
