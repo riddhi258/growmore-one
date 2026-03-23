@@ -22,9 +22,11 @@ In practical terms, the 485 visa acts as a bridge between student life and long-
  
 Most 485 visa holders move toward PR through one of three structured migration streams: 
 
-1. **Skilled Migration (Points-Tested Visas)**
-2. **Employer-Sponsored Pathways**
-3. **Regional Migration Options** 
+ 1.Skilled Migration (Points-Tested Visas)
+
+ 2.Employer-Sponsored Pathways
+ 
+ 3.Regional Migration Options
 
 **1. Skilled Migration Pathways**
 
