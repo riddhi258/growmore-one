@@ -2,6 +2,7 @@ import React from "react";
 import { Check } from "lucide-react";
 import WhyChooseUs from "../Components/WhyChooseUs";
 import Teams from "../Components/Teams";
+import { Link } from "react-router-dom";
 
 const WhoWeAre = () => {
   return (
