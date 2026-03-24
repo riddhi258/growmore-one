@@ -25,7 +25,7 @@ const NewsArticle = () => {
     if (article) {
       let isMounted = true;
 
-      fetch(`/content/${slug}.md`)
+      fetch(`/content/news/${slug}.md`)
         .then((res) => {
           if (!res.ok) throw new Error("File not found");
           return res.text();

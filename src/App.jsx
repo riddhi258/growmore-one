@@ -173,7 +173,8 @@ function App() {
         />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:slug" element={<BlogsArtical />} />
-        <Route path="/:slug" element={<NewsArticle />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/:slug" element={<NewsArticle />} />
       </Routes>
       <Footer />
     </Router>

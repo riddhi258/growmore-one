@@ -47,7 +47,7 @@ const NewsSection = () => {
                 </p>
 
                 <div className="mt-auto">
-                  <Link to={`/${blog.slug}/`}>
+                  <Link to={`/news/${blog.slug}/`}>
                     <button className="group text-[#6dc7d1] font-semibold flex items-center gap-2 justify-end w-full transition-all duration-300">
                       <span className="relative">
                         READ MORE
