@@ -50,11 +50,13 @@ import Policy from "./Pages/Policy";
 import Refund from "./Pages/Refund";
 import NewsArticle from "./Pages/NewsArtical";
 import BlogsArtical from "./Pages/BlogsArtical";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="who-we-are" element={<WhoWeAre />} />

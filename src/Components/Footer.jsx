@@ -190,7 +190,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/cancellation-and-refund-policy" className="hover:text-gray-400 transition">
+              <Link to="/cancellation-and-refund-policy" className="hover:text-gray-400">
                 Cancellation & Refund Policy
               </Link>
             </li>
