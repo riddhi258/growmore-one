@@ -320,8 +320,9 @@ const Migrate = () => {
                   className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
                 />
 
-                {/* CAPTCHA */}
-                <div className="flex justify-start">
+                
+                {/* reCAPTCHA */}
+                <div className="flex justify-center sm:justify-start w-full sm:w-auto max-w-sm sm:max-w-md lg:max-w-lg">
                   <ReCAPTCHA
                     sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                     ref={recaptchaRef}

@@ -140,8 +140,8 @@ const Hero = () => {
 
         {/* RIGHT FORM */}
         {/* RIGHT FORM */}
-        <div className="flex justify-center lg:justify-end">
-          <div className="bg-black rounded-3xl shadow-2xl w-[480px]">
+        <div className="flex justify-center lg:justify-end px-4 sm:px-6">
+          <div className="bg-black rounded-3xl shadow-2xl w-full max-w-sm sm:max-w-md lg:max-w-lg">
             <div className="h-6 bg-[#6dc7d1] rounded-t-3xl"></div>
 
             <div className="p-6 sm:p-8">
@@ -171,16 +171,14 @@ const Hero = () => {
                   />
                 </div>
 
-                {/* 🔥 Split Phone Input */}
-                <div className="flex gap-3">
+                {/* Split Phone Input */}
+                <div className="flex flex-col sm:flex-row gap-3">
                   {/* Country Code */}
-                  <div className="w-28 bg-white rounded-lg border border-gray-300">
+                  <div className="w-full sm:w-28 bg-white rounded-lg border border-gray-300">
                     <PhoneInput
                       country={"au"}
                       enableSearch
-                      onChange={(value, data) => {
-                        setDialCode(data.dialCode);
-                      }}
+                      onChange={(value, data) => setDialCode(data.dialCode)}
                       inputProps={{ readOnly: true }}
                       containerStyle={{ width: "100%" }}
                       inputStyle={{
@@ -202,7 +200,7 @@ const Hero = () => {
                     placeholder="Contact Number"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="flex-1 bg-white rounded-lg px-4 py-2 border border-gray-300"
+                    className="flex-1 bg-white rounded-lg px-4 py-2 border border-gray-300 w-full"
                     required
                   />
                 </div>
@@ -230,7 +228,8 @@ const Hero = () => {
                   className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
                 ></textarea>
 
-                <div className="flex justify-start">
+                {/* reCAPTCHA */}
+                <div className="flex justify-center sm:justify-start w-full sm:w-auto max-w-sm sm:max-w-md lg:max-w-lg">
                   <ReCAPTCHA
                     sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                     ref={recaptchaRef}
@@ -240,7 +239,7 @@ const Hero = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#6dc7d1] hover:border-[#6dc7d1] hover:border-2  px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50"
+                  className="bg-[#6dc7d1] hover:border-[#6dc7d1] hover:border-2 px-8 py-2 text-white rounded-full hover:bg-black transition disabled:opacity-50 w-full sm:w-auto"
                 >
                   {loading ? "Submitting..." : "Submit →"}
                 </button>
