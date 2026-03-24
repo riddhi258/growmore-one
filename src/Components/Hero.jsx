@@ -42,53 +42,52 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentWordIndex]);
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const token = recaptchaRef.current?.getValue();
+    const token = recaptchaRef.current?.getValue();
 
-  if (!token) {
-    alert("Please verify the captcha");
-    return;
-  }
+    if (!token) {
+      alert("Please verify the captcha");
+      return;
+    }
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+    try {
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
 
-    const finalPhone = `+${dialCode}${phoneNumber}`;
+      const finalPhone = `+${dialCode}${phoneNumber}`;
 
-    const payload = {
-      name: data.name,
-      email: data.email,
-      phone: finalPhone,
-      visaType: data.visaType,
-      message: data.message,
-      captchaToken: token,
-      source: "Website Form",
-    };
+      const payload = {
+        name: data.name,
+        email: data.email,
+        phone: finalPhone,
+        visaType: data.visaType,
+        message: data.message,
+        captchaToken: token,
+        source: "Website Form",
+      };
 
-    const response = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    const result = await response.json();
-    if (!result.success) throw new Error("Submission failed");
+      const result = await response.json();
+      if (!result.success) throw new Error("Submission failed");
 
-    alert("Thank you! Our team will contact you shortly.");
+      alert("Thank you! Our team will contact you shortly.");
 
-    e.target.reset();
-    setPhoneNumber("");
-    recaptchaRef.current.reset();
-
-  } finally {
-    setLoading(false);
-  }
-};
+      e.target.reset();
+      setPhoneNumber("");
+      recaptchaRef.current.reset();
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
@@ -231,10 +230,12 @@ const Hero = () => {
                   className="bg-white rounded-lg px-4 py-3 w-full border border-gray-300"
                 ></textarea>
 
-                <ReCAPTCHA
-                  sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
-                  ref={recaptchaRef}
-                />
+                <div className="flex justify-start">
+                  <ReCAPTCHA
+                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                    ref={recaptchaRef}
+                  />
+                </div>
 
                 <button
                   type="submit"

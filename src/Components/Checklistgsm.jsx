@@ -315,10 +315,12 @@ const Checklistgsm = () => {
               className="input-style h-24"
             />
 
-            <ReCAPTCHA
-              sitekey="6Lcb_HEsAAAAAJESdQwpfYltspCpspxJPbCyM58Z"
-              ref={recaptchaRef}
-            />
+               <div className="flex justify-start">
+                  <ReCAPTCHA
+                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                    ref={recaptchaRef}
+                  />
+                </div>
 
             <button
               type="submit"
